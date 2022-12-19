@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 03:20 AM
+-- Generation Time: Dec 19, 2022 at 02:13 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -30,8 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `jenis_mobil` (
   `id` int(10) NOT NULL,
   `jenis_mobil` varchar(100) NOT NULL,
-  `created_at` varchar(100) NOT NULL
+  `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jenis_mobil`
+--
+
+INSERT INTO `jenis_mobil` (`id`, `jenis_mobil`, `created_at`) VALUES
+(1, 'Sedan', '2022-12-19'),
+(2, 'Van', '2022-12-15'),
+(3, 'SUV', '2022-12-10'),
+(4, 'Pickup', '2022-12-01'),
+(5, 'Sport', '2022-10-20');
 
 -- --------------------------------------------------------
 
@@ -142,7 +153,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `jenis_mobil`
 --
 ALTER TABLE `jenis_mobil`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `mobil`
