@@ -22,10 +22,6 @@ Partial Class Penyewa
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-<<<<<<< HEAD
-        Me.SuspendLayout()
-        '
-=======
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.nama = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nik = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,31 +54,21 @@ Partial Class Penyewa
         Me.alamat.HeaderText = "Alamat"
         Me.alamat.Name = "alamat"
         '
->>>>>>> origin/main
         'Penyewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-<<<<<<< HEAD
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Name = "Penyewa"
-        Me.Text = "Form1"
-=======
         Me.ClientSize = New System.Drawing.Size(516, 322)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "Penyewa"
-        Me.Text = "Form1"
+        Me.Text = "Penyewa"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
->>>>>>> origin/main
         Me.ResumeLayout(False)
 
     End Sub
 
-<<<<<<< HEAD
-=======
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents nama As DataGridViewTextBoxColumn
     Friend WithEvents nik As DataGridViewTextBoxColumn
     Friend WithEvents alamat As DataGridViewTextBoxColumn
->>>>>>> origin/main
 End Class
