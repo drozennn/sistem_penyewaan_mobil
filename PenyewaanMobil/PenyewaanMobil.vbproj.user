@@ -4,5 +4,8 @@
     <Compile Update="Penyewa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="TambahPenyewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

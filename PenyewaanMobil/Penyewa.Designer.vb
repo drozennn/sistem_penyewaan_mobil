@@ -26,6 +26,7 @@ Partial Class Penyewa
         Me.nama = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nik = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.alamat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BtnTambah = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,11 +55,21 @@ Partial Class Penyewa
         Me.alamat.HeaderText = "Alamat"
         Me.alamat.Name = "alamat"
         '
+        'BtnTambah
+        '
+        Me.BtnTambah.Location = New System.Drawing.Point(24, 47)
+        Me.BtnTambah.Name = "BtnTambah"
+        Me.BtnTambah.Size = New System.Drawing.Size(75, 23)
+        Me.BtnTambah.TabIndex = 1
+        Me.BtnTambah.Text = "Tambah"
+        Me.BtnTambah.UseVisualStyleBackColor = True
+        '
         'Penyewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(516, 322)
+        Me.Controls.Add(Me.BtnTambah)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "Penyewa"
         Me.Text = "Penyewa"
@@ -71,4 +82,5 @@ Partial Class Penyewa
     Friend WithEvents nama As DataGridViewTextBoxColumn
     Friend WithEvents nik As DataGridViewTextBoxColumn
     Friend WithEvents alamat As DataGridViewTextBoxColumn
+    Friend WithEvents BtnTambah As Button
 End Class
