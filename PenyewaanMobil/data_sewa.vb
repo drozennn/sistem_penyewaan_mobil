@@ -185,5 +185,25 @@ Public Class data_sewa
         End Try
     End Function
 
+    Public Function loadPenyewa()
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+
+        Dim reader As MySqlDataReader
+        Try
+            dbConn.Open()
+            Dim query As String
+            query = "SELECT * FROM penyewa"
+            sqlRead = sqlCommand.ExecuteReader
+
+            While sqlRead.Read
+                Dim sName = sqlRead.GetString("nama")
+            End While
+
+        Catch ex As Exception
+
+        End Try
+
+    End Function
 
 End Class

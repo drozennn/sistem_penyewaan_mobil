@@ -1,4 +1,17 @@
-﻿Public Class tambah_data_sewa
+﻿Imports Microsoft.SqlServer
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+Imports MySql.Data.MySqlClient
+
+Public Class tambah_data_sewa
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
     Private Sub ButtonKirim_Click(sender As Object, e As EventArgs) Handles ButtonKirim.Click
         'form_sewa.Data_Sewa.GSnamaPenyewa = ComboBoxPenyewa.Text
         'form_sewa.Data_Sewa.GSmerek = ComboBoxMerek.Text
@@ -23,6 +36,5 @@
                                                    form_sewa.Data_Sewa.GSstatusSewa
                                                    )
         MessageBox.Show("data dimasukan")
-
     End Sub
 End Class
