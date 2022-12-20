@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 02:13 PM
+-- Generation Time: Dec 20, 2022 at 05:54 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -53,7 +53,7 @@ INSERT INTO `jenis_mobil` (`id`, `jenis_mobil`, `created_at`) VALUES
 CREATE TABLE `mobil` (
   `id` int(10) NOT NULL,
   `jenis` int(10) NOT NULL,
-  `foto_mobil` mediumblob NOT NULL,
+  `foto_mobil` text NOT NULL,
   `merek` varchar(100) NOT NULL,
   `jumlah` int(10) NOT NULL,
   `harga_sewa` varchar(20) NOT NULL,
@@ -70,8 +70,8 @@ CREATE TABLE `mobil` (
 
 CREATE TABLE `penyewa` (
   `id_penyewa` int(10) NOT NULL,
-  `nik` varchar(16) NOT NULL,
   `nama` varchar(100) NOT NULL,
+  `nik` int(16) NOT NULL,
   `alamat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -105,7 +105,7 @@ CREATE TABLE `users` (
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(16) NOT NULL,
-  `foto` mediumblob DEFAULT NULL
+  `foto` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
