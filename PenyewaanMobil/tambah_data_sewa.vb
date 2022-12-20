@@ -1,7 +1,9 @@
 ﻿Public Class tambah_data_sewa
     Private Sub ButtonKirim_Click(sender As Object, e As EventArgs) Handles ButtonKirim.Click
-        form_sewa.Data_Sewa.GSnamaPenyewa = ComboBoxPenyewa.Text
-        form_sewa.Data_Sewa.GSmerek = ComboBoxMerek.Text
+        'form_sewa.Data_Sewa.GSnamaPenyewa = ComboBoxPenyewa.Text
+        'form_sewa.Data_Sewa.GSmerek = ComboBoxMerek.Text
+        form_sewa.Data_Sewa.GSnamaPenyewa = 1
+        form_sewa.Data_Sewa.GSmerek = 1
         form_sewa.Data_Sewa.GSrencanaPinjam = TextBoxRencana.Text
         form_sewa.Data_Sewa.GStanggalPinjam = DateTimePickerTglPinjam.Value.ToShortDateString
         form_sewa.Data_Sewa.GStanggalKembali = DateTimePickerTglKembali.Value.ToShortDateString
@@ -20,7 +22,7 @@
                                                    form_sewa.Data_Sewa.GStotalBayar,
                                                    form_sewa.Data_Sewa.GSstatusSewa
                                                    )
-        MessageBox.Show("Berhasil")
+        MessageBox.Show("data dimasukan")
 
     End Sub
 End Class

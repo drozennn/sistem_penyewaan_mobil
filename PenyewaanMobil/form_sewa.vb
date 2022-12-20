@@ -7,19 +7,20 @@
         InitializeComponent()
 
         Data_Sewa = New data_sewa()
-        ReloadDataTableDatabase()
+        'ReloadDataTableDatabase()
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-    Private Sub ReloadDataTableDatabase()
-        DataGridSewa.DataSource = Data_Sewa.GetDataKoleksiDatabase()
-    End Sub
+    'Private Sub ReloadDataTableDatabase()
+    '    DataGridSewa.DataSource = Data_Sewa.GetDataKoleksiDatabase()
+    'End Sub
 
     Private Sub form_sewa_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        ReloadDataTableDatabase()
+        'ReloadDataTableDatabase()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonTambah.Click
+        Dim tambah = New tambah_data_sewa()
+        tambah.Show()
     End Sub
 End Class

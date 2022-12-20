@@ -4,10 +4,10 @@ Public Class data_sewa
 
     Private dataTableSewa As New ArrayList()
 
-    Public Shared dbconn As New MySqlConnection
-    Public Shared sqlcommand As New MySqlCommand
-    Public Shared sqlread As MySqlDataReader
-    Private sqlquery As String
+    Public Shared dbConn As New MySqlConnection
+    Public Shared sqlCommand As New MySqlCommand
+    Public Shared sqlRead As MySqlDataReader
+    Private sqlQuery As String
 
     Private server As String = "localhost"
     Private username As String = "root"
@@ -23,9 +23,9 @@ Public Class data_sewa
     Private rencanaPinjam As Integer
     Private tanggalPinjam As Date
     Private tanggalKembali As Date
-    Private totalBiayaSewa As Integer
-    Private biayaKelebihanSewa As Integer
-    Private totalBayar As Integer
+    Private totalBiayaSewa As String
+    Private biayaKelebihanSewa As String
+    Private totalBayar As String
     Private statusSewa As String
 
     '====================================================
@@ -75,38 +75,38 @@ Public Class data_sewa
         End Set
     End Property
 
-    Public Property GStotalBiayaSewa() As Integer
+    Public Property GStotalBiayaSewa() As String
         Get
             Return totalBiayaSewa
         End Get
-        Set(value As Integer)
+        Set(value As String)
             totalBiayaSewa = value
         End Set
     End Property
 
-    Public Property GSbiayaKelebihanSewa() As Integer
+    Public Property GSbiayaKelebihanSewa() As String
         Get
             Return biayaKelebihanSewa
         End Get
-        Set(value As Integer)
+        Set(value As String)
             biayaKelebihanSewa = value
         End Set
     End Property
 
-    Public Property GStotalBayar() As Integer
+    Public Property GStotalBayar() As String
         Get
             Return totalBayar
         End Get
-        Set(value As Integer)
+        Set(value As String)
             totalBayar = value
         End Set
     End Property
 
-    Public Property GSstatusSewa() As Integer
+    Public Property GSstatusSewa() As String
         Get
             Return statusSewa
         End Get
-        Set(value As Integer)
+        Set(value As String)
             statusSewa = value
         End Set
     End Property
@@ -116,12 +116,12 @@ Public Class data_sewa
     Public Function GetDataKoleksiDatabase() As DataTable
         Dim result As New DataTable
 
-        dbconn.ConnectionString = "server=" + server + ";" + "user id=" + username + ";" _
+        dbConn.ConnectionString = "server=" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database=" + database
         Try
-            dbconn.Open()
-            sqlcommand.Connection = dbconn
-            sqlcommand.CommandText = "SELECT id AS 'ID',
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlCommand.CommandText = "SELECT id AS 'ID',
                                   merek AS 'Merek',
                                   penyewa AS 'Penyewa',
                                   rencana_pinjam AS 'Rencana Pinjam',
@@ -133,10 +133,10 @@ Public Class data_sewa
                                   status_sewa AS 'Status Sewa'
                                   FROM sewa"
 
-            sqlread = sqlcommand.ExecuteReader
-            result.Load(sqlread)
-            sqlread.Close()
-            dbconn.Close()
+            sqlRead = sqlCommand.ExecuteReader
+            result.Load(sqlRead)
+            sqlRead.Close()
+            dbConn.Close()
             Return result
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -145,21 +145,21 @@ Public Class data_sewa
 
 
     Public Function AddDataKoleksiDatabase(merek As Integer,
-                                           penyewa As String,
+                                           penyewa As Integer,
                                            rencana_pinjam As Integer,
                                            tanggal_pinjam As Date,
                                            tanggal_kembali As Date,
-                                           total_biaya_sewa As Integer,
-                                           biaya_kelebihan_pinjam As Integer,
-                                           total_bayar As Integer,
+                                           total_biaya_sewa As String,
+                                           biaya_kelebihan_pinjam As String,
+                                           total_bayar As String,
                                            status_sewa As String)
 
-        dbconn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
         Try
-            dbconn.Open()
-            sqlcommand.Connection = dbconn
-            sqlquery = "INSERT INTO SEWA (merek, penyewa, 
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "INSERT INTO sewa (merek, penyewa, 
                         rencana_pinjam, tanggal_pinjam, tanggal_kembali, 
                         total_biaya_sewa, biaya_kelebihan_pinjam, total_bayar, 
                         status_sewa) VALUE('" _
@@ -173,17 +173,15 @@ Public Class data_sewa
                         & total_bayar & "', '" _
                         & status_sewa & "')"
 
-            sqlcommand = New MySqlCommand(sqlquery, dbconn)
-            sqlread = sqlcommand.ExecuteReader
-            dbconn.Close()
-
-            'Perpustakaan.sqlDt.Load(sqlRead)
-            sqlread.Close()
-            dbconn.Close()
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlcommand.ExecuteReader
+            dbConn.Close()
+            sqlRead.Close()
+            dbConn.Close()
         Catch ex As Exception
             Return ex.Message
         Finally
-            dbconn.Dispose()
+            dbConn.Dispose()
         End Try
     End Function
 
