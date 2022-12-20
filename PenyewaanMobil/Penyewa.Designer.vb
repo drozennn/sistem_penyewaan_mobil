@@ -22,17 +22,67 @@ Partial Class Penyewa
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+<<<<<<< HEAD
         Me.SuspendLayout()
         '
+=======
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.nama = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nik = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.alamat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nama, Me.nik, Me.alamat})
+        Me.DataGridView1.Location = New System.Drawing.Point(127, 37)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowTemplate.Height = 25
+        Me.DataGridView1.Size = New System.Drawing.Size(344, 252)
+        Me.DataGridView1.TabIndex = 0
+        '
+        'nama
+        '
+        Me.nama.HeaderText = "Nama"
+        Me.nama.Name = "nama"
+        '
+        'nik
+        '
+        Me.nik.HeaderText = "NIK"
+        Me.nik.Name = "nik"
+        '
+        'alamat
+        '
+        Me.alamat.HeaderText = "Alamat"
+        Me.alamat.Name = "alamat"
+        '
+>>>>>>> origin/main
         'Penyewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+<<<<<<< HEAD
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Name = "Penyewa"
         Me.Text = "Form1"
+=======
+        Me.ClientSize = New System.Drawing.Size(516, 322)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Name = "Penyewa"
+        Me.Text = "Form1"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+>>>>>>> origin/main
         Me.ResumeLayout(False)
 
     End Sub
 
+<<<<<<< HEAD
+=======
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents nama As DataGridViewTextBoxColumn
+    Friend WithEvents nik As DataGridViewTextBoxColumn
+    Friend WithEvents alamat As DataGridViewTextBoxColumn
+>>>>>>> origin/main
 End Class
