@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 02:13 PM
+-- Generation Time: Dec 20, 2022 at 04:41 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -70,8 +70,8 @@ CREATE TABLE `mobil` (
 
 CREATE TABLE `penyewa` (
   `id_penyewa` int(10) NOT NULL,
-  `nik` varchar(16) NOT NULL,
   `nama` varchar(100) NOT NULL,
+  `nik` int(16) NOT NULL,
   `alamat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
