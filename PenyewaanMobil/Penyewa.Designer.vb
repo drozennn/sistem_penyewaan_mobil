@@ -22,38 +22,19 @@ Partial Class Penyewa
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.nama = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nik = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.alamat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridPenyewa = New System.Windows.Forms.DataGridView()
         Me.BtnTambah = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridPenyewa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DataGridPenyewa
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nama, Me.nik, Me.alamat})
-        Me.DataGridView1.Location = New System.Drawing.Point(127, 37)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(344, 252)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'nama
-        '
-        Me.nama.HeaderText = "Nama"
-        Me.nama.Name = "nama"
-        '
-        'nik
-        '
-        Me.nik.HeaderText = "NIK"
-        Me.nik.Name = "nik"
-        '
-        'alamat
-        '
-        Me.alamat.HeaderText = "Alamat"
-        Me.alamat.Name = "alamat"
+        Me.DataGridPenyewa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridPenyewa.Location = New System.Drawing.Point(127, 37)
+        Me.DataGridPenyewa.Name = "DataGridPenyewa"
+        Me.DataGridPenyewa.RowTemplate.Height = 25
+        Me.DataGridPenyewa.Size = New System.Drawing.Size(445, 252)
+        Me.DataGridPenyewa.TabIndex = 0
         '
         'BtnTambah
         '
@@ -68,19 +49,16 @@ Partial Class Penyewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(516, 322)
+        Me.ClientSize = New System.Drawing.Size(632, 322)
         Me.Controls.Add(Me.BtnTambah)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DataGridPenyewa)
         Me.Name = "Penyewa"
         Me.Text = "Penyewa"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridPenyewa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents nama As DataGridViewTextBoxColumn
-    Friend WithEvents nik As DataGridViewTextBoxColumn
-    Friend WithEvents alamat As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridPenyewa As DataGridView
     Friend WithEvents BtnTambah As Button
 End Class

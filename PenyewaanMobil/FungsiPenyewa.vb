@@ -74,8 +74,7 @@ Public Class FungsiPenyewa
 
         dbConn.ConnectionString = "server=" + server + ";" + "user id=" + username + ";" + "password=" + password + ";" + "database=" + database
 
-        Try
-            dbConn.Open()
+        dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlCommand.CommandText = "SELECT id_penyewa AS 'ID',
                                       nama AS 'Nama',
@@ -88,10 +87,6 @@ Public Class FungsiPenyewa
             sqlRead.Close()
             dbConn.Close()
             Return result
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
     End Function
 
     Public Function AddDataKoleksiDatabase(nama As String,
