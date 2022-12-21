@@ -3,6 +3,8 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 Imports MySql.Data.MySqlClient
 
 Public Class tambah_data_sewa
+    Private data As New List(Of String)
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -13,10 +15,11 @@ Public Class tambah_data_sewa
     End Sub
 
     Private Sub ButtonKirim_Click(sender As Object, e As EventArgs) Handles ButtonKirim.Click
-        'form_sewa.Data_Sewa.GSnamaPenyewa = ComboBoxPenyewa.Text
-        'form_sewa.Data_Sewa.GSmerek = ComboBoxMerek.Text
-        form_sewa.Data_Sewa.GSnamaPenyewa = 1
-        form_sewa.Data_Sewa.GSmerek = 1
+
+
+
+        form_sewa.Data_Sewa.GSnamaPenyewa = ComboBoxPenyewa.SelectedItem
+        form_sewa.Data_Sewa.GSmerek = ComboBoxPenyewa.SelectedItem
         form_sewa.Data_Sewa.GSrencanaPinjam = TextBoxRencana.Text
         form_sewa.Data_Sewa.GStanggalPinjam = DateTimePickerTglPinjam.Value.ToShortDateString
         form_sewa.Data_Sewa.GStanggalKembali = DateTimePickerTglKembali.Value.ToShortDateString
@@ -36,5 +39,34 @@ Public Class tambah_data_sewa
                                                    form_sewa.Data_Sewa.GSstatusSewa
                                                    )
         MessageBox.Show("data dimasukan")
+    End Sub
+
+    Private Sub tambah_data_sewa_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        data = form_sewa.Data_Sewa.loadPenyewa
+        ComboBoxPenyewa.Items.Clear()
+        For Each kel In data
+            ComboBoxPenyewa.Items.Add(kel)
+        Next
+        '========================================
+        data.Clear()
+        data = form_sewa.Data_Sewa.LoadMobil
+
+        ComboBoxMerek.Items.Clear()
+        For Each kel In data
+            ComboBoxMerek.Items.Add(kel)
+        Next
+        '======================================
+        data.Clear()
+
+    End Sub
+
+    Private Sub ComboBoxMerek_SelectedValueChanged(sender As Object, e As EventArgs) Handles ComboBoxMerek.SelectedValueChanged
+        Dim data2 As List(Of String) = form_sewa.Data_Sewa.LoadTipe(ComboBoxMerek.SelectedItem)
+        ComboBoxTipe.Items.Clear()
+        For Each kel In data2
+            ComboBoxTipe.Items.Add(kel)
+        Next
+        '======================================
+        data2.Clear()
     End Sub
 End Class

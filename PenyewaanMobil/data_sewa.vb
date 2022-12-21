@@ -2,7 +2,8 @@
 Public Class data_sewa
     'variable database
 
-    Private dataTableSewa As New ArrayList()
+    Private dataTableSewa As New List(Of String)
+    Private tableTipe As New List(Of String)
 
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
@@ -111,6 +112,15 @@ Public Class data_sewa
         End Set
     End Property
 
+    Public Property GStipe() As List(Of String)
+        Get
+            Return tableTipe
+        End Get
+        Set(value As List(Of String))
+            tableTipe = value
+        End Set
+    End Property
+
     '====================================================
 
     Public Function GetDataKoleksiDatabase() As DataTable
@@ -157,6 +167,10 @@ Public Class data_sewa
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
         Try
+
+            Dim idPenyewa = getIdPenyewa(penyewa)
+            Dim idMerek = getIdMerek(merek)
+
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "INSERT INTO sewa (merek, penyewa, 
@@ -164,7 +178,7 @@ Public Class data_sewa
                         total_biaya_sewa, biaya_kelebihan_pinjam, total_bayar, 
                         status_sewa) VALUE('" _
                         & merek & "', '" _
-                        & penyewa & "', '" _
+                        & idPenyewa & "', '" _
                         & rencana_pinjam & "', '" _
                         & tanggal_pinjam.ToString("yyyy/MM/dd") & "', '" _
                         & tanggal_kembali.ToString("yyyy/MM/dd") & "', '" _
@@ -174,7 +188,7 @@ Public Class data_sewa
                         & status_sewa & "')"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
-            sqlRead = sqlcommand.ExecuteReader
+            sqlRead = sqlCommand.ExecuteReader
             dbConn.Close()
             sqlRead.Close()
             dbConn.Close()
@@ -188,20 +202,127 @@ Public Class data_sewa
     Public Function loadPenyewa()
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
-
-        Dim reader As MySqlDataReader
         Try
             dbConn.Open()
-            Dim query As String
-            query = "SELECT * FROM penyewa"
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT nama FROM penyewa"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
 
             While sqlRead.Read
-                Dim sName = sqlRead.GetString("nama")
+                dataTableSewa.Add(sqlRead.GetString(0).ToString)
             End While
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return dataTableSewa
 
         Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
 
+    Public Function LoadMobil()
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT merek FROM mobil WHERE status_sewa = 'Tersedia'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+
+            dataTableSewa.Clear()
+            While sqlRead.Read
+                dataTableSewa.Add(sqlRead.GetString(0).ToString)
+            End While
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return dataTableSewa
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function LoadTipe(merek As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT tipe FROM mobil WHERE merek = '" & merek & "'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+
+            dataTableSewa.Clear()
+            While sqlRead.Read
+                dataTableSewa.Add(sqlRead.GetString(0).ToString)
+            End While
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return dataTableSewa
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function getIdPenyewa(nama As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT id FROM penyewa WHERE nama = " & nama
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return sqlRead.GetString(0).ToString
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+
+    End Function
+
+    Public Function getIdMerek(merek As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT id FROM penyewa WHERE nama = " & merek
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return sqlRead.GetString(0).ToString
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
         End Try
 
     End Function

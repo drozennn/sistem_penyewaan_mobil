@@ -56,6 +56,9 @@ Partial Class tambah_data_sewa
         Me.ButtonKembali = New System.Windows.Forms.Button()
         Me.ComboBoxPenyewa = New System.Windows.Forms.ComboBox()
         Me.ComboBoxMerek = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxTipe = New System.Windows.Forms.ComboBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -64,9 +67,9 @@ Partial Class tambah_data_sewa
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(225, 51)
+        Me.Label1.Size = New System.Drawing.Size(381, 51)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Sewa Mobil"
+        Me.Label1.Text = "Tambah Sewa Mobil"
         '
         'Label2
         '
@@ -346,11 +349,40 @@ Partial Class tambah_data_sewa
         Me.ComboBoxMerek.Size = New System.Drawing.Size(195, 23)
         Me.ComboBoxMerek.TabIndex = 43
         '
+        'ComboBoxTipe
+        '
+        Me.ComboBoxTipe.FormattingEnabled = True
+        Me.ComboBoxTipe.Location = New System.Drawing.Point(230, 224)
+        Me.ComboBoxTipe.Name = "ComboBoxTipe"
+        Me.ComboBoxTipe.Size = New System.Drawing.Size(195, 23)
+        Me.ComboBoxTipe.TabIndex = 46
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(205, 227)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(10, 15)
+        Me.Label24.TabIndex = 45
+        Me.Label24.Text = ":"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(23, 227)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(63, 15)
+        Me.Label25.TabIndex = 44
+        Me.Label25.Text = "Tipe Mobil"
+        '
         'tambah_data_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1010, 497)
+        Me.Controls.Add(Me.ComboBoxTipe)
+        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.ComboBoxMerek)
         Me.Controls.Add(Me.ComboBoxPenyewa)
         Me.Controls.Add(Me.ButtonKembali)
@@ -426,4 +458,7 @@ Partial Class tambah_data_sewa
     Friend WithEvents ButtonKembali As Button
     Friend WithEvents ComboBoxPenyewa As ComboBox
     Friend WithEvents ComboBoxMerek As ComboBox
+    Friend WithEvents ComboBoxTipe As ComboBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
 End Class

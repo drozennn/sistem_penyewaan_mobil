@@ -31,11 +31,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
         Protected Overrides Sub OnCreateMainForm()
-<<<<<<< HEAD
             Me.MainForm = form_sewa
-=======
-            Me.MainForm = Penyewa
->>>>>>> origin/main
         End Sub
     End Class
 End Namespace
