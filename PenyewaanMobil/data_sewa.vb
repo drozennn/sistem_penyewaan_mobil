@@ -3,7 +3,6 @@ Public Class data_sewa
     'variable database
 
     Private dataTableSewa As New List(Of String)
-    Private tableTipe As New List(Of String)
 
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
@@ -19,8 +18,9 @@ Public Class data_sewa
 
     'variable local
 
-    Private namaPenyewa As Integer
-    Private merek As Integer
+    Private namaPenyewa As String
+    Private merek As String
+    Private Tipe As String
     Private rencanaPinjam As Integer
     Private tanggalPinjam As Date
     Private tanggalKembali As Date
@@ -31,20 +31,20 @@ Public Class data_sewa
 
     '====================================================
 
-    Public Property GSnamaPenyewa() As Integer
+    Public Property GSnamaPenyewa() As String
         Get
             Return namaPenyewa
         End Get
-        Set(value As Integer)
+        Set(value As String)
             namaPenyewa = value
         End Set
     End Property
 
-    Public Property GSmerek() As Integer
+    Public Property GSmerek() As String
         Get
             Return merek
         End Get
-        Set(value As Integer)
+        Set(value As String)
             merek = value
         End Set
     End Property
@@ -112,12 +112,12 @@ Public Class data_sewa
         End Set
     End Property
 
-    Public Property GStipe() As List(Of String)
+    Public Property GStipe() As Integer
         Get
-            Return tableTipe
+            Return Tipe
         End Get
-        Set(value As List(Of String))
-            tableTipe = value
+        Set(value As Integer)
+            Tipe = value
         End Set
     End Property
 
@@ -154,8 +154,8 @@ Public Class data_sewa
     End Function
 
 
-    Public Function AddDataKoleksiDatabase(merek As Integer,
-                                           penyewa As Integer,
+    Public Function AddDataKoleksiDatabase(merek As String,
+                                           penyewa As String,
                                            rencana_pinjam As Integer,
                                            tanggal_pinjam As Date,
                                            tanggal_kembali As Date,
@@ -171,20 +171,23 @@ Public Class data_sewa
             Dim idPenyewa = getIdPenyewa(penyewa)
             Dim idMerek = getIdMerek(merek)
 
+            MessageBox.Show(idPenyewa)
+            MessageBox.Show(idMerek)
+
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "INSERT INTO sewa (merek, penyewa, 
                         rencana_pinjam, tanggal_pinjam, tanggal_kembali, 
                         total_biaya_sewa, biaya_kelebihan_pinjam, total_bayar, 
-                        status_sewa) VALUE('" _
-                        & merek & "', '" _
-                        & idPenyewa & "', '" _
-                        & rencana_pinjam & "', '" _
+                        status_sewa) VALUES(" _
+                        & idMerek & ", " _
+                        & idPenyewa & ", " _
+                        & rencana_pinjam & ", '" _
                         & tanggal_pinjam.ToString("yyyy/MM/dd") & "', '" _
-                        & tanggal_kembali.ToString("yyyy/MM/dd") & "', '" _
-                        & total_biaya_sewa & "', '" _
-                        & biaya_kelebihan_pinjam & "', '" _
-                        & total_bayar & "', '" _
+                        & tanggal_kembali.ToString("yyyy/MM/dd") & "', " _
+                        & total_biaya_sewa & ", " _
+                        & biaya_kelebihan_pinjam & ", " _
+                        & total_bayar & ", '" _
                         & status_sewa & "')"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
@@ -231,7 +234,7 @@ Public Class data_sewa
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "SELECT merek FROM mobil WHERE status_sewa = 'Tersedia'"
+            sqlQuery = "SELECT DISTINCT merek FROM mobil WHERE status_sewa = 'Tersedia'"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
@@ -282,18 +285,22 @@ Public Class data_sewa
     Public Function getIdPenyewa(nama As String)
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
-
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "SELECT id FROM penyewa WHERE nama = " & nama
+            sqlQuery = "SELECT id_penyewa FROM penyewa WHERE nama = '" & nama & "'"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
+            Dim result As Integer
+            While sqlRead.Read
+                result = sqlRead.GetString(0).ToString
+            End While
+
             sqlRead.Close()
             dbConn.Close()
 
-            Return sqlRead.GetString(0).ToString
+            Return result
 
         Catch ex As Exception
             Return ex.Message
@@ -303,21 +310,26 @@ Public Class data_sewa
 
     End Function
 
-    Public Function getIdMerek(merek As String)
+    Public Function getIdMerek(tipe As String)
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
 
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "SELECT id FROM penyewa WHERE nama = " & merek
+            sqlQuery = "SELECT id FROM mobil WHERE tipe = '" & tipe & "'"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
+            Dim result As Integer
+            While sqlRead.Read
+                result = sqlRead.GetString(0).ToString
+            End While
+
             sqlRead.Close()
             dbConn.Close()
 
-            Return sqlRead.GetString(0).ToString
+            Return result
 
         Catch ex As Exception
             Return ex.Message

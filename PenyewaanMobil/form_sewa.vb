@@ -23,4 +23,9 @@
         Dim tambah = New tambah_data_sewa()
         tambah.Show()
     End Sub
+
+    Private Sub ButtonEdit_Click(sender As Object, e As EventArgs) Handles ButtonEdit.Click
+        Dim edit = New edit_sewa()
+        edit.Show()
+    End Sub
 End Class

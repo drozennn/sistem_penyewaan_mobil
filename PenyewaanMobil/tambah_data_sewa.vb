@@ -16,13 +16,11 @@ Public Class tambah_data_sewa
 
     Private Sub ButtonKirim_Click(sender As Object, e As EventArgs) Handles ButtonKirim.Click
 
-
-
         form_sewa.Data_Sewa.GSnamaPenyewa = ComboBoxPenyewa.SelectedItem
-        form_sewa.Data_Sewa.GSmerek = ComboBoxPenyewa.SelectedItem
+        form_sewa.Data_Sewa.GSmerek = ComboBoxTipe.SelectedItem
         form_sewa.Data_Sewa.GSrencanaPinjam = TextBoxRencana.Text
-        form_sewa.Data_Sewa.GStanggalPinjam = DateTimePickerTglPinjam.Value.ToShortDateString
-        form_sewa.Data_Sewa.GStanggalKembali = DateTimePickerTglKembali.Value.ToShortDateString
+        form_sewa.Data_Sewa.GStanggalPinjam = DateTimePickerTglPinjam.Value.ToString("yyyy/MM/dd")
+        form_sewa.Data_Sewa.GStanggalKembali = DateTimePickerTglKembali.Value.ToString("yyyy/MM/dd")
         form_sewa.Data_Sewa.GStotalBiayaSewa = TextBoxTotalBiayaSewa.Text
         form_sewa.Data_Sewa.GSbiayaKelebihanSewa = TextBoxBiayaKelebihan.Text
         form_sewa.Data_Sewa.GStotalBayar = TextBoxTotalBayar.Text
@@ -38,6 +36,17 @@ Public Class tambah_data_sewa
                                                    form_sewa.Data_Sewa.GStotalBayar,
                                                    form_sewa.Data_Sewa.GSstatusSewa
                                                    )
+        MessageBox.Show(form_sewa.Data_Sewa.GSmerek)
+        MessageBox.Show(form_sewa.Data_Sewa.GSnamaPenyewa)
+        MessageBox.Show(form_sewa.Data_Sewa.GSrencanaPinjam)
+        MessageBox.Show(form_sewa.Data_Sewa.GStanggalPinjam)
+        MessageBox.Show(form_sewa.Data_Sewa.GStanggalKembali)
+        MessageBox.Show(form_sewa.Data_Sewa.GStotalBiayaSewa)
+        MessageBox.Show(form_sewa.Data_Sewa.GSbiayaKelebihanSewa)
+        MessageBox.Show(form_sewa.Data_Sewa.GStotalBayar)
+        MessageBox.Show(form_sewa.Data_Sewa.GSstatusSewa)
+
+
         MessageBox.Show("data dimasukan")
     End Sub
 
