@@ -59,6 +59,7 @@ Partial Class tambah_data_sewa
         Me.ComboBoxTipe = New System.Windows.Forms.ComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -375,11 +376,21 @@ Partial Class tambah_data_sewa
         Me.Label25.TabIndex = 44
         Me.Label25.Text = "Tipe Mobil"
         '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(310, 348)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(47, 15)
+        Me.Label26.TabIndex = 47
+        Me.Label26.Text = "Label26"
+        '
         'tambah_data_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1010, 497)
+        Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.ComboBoxTipe)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.Label25)
@@ -461,4 +472,5 @@ Partial Class tambah_data_sewa
     Friend WithEvents ComboBoxTipe As ComboBox
     Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
 End Class

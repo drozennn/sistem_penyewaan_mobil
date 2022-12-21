@@ -25,7 +25,7 @@ Partial Class edit_sewa
         Me.ComboBoxMerek = New System.Windows.Forms.ComboBox()
         Me.ComboBoxPenyewa = New System.Windows.Forms.ComboBox()
         Me.ButtonKembali = New System.Windows.Forms.Button()
-        Me.ButtonKirim = New System.Windows.Forms.Button()
+        Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.DateTimePickerTglKembali = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePickerTglPinjam = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxStatusSewa = New System.Windows.Forms.TextBox()
@@ -56,6 +56,9 @@ Partial Class edit_sewa
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ComboBoxTipe = New System.Windows.Forms.ComboBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ComboBoxMerek
@@ -83,14 +86,14 @@ Partial Class edit_sewa
         Me.ButtonKembali.Text = "Kembali"
         Me.ButtonKembali.UseVisualStyleBackColor = True
         '
-        'ButtonKirim
+        'ButtonUpdate
         '
-        Me.ButtonKirim.Location = New System.Drawing.Point(773, 443)
-        Me.ButtonKirim.Name = "ButtonKirim"
-        Me.ButtonKirim.Size = New System.Drawing.Size(75, 23)
-        Me.ButtonKirim.TabIndex = 74
-        Me.ButtonKirim.Text = "Kirim"
-        Me.ButtonKirim.UseVisualStyleBackColor = True
+        Me.ButtonUpdate.Location = New System.Drawing.Point(773, 443)
+        Me.ButtonUpdate.Name = "ButtonUpdate"
+        Me.ButtonUpdate.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonUpdate.TabIndex = 74
+        Me.ButtonUpdate.Text = "Update"
+        Me.ButtonUpdate.UseVisualStyleBackColor = True
         '
         'DateTimePickerTglKembali
         '
@@ -346,15 +349,44 @@ Partial Class edit_sewa
         Me.Label1.TabIndex = 44
         Me.Label1.Text = "Edit Sewa Mobil"
         '
+        'ComboBoxTipe
+        '
+        Me.ComboBoxTipe.FormattingEnabled = True
+        Me.ComboBoxTipe.Location = New System.Drawing.Point(239, 222)
+        Me.ComboBoxTipe.Name = "ComboBoxTipe"
+        Me.ComboBoxTipe.Size = New System.Drawing.Size(195, 23)
+        Me.ComboBoxTipe.TabIndex = 80
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(214, 225)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(10, 15)
+        Me.Label24.TabIndex = 79
+        Me.Label24.Text = ":"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(32, 225)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(63, 15)
+        Me.Label25.TabIndex = 78
+        Me.Label25.Text = "Tipe Mobil"
+        '
         'edit_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(936, 493)
+        Me.Controls.Add(Me.ComboBoxTipe)
+        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.ComboBoxMerek)
         Me.Controls.Add(Me.ComboBoxPenyewa)
         Me.Controls.Add(Me.ButtonKembali)
-        Me.Controls.Add(Me.ButtonKirim)
+        Me.Controls.Add(Me.ButtonUpdate)
         Me.Controls.Add(Me.DateTimePickerTglKembali)
         Me.Controls.Add(Me.DateTimePickerTglPinjam)
         Me.Controls.Add(Me.TextBoxStatusSewa)
@@ -395,7 +427,7 @@ Partial Class edit_sewa
     Friend WithEvents ComboBoxMerek As ComboBox
     Friend WithEvents ComboBoxPenyewa As ComboBox
     Friend WithEvents ButtonKembali As Button
-    Friend WithEvents ButtonKirim As Button
+    Friend WithEvents ButtonUpdate As Button
     Friend WithEvents DateTimePickerTglKembali As DateTimePicker
     Friend WithEvents DateTimePickerTglPinjam As DateTimePicker
     Friend WithEvents TextBoxStatusSewa As TextBox
@@ -426,4 +458,7 @@ Partial Class edit_sewa
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBoxTipe As ComboBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
 End Class

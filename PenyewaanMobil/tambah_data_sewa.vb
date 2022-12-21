@@ -5,6 +5,7 @@ Imports MySql.Data.MySqlClient
 Public Class tambah_data_sewa
     Private data As New List(Of String)
 
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -77,5 +78,9 @@ Public Class tambah_data_sewa
         Next
         '======================================
         data2.Clear()
+    End Sub
+
+    Private Sub TextBoxRencana_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBoxRencana.KeyDown
+        TextBoxTotalBiayaSewa.Text = form_sewa.Data_Sewa.hargaSewa(ComboBoxTipe.SelectedItem, TextBoxRencana.Text)
     End Sub
 End Class

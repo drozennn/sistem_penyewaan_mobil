@@ -28,4 +28,9 @@
         Dim edit = New edit_sewa()
         edit.Show()
     End Sub
+
+    Private Sub ButtonHapus_Click(sender As Object, e As EventArgs) Handles ButtonHapus.Click
+        Dim hapus = New hapus_sewa()
+        hapus.Show()
+    End Sub
 End Class

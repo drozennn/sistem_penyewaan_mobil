@@ -339,4 +339,34 @@ Public Class data_sewa
 
     End Function
 
+    Public Function hargaSewa(tipe As String, hari As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT harga_sewa FROM mobil WHERE tipe = '" & tipe & "'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            Dim result As Integer
+            While sqlRead.Read
+                result = sqlRead.GetString(0).ToString
+            End While
+
+            Dim harga As Integer = result * hari
+
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return harga
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
 End Class
