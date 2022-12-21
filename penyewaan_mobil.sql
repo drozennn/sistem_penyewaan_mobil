@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 05:54 PM
+-- Generation Time: Dec 21, 2022 at 03:17 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -57,10 +57,20 @@ CREATE TABLE `mobil` (
   `merek` varchar(100) NOT NULL,
   `jumlah` int(10) NOT NULL,
   `harga_sewa` varchar(20) NOT NULL,
-  `tahun_pembuatan` date NOT NULL,
+  `tahun_pembuatan` year(4) NOT NULL,
   `tanggal_data_masuk` date NOT NULL,
   `status_sewa` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mobil`
+--
+
+INSERT INTO `mobil` (`id`, `jenis`, `foto_mobil`, `merek`, `jumlah`, `harga_sewa`, `tahun_pembuatan`, `tanggal_data_masuk`, `status_sewa`) VALUES
+(1, 4, '', 'Honda', 1, '300000', 2021, '2022-12-03', 'Tersedia'),
+(2, 4, '', 'Honda', 1, '300000', 2021, '2022-12-08', 'Tersedia'),
+(3, 5, '', 'Ferrari', 1, '4500000', 2018, '2022-12-21', 'tersedia'),
+(4, 3, '', 'Toyota', 1, '700000', 2020, '2021-10-12', 'tidak tersedia');
 
 -- --------------------------------------------------------
 
@@ -71,9 +81,18 @@ CREATE TABLE `mobil` (
 CREATE TABLE `penyewa` (
   `id_penyewa` int(10) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `nik` int(16) NOT NULL,
+  `nik` varchar(16) NOT NULL,
   `alamat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `penyewa`
+--
+
+INSERT INTO `penyewa` (`id_penyewa`, `nama`, `nik`, `alamat`) VALUES
+(1, 'maemunah', '212193220', 'jalan jalan ke manado'),
+(2, 'asep', '121222233', 'jalan ke bogor'),
+(3, 'kasim', '399043', 'jalan batu ancur');
 
 -- --------------------------------------------------------
 
@@ -87,11 +106,11 @@ CREATE TABLE `sewa` (
   `penyewa` int(10) NOT NULL,
   `rencana_pinjam` int(10) NOT NULL,
   `tanggal_pinjam` date NOT NULL,
-  `tanggal_kembali` date NOT NULL,
+  `tanggal_kembali` date DEFAULT NULL,
   `total_biaya_sewa` varchar(100) DEFAULT NULL,
   `biaya_kelebihan_pinjam` varchar(100) DEFAULT NULL,
   `total_bayar` varchar(100) DEFAULT NULL,
-  `status_sewa` varchar(50) DEFAULT NULL
+  `status_sewa` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -159,13 +178,13 @@ ALTER TABLE `jenis_mobil`
 -- AUTO_INCREMENT for table `mobil`
 --
 ALTER TABLE `mobil`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `penyewa`
 --
 ALTER TABLE `penyewa`
-  MODIFY `id_penyewa` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_penyewa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sewa`
