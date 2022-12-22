@@ -139,4 +139,32 @@ Public Class FungsiPenyewa
         dbConn.Close()
         Return result
     End Function
+
+    Public Function UpdateDataKoleksiByIdDatabase(ID As Integer,
+                                                  nama As String,
+                                                  nik As String,
+                                                  alamat As String)
+
+        dbConn.ConnectionString = "server=" + server + ";" + "user id=" + username + ";" + "password=" + password + ";" + "database=" + database
+
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "UPDATE penyewa SET " &
+                        "nama='" & nama & "', " &
+                        "nik='" & nik & "', " &
+                        "alamat='" & alamat & "' " &
+                        "WHERE id_penyewa='" & ID & "'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
 End Class
