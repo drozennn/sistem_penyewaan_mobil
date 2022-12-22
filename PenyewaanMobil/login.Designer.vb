@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Daftar
+Partial Class login
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,12 +24,12 @@ Partial Class Daftar
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'Daftar
+        'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Name = "Daftar"
+        Me.Name = "login"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 
