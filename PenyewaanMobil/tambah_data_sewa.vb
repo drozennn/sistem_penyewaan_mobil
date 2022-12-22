@@ -21,31 +21,16 @@ Public Class tambah_data_sewa
         form_sewa.Data_Sewa.GSmerek = ComboBoxTipe.SelectedItem
         form_sewa.Data_Sewa.GSrencanaPinjam = TextBoxRencana.Text
         form_sewa.Data_Sewa.GStanggalPinjam = DateTimePickerTglPinjam.Value.ToString("yyyy/MM/dd")
-        form_sewa.Data_Sewa.GStanggalKembali = DateTimePickerTglKembali.Value.ToString("yyyy/MM/dd")
         form_sewa.Data_Sewa.GStotalBiayaSewa = TextBoxTotalBiayaSewa.Text
-        form_sewa.Data_Sewa.GSbiayaKelebihanSewa = TextBoxBiayaKelebihan.Text
-        form_sewa.Data_Sewa.GStotalBayar = TextBoxTotalBayar.Text
-        form_sewa.Data_Sewa.GSstatusSewa = TextBoxStatusSewa.Text
+        form_sewa.Data_Sewa.GSstatusSewa = ComboBoxSewa.SelectedItem
 
         form_sewa.Data_Sewa.AddDataKoleksiDatabase(form_sewa.Data_Sewa.GSmerek,
                                                    form_sewa.Data_Sewa.GSnamaPenyewa,
                                                    form_sewa.Data_Sewa.GSrencanaPinjam,
                                                    form_sewa.Data_Sewa.GStanggalPinjam,
-                                                   form_sewa.Data_Sewa.GStanggalKembali,
                                                    form_sewa.Data_Sewa.GStotalBiayaSewa,
-                                                   form_sewa.Data_Sewa.GSbiayaKelebihanSewa,
-                                                   form_sewa.Data_Sewa.GStotalBayar,
                                                    form_sewa.Data_Sewa.GSstatusSewa
                                                    )
-        MessageBox.Show(form_sewa.Data_Sewa.GSmerek)
-        MessageBox.Show(form_sewa.Data_Sewa.GSnamaPenyewa)
-        MessageBox.Show(form_sewa.Data_Sewa.GSrencanaPinjam)
-        MessageBox.Show(form_sewa.Data_Sewa.GStanggalPinjam)
-        MessageBox.Show(form_sewa.Data_Sewa.GStanggalKembali)
-        MessageBox.Show(form_sewa.Data_Sewa.GStotalBiayaSewa)
-        MessageBox.Show(form_sewa.Data_Sewa.GSbiayaKelebihanSewa)
-        MessageBox.Show(form_sewa.Data_Sewa.GStotalBayar)
-        MessageBox.Show(form_sewa.Data_Sewa.GSstatusSewa)
 
 
         MessageBox.Show("data dimasukan")
@@ -80,7 +65,26 @@ Public Class tambah_data_sewa
         data2.Clear()
     End Sub
 
-    Private Sub TextBoxRencana_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBoxRencana.KeyDown
-        TextBoxTotalBiayaSewa.Text = form_sewa.Data_Sewa.hargaSewa(ComboBoxTipe.SelectedItem, TextBoxRencana.Text)
+    'Private Sub TextBoxRencana_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxRencana.KeyPress
+    '    'masih ada masalah dengan index yang di ketik
+    '    Dim data = TextBoxRencana.Text.Length
+    '    'Dim q = Integer.Parse(data) + 10
+    '    MessageBox.Show(data)
+    '    'Dim result As Integer = form_sewa.Data_Sewa.hargaSewa(ComboBoxTipe.SelectedItem, data)
+    '    'TextBoxTotalBiayaSewa.Text = result
+    'End Sub
+
+    Private Sub TextBoxRencana_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBoxRencana.KeyUp
+        Dim data As Integer
+
+        If TextBoxRencana.Text.Length > 0 Then
+            data = Integer.Parse(TextBoxRencana.Text)
+        Else
+            data = 0
+        End If
+        Dim result As Integer = form_sewa.Data_Sewa.hargaSewa(ComboBoxTipe.SelectedItem, data)
+        TextBoxTotalBiayaSewa.Text = result
+
     End Sub
+
 End Class

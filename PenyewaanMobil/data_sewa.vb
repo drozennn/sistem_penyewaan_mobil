@@ -139,7 +139,7 @@ Public Class data_sewa
                                   tanggal_kembali AS 'Tanggal Kembali',
                                   total_biaya_sewa AS 'Total Biaya Sewa',
                                   biaya_kelebihan_pinjam AS 'Biaya Kelebihan Pinjam',
-                                  total_bayar AS 'Total Bayar'
+                                  total_bayar AS 'Total Bayar',
                                   status_sewa AS 'Status Sewa'
                                   FROM sewa"
 
@@ -158,10 +158,7 @@ Public Class data_sewa
                                            penyewa As String,
                                            rencana_pinjam As Integer,
                                            tanggal_pinjam As Date,
-                                           tanggal_kembali As Date,
                                            total_biaya_sewa As String,
-                                           biaya_kelebihan_pinjam As String,
-                                           total_bayar As String,
                                            status_sewa As String)
 
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
@@ -172,22 +169,20 @@ Public Class data_sewa
             Dim idMerek = getIdMerek(merek)
 
             MessageBox.Show(idPenyewa)
-            MessageBox.Show(idMerek)
 
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "INSERT INTO sewa (merek, penyewa, 
-                        rencana_pinjam, tanggal_pinjam, tanggal_kembali, 
-                        total_biaya_sewa, biaya_kelebihan_pinjam, total_bayar, 
+                        rencana_pinjam, tanggal_pinjam, total_biaya_sewa, 
+                        biaya_kelebihan_pinjam, total_bayar, 
                         status_sewa) VALUES(" _
                         & idMerek & ", " _
                         & idPenyewa & ", " _
                         & rencana_pinjam & ", '" _
-                        & tanggal_pinjam.ToString("yyyy/MM/dd") & "', '" _
-                        & tanggal_kembali.ToString("yyyy/MM/dd") & "', " _
+                        & tanggal_pinjam.ToString("yyyy/MM/dd") & "', " _
                         & total_biaya_sewa & ", " _
-                        & biaya_kelebihan_pinjam & ", " _
-                        & total_bayar & ", '" _
+                        & 0 & ", " _
+                        & total_biaya_sewa & ", '" _
                         & status_sewa & "')"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
@@ -339,7 +334,7 @@ Public Class data_sewa
 
     End Function
 
-    Public Function hargaSewa(tipe As String, hari As String)
+    Public Function hargaSewa(tipe As String, hari As Integer) As Integer
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
 
@@ -355,7 +350,7 @@ Public Class data_sewa
                 result = sqlRead.GetString(0).ToString
             End While
 
-            Dim harga As Integer = result * hari
+            Dim harga As Integer = Integer.Parse(result) * hari
 
             sqlRead.Close()
             dbConn.Close()

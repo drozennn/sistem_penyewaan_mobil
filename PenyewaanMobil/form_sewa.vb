@@ -7,21 +7,16 @@
         InitializeComponent()
 
         Data_Sewa = New data_sewa()
-        'ReloadDataTableDatabase()
+        ReloadDataTableDatabase()
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-    'Private Sub ReloadDataTableDatabase()
-    '    DataGridSewa.DataSource = Data_Sewa.GetDataKoleksiDatabase()
-    'End Sub
-
-    Private Sub form_sewa_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        'ReloadDataTableDatabase()
+    Private Sub ReloadDataTableDatabase()
+        DataGridSewa.DataSource = Data_Sewa.GetDataKoleksiDatabase()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonTambah.Click
-        Dim tambah = New tambah_data_sewa()
-        tambah.Show()
+    Private Sub form_sewa_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        ReloadDataTableDatabase()
     End Sub
 
     Private Sub ButtonEdit_Click(sender As Object, e As EventArgs) Handles ButtonEdit.Click
@@ -32,5 +27,10 @@
     Private Sub ButtonHapus_Click(sender As Object, e As EventArgs) Handles ButtonHapus.Click
         Dim hapus = New hapus_sewa()
         hapus.Show()
+    End Sub
+
+    Private Sub ButtonTambah_Click(sender As Object, e As EventArgs) Handles ButtonTambah.Click
+        Dim tambah = New tambah_data_sewa()
+        tambah.Show()
     End Sub
 End Class

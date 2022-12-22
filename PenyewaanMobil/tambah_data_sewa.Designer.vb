@@ -28,30 +28,18 @@ Partial Class tambah_data_sewa
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.TextBoxRencana = New System.Windows.Forms.TextBox()
         Me.TextBoxTotalBiayaSewa = New System.Windows.Forms.TextBox()
-        Me.TextBoxStatusSewa = New System.Windows.Forms.TextBox()
-        Me.TextBoxTotalBayar = New System.Windows.Forms.TextBox()
-        Me.TextBoxBiayaKelebihan = New System.Windows.Forms.TextBox()
         Me.DateTimePickerTglPinjam = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePickerTglKembali = New System.Windows.Forms.DateTimePicker()
         Me.ButtonKirim = New System.Windows.Forms.Button()
         Me.ButtonKembali = New System.Windows.Forms.Button()
         Me.ComboBoxPenyewa = New System.Windows.Forms.ComboBox()
@@ -59,7 +47,7 @@ Partial Class tambah_data_sewa
         Me.ComboBoxTipe = New System.Windows.Forms.ComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
+        Me.ComboBoxSewa = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -111,48 +99,20 @@ Partial Class tambah_data_sewa
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(453, 230)
+        Me.Label6.Location = New System.Drawing.Point(453, 191)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(93, 15)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Total Biaya Sewa"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(453, 185)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(94, 15)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Tanggal Kembali"
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(453, 354)
+        Me.Label8.Location = New System.Drawing.Point(453, 227)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(69, 15)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Status Sewa"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(453, 316)
-        Me.Label9.Name = "Label9"
-        Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label9.Size = New System.Drawing.Size(64, 15)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = "Total Bayar"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(453, 274)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(130, 15)
-        Me.Label10.TabIndex = 13
-        Me.Label10.Text = "Biaya Kelebihan Pinjam"
         '
         'Label11
         '
@@ -184,20 +144,11 @@ Partial Class tambah_data_sewa
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(605, 230)
+        Me.Label14.Location = New System.Drawing.Point(605, 191)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(10, 15)
         Me.Label14.TabIndex = 21
         Me.Label14.Text = ":"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(605, 185)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(10, 15)
-        Me.Label15.TabIndex = 20
-        Me.Label15.Text = ":"
         '
         'Label16
         '
@@ -208,47 +159,13 @@ Partial Class tambah_data_sewa
         Me.Label16.TabIndex = 19
         Me.Label16.Text = ":"
         '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(605, 316)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(10, 15)
-        Me.Label17.TabIndex = 27
-        Me.Label17.Text = ":"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(605, 274)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(10, 15)
-        Me.Label18.TabIndex = 26
-        Me.Label18.Text = ":"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(447, 278)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(0, 15)
-        Me.Label19.TabIndex = 25
-        '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(447, 237)
+        Me.Label20.Location = New System.Drawing.Point(447, 207)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(0, 15)
         Me.Label20.TabIndex = 24
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(447, 189)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(0, 15)
-        Me.Label21.TabIndex = 23
         '
         'Label22
         '
@@ -261,7 +178,7 @@ Partial Class tambah_data_sewa
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(605, 354)
+        Me.Label23.Location = New System.Drawing.Point(605, 227)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(10, 15)
         Me.Label23.TabIndex = 28
@@ -276,31 +193,10 @@ Partial Class tambah_data_sewa
         '
         'TextBoxTotalBiayaSewa
         '
-        Me.TextBoxTotalBiayaSewa.Location = New System.Drawing.Point(638, 227)
+        Me.TextBoxTotalBiayaSewa.Location = New System.Drawing.Point(638, 188)
         Me.TextBoxTotalBiayaSewa.Name = "TextBoxTotalBiayaSewa"
         Me.TextBoxTotalBiayaSewa.Size = New System.Drawing.Size(185, 23)
         Me.TextBoxTotalBiayaSewa.TabIndex = 34
-        '
-        'TextBoxStatusSewa
-        '
-        Me.TextBoxStatusSewa.Location = New System.Drawing.Point(638, 351)
-        Me.TextBoxStatusSewa.Name = "TextBoxStatusSewa"
-        Me.TextBoxStatusSewa.Size = New System.Drawing.Size(185, 23)
-        Me.TextBoxStatusSewa.TabIndex = 37
-        '
-        'TextBoxTotalBayar
-        '
-        Me.TextBoxTotalBayar.Location = New System.Drawing.Point(638, 313)
-        Me.TextBoxTotalBayar.Name = "TextBoxTotalBayar"
-        Me.TextBoxTotalBayar.Size = New System.Drawing.Size(185, 23)
-        Me.TextBoxTotalBayar.TabIndex = 36
-        '
-        'TextBoxBiayaKelebihan
-        '
-        Me.TextBoxBiayaKelebihan.Location = New System.Drawing.Point(638, 271)
-        Me.TextBoxBiayaKelebihan.Name = "TextBoxBiayaKelebihan"
-        Me.TextBoxBiayaKelebihan.Size = New System.Drawing.Size(185, 23)
-        Me.TextBoxBiayaKelebihan.TabIndex = 35
         '
         'DateTimePickerTglPinjam
         '
@@ -308,13 +204,6 @@ Partial Class tambah_data_sewa
         Me.DateTimePickerTglPinjam.Name = "DateTimePickerTglPinjam"
         Me.DateTimePickerTglPinjam.Size = New System.Drawing.Size(185, 23)
         Me.DateTimePickerTglPinjam.TabIndex = 38
-        '
-        'DateTimePickerTglKembali
-        '
-        Me.DateTimePickerTglKembali.Location = New System.Drawing.Point(638, 183)
-        Me.DateTimePickerTglKembali.Name = "DateTimePickerTglKembali"
-        Me.DateTimePickerTglKembali.Size = New System.Drawing.Size(185, 23)
-        Me.DateTimePickerTglKembali.TabIndex = 39
         '
         'ButtonKirim
         '
@@ -376,21 +265,21 @@ Partial Class tambah_data_sewa
         Me.Label25.TabIndex = 44
         Me.Label25.Text = "Tipe Mobil"
         '
-        'Label26
+        'ComboBoxSewa
         '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(310, 348)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(47, 15)
-        Me.Label26.TabIndex = 47
-        Me.Label26.Text = "Label26"
+        Me.ComboBoxSewa.FormattingEnabled = True
+        Me.ComboBoxSewa.Items.AddRange(New Object() {"Boking", "dipinjam(belum kembali)", "dikembalikan"})
+        Me.ComboBoxSewa.Location = New System.Drawing.Point(638, 227)
+        Me.ComboBoxSewa.Name = "ComboBoxSewa"
+        Me.ComboBoxSewa.Size = New System.Drawing.Size(185, 23)
+        Me.ComboBoxSewa.TabIndex = 48
         '
         'tambah_data_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1010, 497)
-        Me.Controls.Add(Me.Label26)
+        Me.Controls.Add(Me.ComboBoxSewa)
         Me.Controls.Add(Me.ComboBoxTipe)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.Label25)
@@ -398,31 +287,19 @@ Partial Class tambah_data_sewa
         Me.Controls.Add(Me.ComboBoxPenyewa)
         Me.Controls.Add(Me.ButtonKembali)
         Me.Controls.Add(Me.ButtonKirim)
-        Me.Controls.Add(Me.DateTimePickerTglKembali)
         Me.Controls.Add(Me.DateTimePickerTglPinjam)
-        Me.Controls.Add(Me.TextBoxStatusSewa)
-        Me.Controls.Add(Me.TextBoxTotalBayar)
-        Me.Controls.Add(Me.TextBoxBiayaKelebihan)
         Me.Controls.Add(Me.TextBoxTotalBiayaSewa)
         Me.Controls.Add(Me.TextBoxRencana)
         Me.Controls.Add(Me.Label23)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label3)
@@ -441,30 +318,18 @@ Partial Class tambah_data_sewa
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
-    Friend WithEvents Label21 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents TextBoxRencana As TextBox
     Friend WithEvents TextBoxTotalBiayaSewa As TextBox
-    Friend WithEvents TextBoxStatusSewa As TextBox
-    Friend WithEvents TextBoxTotalBayar As TextBox
-    Friend WithEvents TextBoxBiayaKelebihan As TextBox
     Friend WithEvents DateTimePickerTglPinjam As DateTimePicker
-    Friend WithEvents DateTimePickerTglKembali As DateTimePicker
     Friend WithEvents ButtonKirim As Button
     Friend WithEvents ButtonKembali As Button
     Friend WithEvents ComboBoxPenyewa As ComboBox
@@ -472,5 +337,5 @@ Partial Class tambah_data_sewa
     Friend WithEvents ComboBoxTipe As ComboBox
     Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
-    Friend WithEvents Label26 As Label
+    Friend WithEvents ComboBoxSewa As ComboBox
 End Class
