@@ -28,7 +28,6 @@ Partial Class edit_sewa
         Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.DateTimePickerTglKembali = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePickerTglPinjam = New System.Windows.Forms.DateTimePicker()
-        Me.TextBoxStatusSewa = New System.Windows.Forms.TextBox()
         Me.TextBoxTotalBayar = New System.Windows.Forms.TextBox()
         Me.TextBoxBiayaKelebihan = New System.Windows.Forms.TextBox()
         Me.TextBoxTotalBiayaSewa = New System.Windows.Forms.TextBox()
@@ -59,6 +58,7 @@ Partial Class edit_sewa
         Me.ComboBoxTipe = New System.Windows.Forms.ComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
+        Me.ComboBoxSewa = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'ComboBoxMerek
@@ -108,13 +108,6 @@ Partial Class edit_sewa
         Me.DateTimePickerTglPinjam.Name = "DateTimePickerTglPinjam"
         Me.DateTimePickerTglPinjam.Size = New System.Drawing.Size(185, 23)
         Me.DateTimePickerTglPinjam.TabIndex = 72
-        '
-        'TextBoxStatusSewa
-        '
-        Me.TextBoxStatusSewa.Location = New System.Drawing.Point(647, 351)
-        Me.TextBoxStatusSewa.Name = "TextBoxStatusSewa"
-        Me.TextBoxStatusSewa.Size = New System.Drawing.Size(185, 23)
-        Me.TextBoxStatusSewa.TabIndex = 71
         '
         'TextBoxTotalBayar
         '
@@ -375,11 +368,21 @@ Partial Class edit_sewa
         Me.Label25.TabIndex = 78
         Me.Label25.Text = "Tipe Mobil"
         '
+        'ComboBoxSewa
+        '
+        Me.ComboBoxSewa.FormattingEnabled = True
+        Me.ComboBoxSewa.Items.AddRange(New Object() {"booking", "dipinjam (belum kembali)", "dikembalikan"})
+        Me.ComboBoxSewa.Location = New System.Drawing.Point(647, 354)
+        Me.ComboBoxSewa.Name = "ComboBoxSewa"
+        Me.ComboBoxSewa.Size = New System.Drawing.Size(185, 23)
+        Me.ComboBoxSewa.TabIndex = 81
+        '
         'edit_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(936, 493)
+        Me.Controls.Add(Me.ComboBoxSewa)
         Me.Controls.Add(Me.ComboBoxTipe)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.Label25)
@@ -389,7 +392,6 @@ Partial Class edit_sewa
         Me.Controls.Add(Me.ButtonUpdate)
         Me.Controls.Add(Me.DateTimePickerTglKembali)
         Me.Controls.Add(Me.DateTimePickerTglPinjam)
-        Me.Controls.Add(Me.TextBoxStatusSewa)
         Me.Controls.Add(Me.TextBoxTotalBayar)
         Me.Controls.Add(Me.TextBoxBiayaKelebihan)
         Me.Controls.Add(Me.TextBoxTotalBiayaSewa)
@@ -430,7 +432,6 @@ Partial Class edit_sewa
     Friend WithEvents ButtonUpdate As Button
     Friend WithEvents DateTimePickerTglKembali As DateTimePicker
     Friend WithEvents DateTimePickerTglPinjam As DateTimePicker
-    Friend WithEvents TextBoxStatusSewa As TextBox
     Friend WithEvents TextBoxTotalBayar As TextBox
     Friend WithEvents TextBoxBiayaKelebihan As TextBox
     Friend WithEvents TextBoxTotalBiayaSewa As TextBox
@@ -461,4 +462,5 @@ Partial Class edit_sewa
     Friend WithEvents ComboBoxTipe As ComboBox
     Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
+    Friend WithEvents ComboBoxSewa As ComboBox
 End Class

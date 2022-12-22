@@ -112,18 +112,18 @@ Public Class data_sewa
         End Set
     End Property
 
-    Public Property GStipe() As Integer
+    Public Property GStipe() As String
         Get
             Return Tipe
         End Get
-        Set(value As Integer)
+        Set(value As String)
             Tipe = value
         End Set
     End Property
 
     '====================================================
 
-    Public Function GetDataKoleksiDatabase() As DataTable
+    Public Function GetDataDatabase() As DataTable
         Dim result As New DataTable
 
         dbConn.ConnectionString = "server=" + server + ";" + "user id=" + username + ";" _
@@ -154,7 +154,7 @@ Public Class data_sewa
     End Function
 
 
-    Public Function AddDataKoleksiDatabase(merek As String,
+    Public Function AddDataDatabase(merek As String,
                                            penyewa As String,
                                            rencana_pinjam As Integer,
                                            tanggal_pinjam As Date,
@@ -196,6 +196,95 @@ Public Class data_sewa
             dbConn.Dispose()
         End Try
     End Function
+
+    Public Function GetDataByIDDatabase(id As Integer) As List(Of String)
+        Dim result As New List(Of String)
+
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        dbConn.Open()
+        sqlCommand.Connection = dbConn
+        sqlCommand.CommandText = "SELECT id,
+                                  merek,
+                                  penyewa,
+                                  rencana_pinjam,
+                                  tanggal_pinjam,
+                                  tanggal_kembali,
+                                  total_biaya_sewa,
+                                  biaya_kelebihan_pinjam,
+                                  total_bayar,
+                                  status_sewa
+                                  FROM sewa
+                                  WHERE id ='" & id & "'"
+
+        sqlRead = sqlCommand.ExecuteReader
+
+        While sqlRead.Read
+            result.Add(sqlRead.GetString(0).ToString())
+            result.Add(sqlRead.GetString(1).ToString())
+            result.Add(sqlRead.GetString(2).ToString())
+            result.Add(sqlRead.GetString(3).ToString())
+            result.Add(sqlRead.GetString(4).ToString())
+            result.Add(sqlRead.GetString(5).ToString())
+            result.Add(sqlRead.GetString(6).ToString())
+            result.Add(sqlRead.GetString(7).ToString())
+            result.Add(sqlRead.GetString(8).ToString())
+            result.Add(sqlRead.GetString(9).ToString())
+        End While
+
+        sqlRead.Close()
+        dbConn.Close()
+        Return result
+    End Function
+
+    Public Function UpdateDataByIDDatabase(id As String,
+                                                  merek As String,
+                                                  penyewa As String,
+                                                  rencana_pinjam As Integer,
+                                                  tanggal_pinjam As Date,
+                                                  tanggal_kembali As Date,
+                                                  total_biaya_sewa As String,
+                                                  biaya_kelebihan_pinjam As String,
+                                                  total_bayar As String,
+                                                  status_sewa As String)
+
+        'tahun_terbit = tahun_terbit.ToString()
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "UPDATE sewa SET " &
+                        "merek=" & merek & ", " &
+                        "penyewa=" & penyewa & ", " &
+                        "rencana_pinjam=" & rencana_pinjam & ", " &
+                        "tanggal_pinjam='" & tanggal_pinjam & "', " &
+                        "tanggal_kembali='" & tanggal_kembali & "', " &
+                        "total_biaya_sewa=" & total_biaya_sewa & ", " &
+                        "biaya_kelebihan_pinjam=" & biaya_kelebihan_pinjam & ", " &
+                        "total_bayar=" & total_bayar & ", " &
+                        "status_sewa='" & status_sewa & "' " &
+                        "WHERE id_koleksi='" & id & "'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+
+    End Function
+
+
+
+
+
+
+
 
     Public Function loadPenyewa()
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
@@ -356,6 +445,62 @@ Public Class data_sewa
             dbConn.Close()
 
             Return harga
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function getTipe(id As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+           + "password=" + password + ";" + "database =" + database
+
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT tipe FROM mobil WHERE id = '" & id & "'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            Dim result As String
+            While sqlRead.Read
+                result = sqlRead.GetString(0).ToString
+            End While
+
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return result
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function getMerekById(id As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+           + "password=" + password + ";" + "database =" + database
+
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT merek FROM mobil WHERE id = '" & id & "'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            Dim result As String
+            While sqlRead.Read
+                result = sqlRead.GetString(0).ToString
+            End While
+
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return result
 
         Catch ex As Exception
             Return ex.Message

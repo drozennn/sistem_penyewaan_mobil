@@ -24,7 +24,7 @@ Public Class tambah_data_sewa
         form_sewa.Data_Sewa.GStotalBiayaSewa = TextBoxTotalBiayaSewa.Text
         form_sewa.Data_Sewa.GSstatusSewa = ComboBoxSewa.SelectedItem
 
-        form_sewa.Data_Sewa.AddDataKoleksiDatabase(form_sewa.Data_Sewa.GSmerek,
+        form_sewa.Data_Sewa.AddDataDatabase(form_sewa.Data_Sewa.GSmerek,
                                                    form_sewa.Data_Sewa.GSnamaPenyewa,
                                                    form_sewa.Data_Sewa.GSrencanaPinjam,
                                                    form_sewa.Data_Sewa.GStanggalPinjam,

@@ -45,7 +45,7 @@ Partial Class form_sewa
         Me.ButtonEdit.Name = "ButtonEdit"
         Me.ButtonEdit.Size = New System.Drawing.Size(118, 28)
         Me.ButtonEdit.TabIndex = 8
-        Me.ButtonEdit.Text = "Edit Data Sewa"
+        Me.ButtonEdit.Text = "Update Data Sewa"
         Me.ButtonEdit.UseVisualStyleBackColor = True
         '
         'ButtonTambah
@@ -60,17 +60,17 @@ Partial Class form_sewa
         'DataGridSewa
         '
         Me.DataGridSewa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridSewa.Location = New System.Drawing.Point(320, 114)
+        Me.DataGridSewa.Location = New System.Drawing.Point(316, 78)
         Me.DataGridSewa.Name = "DataGridSewa"
         Me.DataGridSewa.RowTemplate.Height = 25
-        Me.DataGridSewa.Size = New System.Drawing.Size(687, 229)
+        Me.DataGridSewa.Size = New System.Drawing.Size(691, 229)
         Me.DataGridSewa.TabIndex = 6
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(405, 24)
+        Me.Label1.Location = New System.Drawing.Point(518, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(225, 51)
         Me.Label1.TabIndex = 5
