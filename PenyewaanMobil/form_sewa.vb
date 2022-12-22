@@ -72,7 +72,4 @@ Public Class form_sewa
         edit.Show()
     End Sub
 
-    Private Sub Button_Click(sender As Object, e As EventArgs) Handles Button.Click
-
-    End Sub
 End Class
