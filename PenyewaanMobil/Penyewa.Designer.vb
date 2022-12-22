@@ -24,6 +24,7 @@ Partial Class Penyewa
     Private Sub InitializeComponent()
         Me.DataGridPenyewa = New System.Windows.Forms.DataGridView()
         Me.BtnTambah = New System.Windows.Forms.Button()
+        Me.BtnEdit = New System.Windows.Forms.Button()
         CType(Me.DataGridPenyewa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -45,11 +46,21 @@ Partial Class Penyewa
         Me.BtnTambah.Text = "Tambah"
         Me.BtnTambah.UseVisualStyleBackColor = True
         '
+        'BtnEdit
+        '
+        Me.BtnEdit.Location = New System.Drawing.Point(24, 87)
+        Me.BtnEdit.Name = "BtnEdit"
+        Me.BtnEdit.Size = New System.Drawing.Size(75, 23)
+        Me.BtnEdit.TabIndex = 2
+        Me.BtnEdit.Text = "Edit"
+        Me.BtnEdit.UseVisualStyleBackColor = True
+        '
         'Penyewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(632, 322)
+        Me.Controls.Add(Me.BtnEdit)
         Me.Controls.Add(Me.BtnTambah)
         Me.Controls.Add(Me.DataGridPenyewa)
         Me.Name = "Penyewa"
@@ -61,4 +72,5 @@ Partial Class Penyewa
 
     Friend WithEvents DataGridPenyewa As DataGridView
     Friend WithEvents BtnTambah As Button
+    Friend WithEvents BtnEdit As Button
 End Class
