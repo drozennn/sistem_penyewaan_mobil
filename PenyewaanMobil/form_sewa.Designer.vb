@@ -27,6 +27,7 @@ Partial Class form_sewa
         Me.ButtonTambah = New System.Windows.Forms.Button()
         Me.DataGridSewa = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button = New System.Windows.Forms.Button()
         CType(Me.DataGridSewa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -76,11 +77,21 @@ Partial Class form_sewa
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Sewa Mobil"
         '
+        'Button
+        '
+        Me.Button.Location = New System.Drawing.Point(102, 104)
+        Me.Button.Name = "Button"
+        Me.Button.Size = New System.Drawing.Size(118, 28)
+        Me.Button.TabIndex = 10
+        Me.Button.Text = "Tambah Data Sewa"
+        Me.Button.UseVisualStyleBackColor = True
+        '
         'form_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1031, 450)
+        Me.Controls.Add(Me.Button)
         Me.Controls.Add(Me.ButtonHapus)
         Me.Controls.Add(Me.ButtonEdit)
         Me.Controls.Add(Me.ButtonTambah)
@@ -99,4 +110,5 @@ Partial Class form_sewa
     Friend WithEvents ButtonTambah As Button
     Friend WithEvents DataGridSewa As DataGridView
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button As Button
 End Class

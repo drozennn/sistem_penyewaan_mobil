@@ -51,18 +51,28 @@ Public Class form_sewa
         'harus mengirimkan id untuk mengambil value dari nama penyewa, merek, tipe dan status sewa
         'error di bagian ambil data kembali yang NULL
 
-        Data_Sewa.GSmerek = Data_Sewa.getMerekById(selectedData(1))
+        Data_Sewa.GSmerek = selectedData(1)
         Data_Sewa.GSnamaPenyewa = selectedData(2)
         Data_Sewa.GSrencanaPinjam = selectedData(3)
-        Data_Sewa.GStanggalPinjam = selectedData(4)
-        Data_Sewa.GStanggalKembali = selectedData(5)
+        Data_Sewa.GStanggalPinjam = Date.Parse(selectedData(4))
+
+        If selectedData(5) = "Belum Dikembalikan" Then
+            Data_Sewa.GStanggalKembali = Date.Parse(selectedData(4)).AddDays(selectedData(3))
+        Else
+            Data_Sewa.GStanggalKembali = selectedData(5)
+        End If
         Data_Sewa.GStotalBiayaSewa = selectedData(6)
         Data_Sewa.GSbiayaKelebihanSewa = selectedData(7)
         Data_Sewa.GStotalBayar = selectedData(8)
         Data_Sewa.GSstatusSewa = selectedData(9)
-        Data_Sewa.GStipe = Data_Sewa.getTipe(selectedData(1))
+        Data_Sewa.GStipe = selectedData(1)
+
 
         Dim edit = New edit_sewa()
         edit.Show()
+    End Sub
+
+    Private Sub Button_Click(sender As Object, e As EventArgs) Handles Button.Click
+
     End Sub
 End Class

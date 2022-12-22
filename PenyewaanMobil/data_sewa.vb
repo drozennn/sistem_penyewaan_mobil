@@ -131,17 +131,20 @@ Public Class data_sewa
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlCommand.CommandText = "SELECT id AS 'ID',
-                                  merek AS 'Merek',
-                                  penyewa AS 'Penyewa',
-                                  rencana_pinjam AS 'Rencana Pinjam',
-                                  tanggal_pinjam AS 'Tanggal Pinjam',
-                                  tanggal_kembali AS 'Tanggal Kembali',
-                                  total_biaya_sewa AS 'Total Biaya Sewa',
-                                  biaya_kelebihan_pinjam AS 'Biaya Kelebihan Pinjam',
-                                  total_bayar AS 'Total Bayar',
-                                  status_sewa AS 'Status Sewa'
-                                  FROM sewa"
+            sqlCommand.CommandText = "SELECT sewa.id AS 'id', 
+                                      mobil.tipe AS 'Merek', 
+                                      penyewa.nama AS 'Penyewa', 
+                                      rencana_pinjam AS 'Rencana Pinjam', 
+                                      tanggal_pinjam AS 'Tanggal Pinjam', 
+                                      CASE WHEN tanggal_kembali IS NULL THEN 'Belum Dikembalikan' 
+                                      ELSE tanggal_kembali
+                                      END AS 'Tanggal Kembali', 
+                                      total_biaya_sewa AS 'Total Biaya Sewa', 
+                                      biaya_kelebihan_pinjam AS 'Biaya Kelebihan Pinjam', 
+                                      total_bayar AS 'Total Bayar', 
+                                      sewa.status_sewa AS 'Status Sewa' 
+                                      FROM sewa JOIN mobil on sewa.merek = mobil.id 
+                                      JOIN penyewa on sewa.penyewa = penyewa.id_penyewa"
 
             sqlRead = sqlCommand.ExecuteReader
             result.Load(sqlRead)
@@ -204,18 +207,21 @@ Public Class data_sewa
             + "password=" + password + ";" + "database =" + database
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT id,
-                                  merek,
-                                  penyewa,
+        sqlCommand.CommandText = "SELECT sewa.id,
+                                  mobil.tipe,
+                                  penyewa.nama,
                                   rencana_pinjam,
                                   tanggal_pinjam,
-                                  tanggal_kembali,
+                                  CASE WHEN tanggal_kembali IS NULL THEN 'Belum Dikembalikan'
+                                  ELSE tanggal_kembali
+                                  END,
                                   total_biaya_sewa,
                                   biaya_kelebihan_pinjam,
                                   total_bayar,
-                                  status_sewa
-                                  FROM sewa
-                                  WHERE id ='" & id & "'"
+                                  sewa.status_sewa
+                                  FROM sewa JOIN mobil on sewa.merek = mobil.id 
+                                  JOIN penyewa on sewa.penyewa = penyewa.id_penyewa 
+                                  WHERE sewa.id ='" & id & "'"
 
         sqlRead = sqlCommand.ExecuteReader
 

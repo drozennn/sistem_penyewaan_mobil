@@ -17,6 +17,7 @@
         TextBoxBiayaKelebihan.Text = form_sewa.Data_Sewa.GSbiayaKelebihanSewa
         TextBoxTotalBayar.Text = form_sewa.Data_Sewa.GStotalBayar
         ComboBoxSewa.SelectedItem() = form_sewa.Data_Sewa.GSstatusSewa
+
     End Sub
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
@@ -58,6 +59,21 @@
             ComboBoxMerek.Items.Add(kel)
         Next
         '======================================
-        Data.Clear()
+        data.Clear()
+
+    End Sub
+
+    Private Sub ComboBoxMerek_SelectedValueChanged(sender As Object, e As EventArgs) Handles ComboBoxMerek.SelectedValueChanged
+        Dim data2 As List(Of String) = form_sewa.Data_Sewa.LoadTipe(ComboBoxMerek.SelectedItem)
+        ComboBoxTipe.Items.Clear()
+        For Each kel In data2
+            ComboBoxTipe.Items.Add(kel)
+        Next
+        '======================================
+        data2.Clear()
+    End Sub
+
+    Private Sub ButtonKembali_Click(sender As Object, e As EventArgs) Handles ButtonKembali.Click
+
     End Sub
 End Class
