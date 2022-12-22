@@ -112,7 +112,7 @@ Public Class FungsiPenyewa
         End Try
     End Function
 
-    Public Function GetDataKoleksiByIdDatabase(ID As Integer) As List(Of String)
+    Public Function GetDataPenyewaByIdDatabase(ID As Integer) As List(Of String)
         Dim result As New List(Of String)
 
         dbConn.ConnectionString = "server=" + server + ";" + "user id=" + username + ";" + "password=" + password + ";" + "database=" + database
@@ -140,7 +140,7 @@ Public Class FungsiPenyewa
         Return result
     End Function
 
-    Public Function UpdateDataKoleksiByIdDatabase(ID As Integer,
+    Public Function UpdateDataPenyewaByIdDatabase(ID As Integer,
                                                   nama As String,
                                                   nik As String,
                                                   alamat As String)

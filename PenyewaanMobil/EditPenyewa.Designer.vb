@@ -37,7 +37,7 @@ Partial Class EditPenyewa
         Me.BtnEditPenyewa.Name = "BtnEditPenyewa"
         Me.BtnEditPenyewa.Size = New System.Drawing.Size(75, 23)
         Me.BtnEditPenyewa.TabIndex = 13
-        Me.BtnEditPenyewa.Text = "Tambah"
+        Me.BtnEditPenyewa.Text = "Edit"
         Me.BtnEditPenyewa.UseVisualStyleBackColor = True
         '
         'txtAlamatPenyewa

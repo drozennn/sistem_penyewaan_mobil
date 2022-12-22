@@ -1,7 +1,7 @@
 ﻿Public Class Penyewa
 
-    Dim selectedTablePenyewa
-    Dim selectedTablePenyewaNama
+    Public selectedTablePenyewa
+    Public selectedTablePenyewaNama
 
     Public Shared FungsiPenyewa As FungsiPenyewa
 
