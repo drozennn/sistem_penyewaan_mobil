@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rafi AY\\source\\repos\\PenyewaanMobil\\PenyewaanMobil\\PenyewaanMobil.vbproj": {}
+    "C:\\Users\\Fazril\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\Rafi AY\\source\\repos\\PenyewaanMobil\\PenyewaanMobil\\PenyewaanMobil.vbproj": {
+    "C:\\Users\\Fazril\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafi AY\\source\\repos\\PenyewaanMobil\\PenyewaanMobil\\PenyewaanMobil.vbproj",
+        "projectUniqueName": "C:\\Users\\Fazril\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj",
         "projectName": "PenyewaanMobil",
-        "projectPath": "C:\\Users\\Rafi AY\\source\\repos\\PenyewaanMobil\\PenyewaanMobil\\PenyewaanMobil.vbproj",
-        "packagesPath": "C:\\Users\\Rafi AY\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafi AY\\source\\repos\\PenyewaanMobil\\PenyewaanMobil\\obj\\",
+        "projectPath": "C:\\Users\\Fazril\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj",
+        "packagesPath": "C:\\Users\\Fazril\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Fazril\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Rafi AY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Fazril\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,7 +65,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
