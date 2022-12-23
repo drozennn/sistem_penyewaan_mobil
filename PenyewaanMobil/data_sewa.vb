@@ -171,8 +171,6 @@ Public Class data_sewa
             Dim idPenyewa = getIdPenyewa(penyewa)
             Dim idMerek = getIdMerek(merek)
 
-            MessageBox.Show(idPenyewa)
-
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "INSERT INTO sewa (merek, penyewa, 
@@ -218,7 +216,8 @@ Public Class data_sewa
                                   total_biaya_sewa,
                                   biaya_kelebihan_pinjam,
                                   total_bayar,
-                                  sewa.status_sewa
+                                  sewa.status_sewa,
+                                  mobil.merek
                                   FROM sewa JOIN mobil on sewa.merek = mobil.id 
                                   JOIN penyewa on sewa.penyewa = penyewa.id_penyewa 
                                   WHERE sewa.id ='" & id & "'"
@@ -236,6 +235,7 @@ Public Class data_sewa
             result.Add(sqlRead.GetString(7).ToString())
             result.Add(sqlRead.GetString(8).ToString())
             result.Add(sqlRead.GetString(9).ToString())
+            result.Add(sqlRead.GetString(10).ToString())
         End While
 
         sqlRead.Close()

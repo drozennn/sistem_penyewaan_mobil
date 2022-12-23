@@ -6,6 +6,30 @@
         ' This call is required by the designer.
         InitializeComponent()
 
+        data = form_sewa.Data_Sewa.loadPenyewa
+        ComboBoxPenyewa.Items.Clear()
+        For Each kel In data
+            ComboBoxPenyewa.Items.Add(kel)
+        Next
+        '========================================
+        data.Clear()
+        data = form_sewa.Data_Sewa.LoadMobil
+
+        ComboBoxMerek.Items.Clear()
+        For Each kel In data
+            ComboBoxMerek.Items.Add(kel)
+        Next
+        '======================================
+        data.Clear()
+
+        data = form_sewa.Data_Sewa.LoadTipe(form_sewa.Data_Sewa.GSmerek)
+        ComboBoxTipe.Items.Clear()
+        For Each kel In data
+            ComboBoxTipe.Items.Add(kel)
+        Next
+        '======================================
+        data.Clear()
+
         ' Add any initialization after the InitializeComponent() call.
         ComboBoxPenyewa.SelectedItem() = form_sewa.Data_Sewa.GSnamaPenyewa
         ComboBoxMerek.SelectedItem() = form_sewa.Data_Sewa.GSmerek
@@ -42,25 +66,6 @@
                                                    form_sewa.Data_Sewa.GStotalBayar,
                                                    form_sewa.Data_Sewa.GSstatusSewa
                                                    )
-    End Sub
-
-    Private Sub edit_sewa_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        Data = form_sewa.Data_Sewa.loadPenyewa
-        ComboBoxPenyewa.Items.Clear()
-        For Each kel In Data
-            ComboBoxPenyewa.Items.Add(kel)
-        Next
-        '========================================
-        Data.Clear()
-        Data = form_sewa.Data_Sewa.LoadMobil
-
-        ComboBoxMerek.Items.Clear()
-        For Each kel In Data
-            ComboBoxMerek.Items.Add(kel)
-        Next
-        '======================================
-        data.Clear()
-
     End Sub
 
     Private Sub ComboBoxMerek_SelectedValueChanged(sender As Object, e As EventArgs) Handles ComboBoxMerek.SelectedValueChanged

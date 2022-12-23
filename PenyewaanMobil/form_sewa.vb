@@ -1,7 +1,7 @@
 ﻿Imports Mysqlx.XDevAPI.Relational
 
 Public Class form_sewa
-
+    Private data As New List(Of String)
     Public Shared Data_Sewa As data_sewa
     Public Shared selectedId
     Public Shared selectedTableKoleksiNama
@@ -51,7 +51,9 @@ Public Class form_sewa
         'harus mengirimkan id untuk mengambil value dari nama penyewa, merek, tipe dan status sewa
         'error di bagian ambil data kembali yang NULL
 
-        Data_Sewa.GSmerek = selectedData(1)
+
+
+        Data_Sewa.GSmerek = selectedData(10)
         Data_Sewa.GSnamaPenyewa = selectedData(2)
         Data_Sewa.GSrencanaPinjam = selectedData(3)
         Data_Sewa.GStanggalPinjam = Date.Parse(selectedData(4))
@@ -66,7 +68,6 @@ Public Class form_sewa
         Data_Sewa.GStotalBayar = selectedData(8)
         Data_Sewa.GSstatusSewa = selectedData(9)
         Data_Sewa.GStipe = selectedData(1)
-
 
         Dim edit = New edit_sewa()
         edit.Show()
