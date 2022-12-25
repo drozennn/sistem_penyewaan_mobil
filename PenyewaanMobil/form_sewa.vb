@@ -4,7 +4,8 @@ Public Class form_sewa
     Private data As New List(Of String)
     Public Shared Data_Sewa As data_sewa
     Public Shared selectedId
-    Public Shared selectedTableKoleksiNama
+    Public Shared selectedMerek
+    Public Shared selectedNama
     Public Shared selectedRow As DataGridViewRow
 
 
@@ -39,10 +40,9 @@ Public Class form_sewa
     Private Sub DataGridSewa_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridSewa.CellClick
         Dim index As Integer = e.RowIndex
         selectedRow = DataGridSewa.Rows(index)
-
         selectedId = selectedRow.Cells(0).Value
-        'selectedTableKoleksiNama = selectedRow.Cells(1).Value
-
+        selectedMerek = selectedRow.Cells(1).Value
+        selectedNama = selectedRow.Cells(2).Value
     End Sub
 
     Private Sub ButtonEdit_Click(sender As Object, e As EventArgs) Handles ButtonEdit.Click
@@ -68,6 +68,8 @@ Public Class form_sewa
         Data_Sewa.GStotalBayar = selectedData(8)
         Data_Sewa.GSstatusSewa = selectedData(9)
         Data_Sewa.GStipe = selectedData(1)
+        MessageBox.Show(Data_Sewa.GStipe)
+        Data_Sewa.GSHargaSewa = selectedData(11)
 
         Dim edit = New edit_sewa()
         edit.Show()

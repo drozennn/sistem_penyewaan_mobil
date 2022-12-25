@@ -1,6 +1,5 @@
 ﻿Public Class edit_sewa
     Private data As New List(Of String)
-
     Public Sub New()
 
         ' This call is required by the designer.
@@ -13,7 +12,7 @@
         Next
         '========================================
         data.Clear()
-        data = form_sewa.Data_Sewa.LoadMobil
+        data = form_sewa.Data_Sewa.LoadMobilUpdate
 
         ComboBoxMerek.Items.Clear()
         For Each kel In data
@@ -22,7 +21,7 @@
         '======================================
         data.Clear()
 
-        data = form_sewa.Data_Sewa.LoadTipe(form_sewa.Data_Sewa.GSmerek)
+        data = form_sewa.Data_Sewa.LoadTipeUpdate(form_sewa.Data_Sewa.GStipe)
         ComboBoxTipe.Items.Clear()
         For Each kel In data
             ComboBoxTipe.Items.Add(kel)
@@ -48,8 +47,8 @@
         form_sewa.Data_Sewa.GSnamaPenyewa = ComboBoxPenyewa.SelectedItem
         form_sewa.Data_Sewa.GSmerek = ComboBoxTipe.SelectedItem
         form_sewa.Data_Sewa.GSrencanaPinjam = TextBoxRencana.Text
-        form_sewa.Data_Sewa.GStanggalPinjam = DateTimePickerTglPinjam.Value.ToString("yyyy/MM/dd")
-        form_sewa.Data_Sewa.GStanggalKembali = DateTimePickerTglKembali.Value.ToString("yyyy/MM/dd")
+        form_sewa.Data_Sewa.GStanggalPinjam = DateTimePickerTglPinjam.Value
+        form_sewa.Data_Sewa.GStanggalKembali = DateTimePickerTglKembali.Value
         form_sewa.Data_Sewa.GStotalBiayaSewa = TextBoxTotalBiayaSewa.Text
         form_sewa.Data_Sewa.GSbiayaKelebihanSewa = TextBoxBiayaKelebihan.Text
         form_sewa.Data_Sewa.GStotalBayar = TextBoxTotalBayar.Text
@@ -66,10 +65,13 @@
                                                    form_sewa.Data_Sewa.GStotalBayar,
                                                    form_sewa.Data_Sewa.GSstatusSewa
                                                    )
+        form_sewa.Data_Sewa.setSewa(form_sewa.Data_Sewa.GSmerek, form_sewa.Data_Sewa.GSstatusSewa)
+        MessageBox.Show("Data di Update")
+
     End Sub
 
     Private Sub ComboBoxMerek_SelectedValueChanged(sender As Object, e As EventArgs) Handles ComboBoxMerek.SelectedValueChanged
-        Dim data2 As List(Of String) = form_sewa.Data_Sewa.LoadTipe(ComboBoxMerek.SelectedItem)
+        Dim data2 As List(Of String) = form_sewa.Data_Sewa.LoadTipeUpdate(ComboBoxMerek.SelectedItem)
         ComboBoxTipe.Items.Clear()
         For Each kel In data2
             ComboBoxTipe.Items.Add(kel)
@@ -78,7 +80,28 @@
         data2.Clear()
     End Sub
 
-    Private Sub ButtonKembali_Click(sender As Object, e As EventArgs) Handles ButtonKembali.Click
+    Private Sub TextBoxRencana_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBoxRencana.KeyUp
+        Dim data As Integer
+
+        If TextBoxRencana.Text.Length > 0 Then
+            data = Integer.Parse(TextBoxRencana.Text)
+        Else
+            data = 0
+        End If
+        Dim result As Integer = form_sewa.Data_Sewa.hargaSewa(ComboBoxTipe.SelectedItem, data)
+        TextBoxTotalBiayaSewa.Text = result
+
+        TextBoxTotalBayar.Text = result + Integer.Parse(TextBoxBiayaKelebihan.Text)
+
+    End Sub
+
+    Private Sub DateTimePickerTglKembali_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerTglKembali.ValueChanged
+        Dim selisih_hari = (DateTimePickerTglKembali.Value - Date.Parse(form_sewa.Data_Sewa.GStanggalKembali)).TotalDays
+        Dim denda = form_sewa.Data_Sewa.GSHargaSewa * 0.1
+        Dim total_denda = selisih_hari * denda
+
+        TextBoxBiayaKelebihan.Text = total_denda
+        TextBoxTotalBayar.Text = total_denda + form_sewa.Data_Sewa.GStotalBiayaSewa
 
     End Sub
 End Class

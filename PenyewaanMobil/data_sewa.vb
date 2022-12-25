@@ -22,12 +22,13 @@ Public Class data_sewa
     Private merek As String
     Private Tipe As String
     Private rencanaPinjam As Integer
-    Private tanggalPinjam As Date
-    Private tanggalKembali As Date
+    Private tanggalPinjam As String
+    Private tanggalKembali As String
     Private totalBiayaSewa As String
     Private biayaKelebihanSewa As String
     Private totalBayar As String
     Private statusSewa As String
+    Private harga_sewa As Integer
 
     '====================================================
 
@@ -58,20 +59,20 @@ Public Class data_sewa
         End Set
     End Property
 
-    Public Property GStanggalPinjam() As Date
+    Public Property GStanggalPinjam() As String
         Get
             Return tanggalPinjam
         End Get
-        Set(value As Date)
+        Set(value As String)
             tanggalPinjam = value
         End Set
     End Property
 
-    Public Property GStanggalKembali() As Date
+    Public Property GStanggalKembali() As String
         Get
             Return tanggalKembali
         End Get
-        Set(value As Date)
+        Set(value As String)
             tanggalKembali = value
         End Set
     End Property
@@ -118,6 +119,15 @@ Public Class data_sewa
         End Get
         Set(value As String)
             Tipe = value
+        End Set
+    End Property
+
+    Public Property GSHargaSewa() As Integer
+        Get
+            Return harga_sewa
+        End Get
+        Set(value As Integer)
+            harga_sewa = value
         End Set
     End Property
 
@@ -191,6 +201,7 @@ Public Class data_sewa
             dbConn.Close()
             sqlRead.Close()
             dbConn.Close()
+
         Catch ex As Exception
             Return ex.Message
         Finally
@@ -217,7 +228,8 @@ Public Class data_sewa
                                   biaya_kelebihan_pinjam,
                                   total_bayar,
                                   sewa.status_sewa,
-                                  mobil.merek
+                                  mobil.merek,
+                                  mobil.harga_sewa
                                   FROM sewa JOIN mobil on sewa.merek = mobil.id 
                                   JOIN penyewa on sewa.penyewa = penyewa.id_penyewa 
                                   WHERE sewa.id ='" & id & "'"
@@ -236,6 +248,7 @@ Public Class data_sewa
             result.Add(sqlRead.GetString(8).ToString())
             result.Add(sqlRead.GetString(9).ToString())
             result.Add(sqlRead.GetString(10).ToString())
+            result.Add(sqlRead.GetString(11).ToString())
         End While
 
         sqlRead.Close()
@@ -243,7 +256,9 @@ Public Class data_sewa
         Return result
     End Function
 
-    Public Function UpdateDataByIDDatabase(id As String,
+
+    'masih belum bisa update
+    Public Function UpdateDataByIDDatabase(id As Integer,
                                                   merek As String,
                                                   penyewa As String,
                                                   rencana_pinjam As Integer,
@@ -258,19 +273,23 @@ Public Class data_sewa
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
         Try
+
+            Dim idPenyewa = getIdPenyewa(penyewa)
+            Dim idMerek = getIdMerek(merek)
+
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "UPDATE sewa SET " &
-                        "merek=" & merek & ", " &
-                        "penyewa=" & penyewa & ", " &
+                        "merek=" & idMerek & ", " &
+                        "penyewa=" & idPenyewa & ", " &
                         "rencana_pinjam=" & rencana_pinjam & ", " &
-                        "tanggal_pinjam='" & tanggal_pinjam & "', " &
-                        "tanggal_kembali='" & tanggal_kembali & "', " &
+                        "tanggal_pinjam='" & tanggal_pinjam.ToString("yyyy/MM/dd") & "', " &
+                        "tanggal_kembali='" & tanggal_kembali.ToString("yyyy/MM/dd") & "', " &
                         "total_biaya_sewa=" & total_biaya_sewa & ", " &
                         "biaya_kelebihan_pinjam=" & biaya_kelebihan_pinjam & ", " &
                         "total_bayar=" & total_bayar & ", " &
                         "status_sewa='" & status_sewa & "' " &
-                        "WHERE id_koleksi='" & id & "'"
+                        "WHERE id='" & id & "'"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
@@ -285,8 +304,30 @@ Public Class data_sewa
 
     End Function
 
+    Public Function DeleteDataByIDDatabase(id As Integer)
 
+        'tahun_terbit = tahun_terbit.ToString()
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "DELETE FROM sewa WHERE id = '" & id & "'"
 
+            Debug.WriteLine(sqlQuery)
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+
+    End Function
 
 
 
@@ -345,7 +386,62 @@ Public Class data_sewa
         End Try
     End Function
 
+    Public Function LoadMobilUpdate()
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT DISTINCT merek FROM mobil"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+
+            dataTableSewa.Clear()
+            While sqlRead.Read
+                dataTableSewa.Add(sqlRead.GetString(0).ToString)
+            End While
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return dataTableSewa
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+
     Public Function LoadTipe(merek As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT tipe FROM mobil WHERE merek = '" & merek & "' AND status_sewa = 'Tersedia'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+
+            dataTableSewa.Clear()
+            While sqlRead.Read
+                dataTableSewa.Add(sqlRead.GetString(0).ToString)
+            End While
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return dataTableSewa
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function LoadTipeUpdate(merek As String)
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
         Try
@@ -508,6 +604,41 @@ Public Class data_sewa
 
             Return result
 
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function setSewa(id As String, status_sewa As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+            Dim idMerek = getIdMerek(id)
+            Dim status As String
+
+            If status_sewa = "Booking" Then
+                status = "Di Booking"
+            ElseIf status_sewa = "Pinjam" Then
+                status = "Dipinjam"
+            Else
+                status = "Tersedia"
+            End If
+
+            MessageBox.Show(status)
+
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "UPDATE mobil SET " &
+                        "status_sewa='" & status & "' " &
+                        "WHERE id='" & idMerek & "'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+            sqlRead.Close()
+            dbConn.Close()
         Catch ex As Exception
             Return ex.Message
         Finally

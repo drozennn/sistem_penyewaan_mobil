@@ -16,11 +16,11 @@ Public Class tambah_data_sewa
     End Sub
 
     Private Sub ButtonKirim_Click(sender As Object, e As EventArgs) Handles ButtonKirim.Click
-
+        'tanggal pinjam diubah dan setting booking gak bisa
         form_sewa.Data_Sewa.GSnamaPenyewa = ComboBoxPenyewa.SelectedItem
         form_sewa.Data_Sewa.GSmerek = ComboBoxTipe.SelectedItem
         form_sewa.Data_Sewa.GSrencanaPinjam = TextBoxRencana.Text
-        form_sewa.Data_Sewa.GStanggalPinjam = DateTimePickerTglPinjam.Value.ToString("yyyy/MM/dd")
+        form_sewa.Data_Sewa.GStanggalPinjam = DateTimePickerTglPinjam.Value
         form_sewa.Data_Sewa.GStotalBiayaSewa = TextBoxTotalBiayaSewa.Text
         form_sewa.Data_Sewa.GSstatusSewa = ComboBoxSewa.SelectedItem
 
@@ -32,6 +32,7 @@ Public Class tambah_data_sewa
                                                    form_sewa.Data_Sewa.GSstatusSewa
                                                    )
 
+        form_sewa.Data_Sewa.setSewa(form_sewa.Data_Sewa.GSmerek, form_sewa.Data_Sewa.GSstatusSewa)
 
         MessageBox.Show("data dimasukan")
     End Sub
