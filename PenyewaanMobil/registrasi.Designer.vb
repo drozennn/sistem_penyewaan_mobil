@@ -28,7 +28,6 @@ Partial Class registrasi
         Me.ButtonRegistrasi = New System.Windows.Forms.Button()
         Me.TextBoxPassword = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ButtonLogin = New System.Windows.Forms.Button()
         Me.TextBoxUsername = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -38,6 +37,7 @@ Partial Class registrasi
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.ButtonGambar = New System.Windows.Forms.Button()
+        Me.OpenGambar = New System.Windows.Forms.OpenFileDialog()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -64,7 +64,7 @@ Partial Class registrasi
         '
         'ButtonRegistrasi
         '
-        Me.ButtonRegistrasi.Location = New System.Drawing.Point(385, 292)
+        Me.ButtonRegistrasi.Location = New System.Drawing.Point(503, 292)
         Me.ButtonRegistrasi.Name = "ButtonRegistrasi"
         Me.ButtonRegistrasi.Size = New System.Drawing.Size(75, 23)
         Me.ButtonRegistrasi.TabIndex = 14
@@ -87,15 +87,6 @@ Partial Class registrasi
         Me.Label2.Size = New System.Drawing.Size(70, 20)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Password"
-        '
-        'ButtonLogin
-        '
-        Me.ButtonLogin.Location = New System.Drawing.Point(503, 292)
-        Me.ButtonLogin.Name = "ButtonLogin"
-        Me.ButtonLogin.Size = New System.Drawing.Size(75, 23)
-        Me.ButtonLogin.TabIndex = 11
-        Me.ButtonLogin.Text = "Login"
-        Me.ButtonLogin.UseVisualStyleBackColor = True
         '
         'TextBoxUsername
         '
@@ -178,6 +169,10 @@ Partial Class registrasi
         Me.ButtonGambar.Text = "Input Gambar"
         Me.ButtonGambar.UseVisualStyleBackColor = True
         '
+        'OpenGambar
+        '
+        Me.OpenGambar.FileName = "OpenFileDialog1"
+        '
         'registrasi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -195,7 +190,6 @@ Partial Class registrasi
         Me.Controls.Add(Me.ButtonRegistrasi)
         Me.Controls.Add(Me.TextBoxPassword)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ButtonLogin)
         Me.Controls.Add(Me.TextBoxUsername)
         Me.Controls.Add(Me.Label1)
         Me.Name = "registrasi"
@@ -212,7 +206,6 @@ Partial Class registrasi
     Friend WithEvents ButtonRegistrasi As Button
     Friend WithEvents TextBoxPassword As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents ButtonLogin As Button
     Friend WithEvents TextBoxUsername As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
@@ -222,4 +215,5 @@ Partial Class registrasi
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents ButtonGambar As Button
+    Friend WithEvents OpenGambar As OpenFileDialog
 End Class
