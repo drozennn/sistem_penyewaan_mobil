@@ -4,8 +4,6 @@ Imports MySql.Data.MySqlClient
 
 Public Class tambah_data_sewa
     Private data As New List(Of String)
-
-
     Public Sub New()
 
         ' This call is required by the designer.
@@ -16,7 +14,6 @@ Public Class tambah_data_sewa
     End Sub
 
     Private Sub ButtonKirim_Click(sender As Object, e As EventArgs) Handles ButtonKirim.Click
-        'tanggal pinjam diubah dan setting booking gak bisa
         form_sewa.Data_Sewa.GSnamaPenyewa = ComboBoxPenyewa.SelectedItem
         form_sewa.Data_Sewa.GSmerek = ComboBoxTipe.SelectedItem
         form_sewa.Data_Sewa.GSrencanaPinjam = TextBoxRencana.Text
@@ -65,15 +62,6 @@ Public Class tambah_data_sewa
         '======================================
         data2.Clear()
     End Sub
-
-    'Private Sub TextBoxRencana_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxRencana.KeyPress
-    '    'masih ada masalah dengan index yang di ketik
-    '    Dim data = TextBoxRencana.Text.Length
-    '    'Dim q = Integer.Parse(data) + 10
-    '    MessageBox.Show(data)
-    '    'Dim result As Integer = form_sewa.Data_Sewa.hargaSewa(ComboBoxTipe.SelectedItem, data)
-    '    'TextBoxTotalBiayaSewa.Text = result
-    'End Sub
 
     Private Sub TextBoxRencana_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBoxRencana.KeyUp
         Dim data As Integer

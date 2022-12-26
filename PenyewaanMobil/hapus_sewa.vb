@@ -15,6 +15,9 @@
     Private Sub ButtonHapus_Click(sender As Object, e As EventArgs) Handles ButtonHapus.Click
         form_sewa.Data_Sewa.DeleteDataByIDDatabase(form_sewa.selectedId)
         MessageBox.Show("Data dihapus")
-    End Sub
 
+        Dim status_sewa = form_sewa.selectedMerek
+        MessageBox.Show(status_sewa)
+        form_sewa.Data_Sewa.setSewaDefault(status_sewa)
+    End Sub
 End Class

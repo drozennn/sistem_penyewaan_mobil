@@ -626,13 +626,32 @@ Public Class data_sewa
                 status = "Tersedia"
             End If
 
-            MessageBox.Show(status)
-
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "UPDATE mobil SET " &
                         "status_sewa='" & status & "' " &
                         "WHERE id='" & idMerek & "'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function setSewaDefault(tipe As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "UPDATE mobil SET " &
+                        "status_sewa='Tersedia' WHERE tipe='" & tipe & "'"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
