@@ -7,5 +7,17 @@
     <Compile Update="registrasi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="edit_sewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="form_sewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="hapus_sewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="tambah_data_sewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
