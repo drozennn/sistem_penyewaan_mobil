@@ -24,7 +24,7 @@
 
         If data_user.Count > 0 Then
             FungsiUsers.GSNama = data_user(1)
-            MessageBox.Show("login berhasil") 'Nonaktifkan setelah merge
+            MessageBox.Show("Login berhasil") 'Nonaktifkan setelah merge
 
             'Aktifkan setelah merge
             'sewa.Show()
@@ -32,5 +32,10 @@
         Else
             MessageBox.Show("Username atau Password Salah")
         End If
+    End Sub
+
+    Private Sub TextBoxPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxPassword.KeyPress
+        TextBoxPassword.PasswordChar = "*"c
+
     End Sub
 End Class
