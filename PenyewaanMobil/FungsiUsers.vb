@@ -59,4 +59,35 @@ Public Class FungsiUsers
             dbConn.Dispose()
         End Try
     End Function
+
+    Public Function CheckAuthDatabase(username_login As String, password_login As String) As List(Of String)
+        Try
+            Dim result As New List(Of String)
+
+            dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username_db + ";" + "password=" + password_db + ";" + "database=" + database
+            dbConn.Open()
+
+            sqlCommand.Connection = dbConn
+
+            Dim queryAuth = "SELECT id, username FROM users WHERE username='" & username_login & "' AND password='" & EncryptMD5(password_login) & "'"
+
+            sqlCommand.CommandText = queryAuth
+            Debug.WriteLine(queryAuth)
+            sqlRead = sqlCommand.ExecuteReader
+
+            If sqlRead.HasRows Then
+                While sqlRead.Read
+                    result.Add(sqlRead.GetString(0).ToString())
+                    result.Add(sqlRead.GetString(1).ToString())
+                End While
+            End If
+
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            Debug.WriteLine(ex.Message)
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
 End Class
