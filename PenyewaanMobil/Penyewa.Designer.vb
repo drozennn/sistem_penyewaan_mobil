@@ -25,6 +25,7 @@ Partial Class Penyewa
         Me.DataGridPenyewa = New System.Windows.Forms.DataGridView()
         Me.BtnTambah = New System.Windows.Forms.Button()
         Me.BtnEdit = New System.Windows.Forms.Button()
+        Me.BtnRemove = New System.Windows.Forms.Button()
         CType(Me.DataGridPenyewa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -55,11 +56,21 @@ Partial Class Penyewa
         Me.BtnEdit.Text = "Edit"
         Me.BtnEdit.UseVisualStyleBackColor = True
         '
+        'BtnRemove
+        '
+        Me.BtnRemove.Location = New System.Drawing.Point(24, 126)
+        Me.BtnRemove.Name = "BtnRemove"
+        Me.BtnRemove.Size = New System.Drawing.Size(75, 23)
+        Me.BtnRemove.TabIndex = 3
+        Me.BtnRemove.Text = "Hapus"
+        Me.BtnRemove.UseVisualStyleBackColor = True
+        '
         'Penyewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(632, 322)
+        Me.Controls.Add(Me.BtnRemove)
         Me.Controls.Add(Me.BtnEdit)
         Me.Controls.Add(Me.BtnTambah)
         Me.Controls.Add(Me.DataGridPenyewa)
@@ -73,4 +84,5 @@ Partial Class Penyewa
     Friend WithEvents DataGridPenyewa As DataGridView
     Friend WithEvents BtnTambah As Button
     Friend WithEvents BtnEdit As Button
+    Friend WithEvents BtnRemove As Button
 End Class

@@ -1,4 +1,5 @@
-﻿Imports System.Text
+﻿Imports System.Security.Cryptography.X509Certificates
+Imports System.Text
 Imports MySql.Data.MySqlClient
 
 Public Class FungsiPenyewa
@@ -75,18 +76,18 @@ Public Class FungsiPenyewa
         dbConn.ConnectionString = "server=" + server + ";" + "user id=" + username + ";" + "password=" + password + ";" + "database=" + database
 
         dbConn.Open()
-            sqlCommand.Connection = dbConn
-            sqlCommand.CommandText = "SELECT id_penyewa AS 'ID',
+        sqlCommand.Connection = dbConn
+        sqlCommand.CommandText = "SELECT id_penyewa AS 'ID',
                                       nama AS 'Nama',
                                       nik AS 'NIK',
                                       alamat AS 'Alamat'
                                       FROM penyewa"
 
-            sqlRead = sqlCommand.ExecuteReader
-            result.Load(sqlRead)
-            sqlRead.Close()
-            dbConn.Close()
-            Return result
+        sqlRead = sqlCommand.ExecuteReader
+        result.Load(sqlRead)
+        sqlRead.Close()
+        dbConn.Close()
+        Return result
     End Function
 
     Public Function AddDataKoleksiDatabase(nama As String,
@@ -167,4 +168,28 @@ Public Class FungsiPenyewa
             dbConn.Dispose()
         End Try
     End Function
+
+    Public Function DeleteDataPenyewaByIdDatabase(ID As Integer)
+
+        dbConn.ConnectionString = "server=" + server + ";" + "user id=" + username + ";" + "password=" + password + ";" + "database=" + database
+
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "DELETE FROM penyewa " &
+                       "WHERE id_penyewa='" & ID & "'"
+
+            Debug.WriteLine(sqlQuery)
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
 End Class

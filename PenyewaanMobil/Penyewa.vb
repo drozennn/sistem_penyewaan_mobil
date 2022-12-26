@@ -46,4 +46,14 @@
         Dim form_edit = New EditPenyewa()
         form_edit.Show()
     End Sub
+
+    Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click
+
+        If selectedTablePenyewa IsNot Nothing Then
+            Dim formHapusPenyewa = New HapusPenyewa()
+            formHapusPenyewa.Show()
+        Else
+            MessageBox.Show("Silahkan pilih baris untuk dihapus terlebih dahulu!")
+        End If
+    End Sub
 End Class
