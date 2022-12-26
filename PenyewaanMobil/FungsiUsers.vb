@@ -3,6 +3,7 @@
 Public Class FungsiUsers
 
     Dim dir_foto As String
+    Dim username As String
 
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
@@ -13,6 +14,15 @@ Public Class FungsiUsers
     Private username_db As String = "root"
     Private password_db As String = ""
     Private database As String = "penyewaan_mobil"
+
+    Public Property GSNama() As String
+        Get
+            Return username
+        End Get
+        Set(value As String)
+            username = value
+        End Set
+    End Property
 
     Public Property GSFoto() As String
         Get
@@ -84,6 +94,7 @@ Public Class FungsiUsers
 
             sqlRead.Close()
             dbConn.Close()
+            Return result
         Catch ex As Exception
             Debug.WriteLine(ex.Message)
         Finally
