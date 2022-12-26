@@ -35,11 +35,11 @@ Partial Class registrasi
         Me.TextBoxEmail = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PicDaftar = New System.Windows.Forms.PictureBox()
         Me.ButtonGambar = New System.Windows.Forms.Button()
         Me.OpenGambar = New System.Windows.Forms.OpenFileDialog()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicDaftar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label4
@@ -152,13 +152,13 @@ Partial Class registrasi
         Me.PictureBox1.TabIndex = 21
         Me.PictureBox1.TabStop = False
         '
-        'PictureBox2
+        'PicDaftar
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(634, 116)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(137, 166)
-        Me.PictureBox2.TabIndex = 22
-        Me.PictureBox2.TabStop = False
+        Me.PicDaftar.Location = New System.Drawing.Point(634, 116)
+        Me.PicDaftar.Name = "PicDaftar"
+        Me.PicDaftar.Size = New System.Drawing.Size(137, 166)
+        Me.PicDaftar.TabIndex = 22
+        Me.PicDaftar.TabStop = False
         '
         'ButtonGambar
         '
@@ -179,7 +179,7 @@ Partial Class registrasi
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ButtonGambar)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PicDaftar)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.TextBoxEmail)
@@ -195,7 +195,7 @@ Partial Class registrasi
         Me.Name = "registrasi"
         Me.Text = "registrasi"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicDaftar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -213,7 +213,7 @@ Partial Class registrasi
     Friend WithEvents TextBoxEmail As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PicDaftar As PictureBox
     Friend WithEvents ButtonGambar As Button
     Friend WithEvents OpenGambar As OpenFileDialog
 End Class

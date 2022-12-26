@@ -2,6 +2,8 @@
 
 Public Class FungsiUsers
 
+    Dim dir_foto As String
+
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
     Public Shared sqlRead As MySqlDataReader
@@ -11,6 +13,15 @@ Public Class FungsiUsers
     Private username_db As String = "root"
     Private password_db As String = ""
     Private database As String = "penyewaan_mobil"
+
+    Public Property GSFoto() As String
+        Get
+            Return dir_foto
+        End Get
+        Set(value As String)
+            dir_foto = value
+        End Set
+    End Property
 
     Public Function EncryptMD5(ByVal password As String)
         Dim x As New System.Security.Cryptography.MD5CryptoServiceProvider()
