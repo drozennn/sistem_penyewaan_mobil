@@ -27,23 +27,19 @@ Partial Class tambahMobil
         Me.lblMerek = New System.Windows.Forms.Label()
         Me.lblHargaSewa = New System.Windows.Forms.Label()
         Me.lblTahun = New System.Windows.Forms.Label()
-        Me.lblStatus = New System.Windows.Forms.Label()
         Me.lblTanggalMasuk = New System.Windows.Forms.Label()
         Me.lblJumlah = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.rdBtnTersedia = New System.Windows.Forms.RadioButton()
-        Me.rdBtnTdkTersedia = New System.Windows.Forms.RadioButton()
-        Me.GroupBoxStatus = New System.Windows.Forms.GroupBox()
+        Me.txtTipe = New System.Windows.Forms.TextBox()
+        Me.cbJenis = New System.Windows.Forms.ComboBox()
+        Me.txtMerek = New System.Windows.Forms.TextBox()
+        Me.txtJumlah = New System.Windows.Forms.TextBox()
+        Me.txtHarga = New System.Windows.Forms.TextBox()
+        Me.dtTglMasuk = New System.Windows.Forms.DateTimePicker()
         Me.PictureBoxMobil = New System.Windows.Forms.PictureBox()
         Me.BtnTambahGambar = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btnTambah = New System.Windows.Forms.Button()
+        Me.DtTahunPembuatan = New System.Windows.Forms.DateTimePicker()
         CType(Me.PictureBoxMobil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -92,15 +88,6 @@ Partial Class tambahMobil
         Me.lblTahun.TabIndex = 4
         Me.lblTahun.Text = "Tahun Pembuatan"
         '
-        'lblStatus
-        '
-        Me.lblStatus.AutoSize = True
-        Me.lblStatus.Location = New System.Drawing.Point(303, 656)
-        Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(65, 25)
-        Me.lblStatus.TabIndex = 6
-        Me.lblStatus.Text = "Status "
-        '
         'lblTanggalMasuk
         '
         Me.lblTanggalMasuk.AutoSize = True
@@ -119,86 +106,48 @@ Partial Class tambahMobil
         Me.lblJumlah.TabIndex = 8
         Me.lblJumlah.Text = "Jumlah"
         '
-        'TextBox1
+        'txtTipe
         '
-        Me.TextBox1.Location = New System.Drawing.Point(487, 105)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(326, 31)
-        Me.TextBox1.TabIndex = 9
+        Me.txtTipe.Location = New System.Drawing.Point(487, 105)
+        Me.txtTipe.Name = "txtTipe"
+        Me.txtTipe.Size = New System.Drawing.Size(326, 31)
+        Me.txtTipe.TabIndex = 9
         '
-        'ComboBox1
+        'cbJenis
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(487, 40)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(326, 33)
-        Me.ComboBox1.TabIndex = 10
+        Me.cbJenis.FormattingEnabled = True
+        Me.cbJenis.Location = New System.Drawing.Point(487, 40)
+        Me.cbJenis.Name = "cbJenis"
+        Me.cbJenis.Size = New System.Drawing.Size(326, 33)
+        Me.cbJenis.TabIndex = 10
         '
-        'TextBox2
+        'txtMerek
         '
-        Me.TextBox2.Location = New System.Drawing.Point(487, 173)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(326, 31)
-        Me.TextBox2.TabIndex = 11
+        Me.txtMerek.Location = New System.Drawing.Point(487, 173)
+        Me.txtMerek.Name = "txtMerek"
+        Me.txtMerek.Size = New System.Drawing.Size(326, 31)
+        Me.txtMerek.TabIndex = 11
         '
-        'TextBox3
+        'txtJumlah
         '
-        Me.TextBox3.Location = New System.Drawing.Point(487, 266)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(326, 31)
-        Me.TextBox3.TabIndex = 12
+        Me.txtJumlah.Location = New System.Drawing.Point(487, 266)
+        Me.txtJumlah.Name = "txtJumlah"
+        Me.txtJumlah.Size = New System.Drawing.Size(326, 31)
+        Me.txtJumlah.TabIndex = 12
         '
-        'TextBox4
+        'txtHarga
         '
-        Me.TextBox4.Location = New System.Drawing.Point(487, 357)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(326, 31)
-        Me.TextBox4.TabIndex = 13
+        Me.txtHarga.Location = New System.Drawing.Point(487, 357)
+        Me.txtHarga.Name = "txtHarga"
+        Me.txtHarga.Size = New System.Drawing.Size(326, 31)
+        Me.txtHarga.TabIndex = 13
         '
-        'TextBox5
+        'dtTglMasuk
         '
-        Me.TextBox5.Location = New System.Drawing.Point(487, 442)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(326, 31)
-        Me.TextBox5.TabIndex = 14
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(487, 535)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(326, 31)
-        Me.DateTimePicker1.TabIndex = 15
-        '
-        'rdBtnTersedia
-        '
-        Me.rdBtnTersedia.AutoSize = True
-        Me.rdBtnTersedia.Location = New System.Drawing.Point(498, 648)
-        Me.rdBtnTersedia.Name = "rdBtnTersedia"
-        Me.rdBtnTersedia.Size = New System.Drawing.Size(100, 29)
-        Me.rdBtnTersedia.TabIndex = 16
-        Me.rdBtnTersedia.TabStop = True
-        Me.rdBtnTersedia.Text = "Tersedia"
-        Me.rdBtnTersedia.UseVisualStyleBackColor = True
-        '
-        'rdBtnTdkTersedia
-        '
-        Me.rdBtnTdkTersedia.AutoSize = True
-        Me.rdBtnTdkTersedia.Location = New System.Drawing.Point(498, 712)
-        Me.rdBtnTdkTersedia.Name = "rdBtnTdkTersedia"
-        Me.rdBtnTdkTersedia.Size = New System.Drawing.Size(146, 29)
-        Me.rdBtnTdkTersedia.TabIndex = 17
-        Me.rdBtnTdkTersedia.TabStop = True
-        Me.rdBtnTdkTersedia.Text = "Tidak tersedia"
-        Me.rdBtnTdkTersedia.UseVisualStyleBackColor = True
-        '
-        'GroupBoxStatus
-        '
-        Me.GroupBoxStatus.Location = New System.Drawing.Point(461, 608)
-        Me.GroupBoxStatus.Name = "GroupBoxStatus"
-        Me.GroupBoxStatus.Size = New System.Drawing.Size(300, 161)
-        Me.GroupBoxStatus.TabIndex = 18
-        Me.GroupBoxStatus.TabStop = False
-        Me.GroupBoxStatus.Text = "Status"
+        Me.dtTglMasuk.Location = New System.Drawing.Point(487, 535)
+        Me.dtTglMasuk.Name = "dtTglMasuk"
+        Me.dtTglMasuk.Size = New System.Drawing.Size(326, 31)
+        Me.dtTglMasuk.TabIndex = 15
         '
         'PictureBoxMobil
         '
@@ -230,32 +179,35 @@ Partial Class tambahMobil
         Me.btnTambah.Text = "Tambah"
         Me.btnTambah.UseVisualStyleBackColor = True
         '
+        'DtTahunPembuatan
+        '
+        Me.DtTahunPembuatan.Location = New System.Drawing.Point(487, 448)
+        Me.DtTahunPembuatan.Name = "DtTahunPembuatan"
+        Me.DtTahunPembuatan.Size = New System.Drawing.Size(326, 31)
+        Me.DtTahunPembuatan.TabIndex = 22
+        '
         'tambahMobil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(999, 801)
+        Me.Controls.Add(Me.DtTahunPembuatan)
         Me.Controls.Add(Me.btnTambah)
         Me.Controls.Add(Me.BtnTambahGambar)
         Me.Controls.Add(Me.PictureBoxMobil)
-        Me.Controls.Add(Me.rdBtnTdkTersedia)
-        Me.Controls.Add(Me.rdBtnTersedia)
-        Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.dtTglMasuk)
+        Me.Controls.Add(Me.txtHarga)
+        Me.Controls.Add(Me.txtJumlah)
+        Me.Controls.Add(Me.txtMerek)
+        Me.Controls.Add(Me.cbJenis)
+        Me.Controls.Add(Me.txtTipe)
         Me.Controls.Add(Me.lblJumlah)
         Me.Controls.Add(Me.lblTanggalMasuk)
-        Me.Controls.Add(Me.lblStatus)
         Me.Controls.Add(Me.lblTahun)
         Me.Controls.Add(Me.lblHargaSewa)
         Me.Controls.Add(Me.lblMerek)
         Me.Controls.Add(Me.lblTipe)
         Me.Controls.Add(Me.lblJenis)
-        Me.Controls.Add(Me.GroupBoxStatus)
         Me.Name = "tambahMobil"
         Me.Text = "tambahMobil"
         CType(Me.PictureBoxMobil, System.ComponentModel.ISupportInitialize).EndInit()
@@ -269,21 +221,17 @@ Partial Class tambahMobil
     Friend WithEvents lblMerek As Label
     Friend WithEvents lblHargaSewa As Label
     Friend WithEvents lblTahun As Label
-    Friend WithEvents lblStatus As Label
     Friend WithEvents lblTanggalMasuk As Label
     Friend WithEvents lblJumlah As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents rdBtnTersedia As RadioButton
-    Friend WithEvents rdBtnTdkTersedia As RadioButton
-    Friend WithEvents GroupBoxStatus As GroupBox
+    Friend WithEvents txtTipe As TextBox
+    Friend WithEvents cbJenis As ComboBox
+    Friend WithEvents txtMerek As TextBox
+    Friend WithEvents txtJumlah As TextBox
+    Friend WithEvents txtHarga As TextBox
+    Friend WithEvents dtTglMasuk As DateTimePicker
     Friend WithEvents PictureBoxMobil As PictureBox
     Friend WithEvents BtnTambahGambar As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents btnTambah As Button
+    Friend WithEvents DtTahunPembuatan As DateTimePicker
 End Class
