@@ -644,6 +644,31 @@ Public Class data_sewa
         End Try
     End Function
 
+    Public Function setSewaUpdate(id As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+            Dim idMerek = getIdMerek(id)
+
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "UPDATE mobil SET " &
+                        "status_sewa='Tersedia' " &
+                        "WHERE id='" & idMerek & "'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+
     Public Function setSewaDefault(tipe As String)
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database

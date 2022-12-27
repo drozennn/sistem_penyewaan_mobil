@@ -28,8 +28,12 @@ Public Class form_sewa
     End Sub
 
     Private Sub ButtonHapus_Click(sender As Object, e As EventArgs) Handles ButtonHapus.Click
-        Dim hapus = New hapus_sewa()
-        hapus.Show()
+        If selectedId = 0 Then
+            MessageBox.Show("pilih baris yang ingin dihapus pada datagrid ")
+        Else
+            Dim hapus = New hapus_sewa()
+            hapus.Show()
+        End If
     End Sub
 
     Private Sub ButtonTambah_Click(sender As Object, e As EventArgs) Handles ButtonTambah.Click
@@ -46,33 +50,30 @@ Public Class form_sewa
     End Sub
 
     Private Sub ButtonEdit_Click(sender As Object, e As EventArgs) Handles ButtonEdit.Click
-        Dim selectedData As List(Of String) = Data_Sewa.GetDataByIDDatabase(selectedId)
-
-        'harus mengirimkan id untuk mengambil value dari nama penyewa, merek, tipe dan status sewa
-        'error di bagian ambil data kembali yang NULL
-
-
-
-        Data_Sewa.GSmerek = selectedData(10)
-        Data_Sewa.GSnamaPenyewa = selectedData(2)
-        Data_Sewa.GSrencanaPinjam = selectedData(3)
-        Data_Sewa.GStanggalPinjam = Date.Parse(selectedData(4))
-
-        If selectedData(5) = "Belum Dikembalikan" Then
-            Data_Sewa.GStanggalKembali = Date.Parse(selectedData(4)).AddDays(selectedData(3))
+        If selectedId = 0 Then
+            MessageBox.Show("Pilih baris yang ingin di update pada datagrid")
         Else
-            Data_Sewa.GStanggalKembali = selectedData(5)
+            Dim selectedData As List(Of String) = Data_Sewa.GetDataByIDDatabase(selectedId)
+
+            Data_Sewa.GSmerek = selectedData(10)
+            Data_Sewa.GSnamaPenyewa = selectedData(2)
+            Data_Sewa.GSrencanaPinjam = selectedData(3)
+            Data_Sewa.GStanggalPinjam = Date.Parse(selectedData(4))
+
+            If selectedData(5) = "Belum Dikembalikan" Then
+                Data_Sewa.GStanggalKembali = Date.Parse(selectedData(4)).AddDays(selectedData(3))
+            Else
+                Data_Sewa.GStanggalKembali = selectedData(5)
+            End If
+            Data_Sewa.GStotalBiayaSewa = selectedData(6)
+            Data_Sewa.GSbiayaKelebihanSewa = selectedData(7)
+            Data_Sewa.GStotalBayar = selectedData(8)
+            Data_Sewa.GSstatusSewa = selectedData(9)
+            Data_Sewa.GStipe = selectedData(1)
+            Data_Sewa.GSHargaSewa = selectedData(11)
+
+            Dim edit = New edit_sewa()
+            edit.Show()
         End If
-        Data_Sewa.GStotalBiayaSewa = selectedData(6)
-        Data_Sewa.GSbiayaKelebihanSewa = selectedData(7)
-        Data_Sewa.GStotalBayar = selectedData(8)
-        Data_Sewa.GSstatusSewa = selectedData(9)
-        Data_Sewa.GStipe = selectedData(1)
-        MessageBox.Show(Data_Sewa.GStipe)
-        Data_Sewa.GSHargaSewa = selectedData(11)
-
-        Dim edit = New edit_sewa()
-        edit.Show()
     End Sub
-
 End Class

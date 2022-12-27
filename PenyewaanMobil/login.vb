@@ -24,11 +24,8 @@
 
         If data_user.Count > 0 Then
             FungsiUsers.GSNama = data_user(1)
-            MessageBox.Show("Login berhasil") 'Nonaktifkan setelah merge
-
-            'Aktifkan setelah merge
-            'sewa.Show()
-            'Me.Hide()
+            form_sewa.Show()
+            Me.Hide()
         Else
             MessageBox.Show("Username atau Password Salah")
         End If

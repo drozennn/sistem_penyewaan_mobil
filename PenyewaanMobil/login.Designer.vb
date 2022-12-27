@@ -39,10 +39,10 @@ Partial Class login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(317, 121)
+        Me.Label1.Font = New System.Drawing.Font("Lucida Sans Unicode", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(317, 125)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 20)
+        Me.Label1.Size = New System.Drawing.Size(89, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Username"
         '
@@ -65,20 +65,20 @@ Partial Class login
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.Font = New System.Drawing.Font("Lucida Sans Unicode", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label2.Location = New System.Drawing.Point(317, 180)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(70, 20)
+        Me.Label2.Size = New System.Drawing.Size(83, 20)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Password"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Comic Sans MS", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(262, 19)
+        Me.Label3.Font = New System.Drawing.Font("Franklin Gothic Demi", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(299, 27)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(179, 49)
+        Me.Label3.Size = New System.Drawing.Size(135, 41)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "SIGN IN"
         '
@@ -91,12 +91,13 @@ Partial Class login
         '
         'ButtonRegistrasi
         '
+        Me.ButtonRegistrasi.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ButtonRegistrasi.Location = New System.Drawing.Point(454, 253)
         Me.ButtonRegistrasi.Name = "ButtonRegistrasi"
         Me.ButtonRegistrasi.Size = New System.Drawing.Size(75, 23)
         Me.ButtonRegistrasi.TabIndex = 6
         Me.ButtonRegistrasi.Text = "Registrasi"
-        Me.ButtonRegistrasi.UseVisualStyleBackColor = True
+        Me.ButtonRegistrasi.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -132,6 +133,7 @@ Partial Class login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(711, 360)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label4)

@@ -1,5 +1,7 @@
 ﻿Public Class edit_sewa
     Private data As New List(Of String)
+    Private tipe
+    Private id
     Public Sub New()
 
         ' This call is required by the designer.
@@ -40,7 +42,8 @@
         TextBoxBiayaKelebihan.Text = form_sewa.Data_Sewa.GSbiayaKelebihanSewa
         TextBoxTotalBayar.Text = form_sewa.Data_Sewa.GStotalBayar
         ComboBoxSewa.SelectedItem() = form_sewa.Data_Sewa.GSstatusSewa
-
+        tipe = form_sewa.Data_Sewa.GStipe
+        id = form_sewa.Data_Sewa.GSmerek
     End Sub
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
@@ -65,7 +68,15 @@
                                                    form_sewa.Data_Sewa.GStotalBayar,
                                                    form_sewa.Data_Sewa.GSstatusSewa
                                                    )
-        form_sewa.Data_Sewa.setSewa(form_sewa.Data_Sewa.GSmerek, form_sewa.Data_Sewa.GSstatusSewa)
+        If form_sewa.Data_Sewa.GSmerek = tipe Then
+            form_sewa.Data_Sewa.setSewa(form_sewa.Data_Sewa.GSmerek, form_sewa.Data_Sewa.GSstatusSewa)
+            MessageBox.Show("sama")
+        Else
+            form_sewa.Data_Sewa.setSewaUpdate(tipe)
+            form_sewa.Data_Sewa.setSewa(form_sewa.Data_Sewa.GSmerek, form_sewa.Data_Sewa.GSstatusSewa)
+            MessageBox.Show("beda")
+        End If
+
         MessageBox.Show("Data di Update")
 
     End Sub
