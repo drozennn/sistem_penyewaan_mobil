@@ -46,7 +46,7 @@ Partial Class registrasi
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(368, 242)
+        Me.Label4.Location = New System.Drawing.Point(266, 238)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(12, 20)
         Me.Label4.TabIndex = 16
@@ -56,7 +56,7 @@ Partial Class registrasi
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.Location = New System.Drawing.Point(368, 132)
+        Me.Label5.Location = New System.Drawing.Point(266, 128)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(12, 20)
         Me.Label5.TabIndex = 15
@@ -64,54 +64,61 @@ Partial Class registrasi
         '
         'ButtonRegistrasi
         '
-        Me.ButtonRegistrasi.Location = New System.Drawing.Point(503, 292)
+        Me.ButtonRegistrasi.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ButtonRegistrasi.Location = New System.Drawing.Point(401, 291)
         Me.ButtonRegistrasi.Name = "ButtonRegistrasi"
-        Me.ButtonRegistrasi.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonRegistrasi.Size = New System.Drawing.Size(82, 23)
         Me.ButtonRegistrasi.TabIndex = 14
         Me.ButtonRegistrasi.Text = "Registrasi"
         Me.ButtonRegistrasi.UseVisualStyleBackColor = True
         '
         'TextBoxPassword
         '
-        Me.TextBoxPassword.Location = New System.Drawing.Point(398, 243)
+        Me.TextBoxPassword.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TextBoxPassword.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBoxPassword.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxPassword.Location = New System.Drawing.Point(295, 240)
         Me.TextBoxPassword.Name = "TextBoxPassword"
-        Me.TextBoxPassword.Size = New System.Drawing.Size(180, 23)
+        Me.TextBoxPassword.Size = New System.Drawing.Size(180, 21)
         Me.TextBoxPassword.TabIndex = 13
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(283, 240)
+        Me.Label2.Font = New System.Drawing.Font("Lucida Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.Location = New System.Drawing.Point(181, 239)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(70, 20)
+        Me.Label2.Size = New System.Drawing.Size(81, 18)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Password"
         '
         'TextBoxUsername
         '
-        Me.TextBoxUsername.Location = New System.Drawing.Point(398, 133)
+        Me.TextBoxUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TextBoxUsername.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBoxUsername.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxUsername.Location = New System.Drawing.Point(295, 130)
         Me.TextBoxUsername.Name = "TextBoxUsername"
-        Me.TextBoxUsername.Size = New System.Drawing.Size(180, 23)
+        Me.TextBoxUsername.Size = New System.Drawing.Size(180, 21)
         Me.TextBoxUsername.TabIndex = 10
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(283, 130)
+        Me.Label1.Font = New System.Drawing.Font("Lucida Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(181, 129)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 20)
+        Me.Label1.Size = New System.Drawing.Size(82, 18)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Username"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Comic Sans MS", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(282, 20)
+        Me.Label3.Font = New System.Drawing.Font("Franklin Gothic Demi", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(266, 19)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(177, 49)
+        Me.Label3.Size = New System.Drawing.Size(146, 41)
         Me.Label3.TabIndex = 17
         Me.Label3.Text = "SIGN UP"
         '
@@ -119,7 +126,7 @@ Partial Class registrasi
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label6.Location = New System.Drawing.Point(368, 188)
+        Me.Label6.Location = New System.Drawing.Point(266, 184)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(12, 20)
         Me.Label6.TabIndex = 20
@@ -127,18 +134,21 @@ Partial Class registrasi
         '
         'TextBoxEmail
         '
-        Me.TextBoxEmail.Location = New System.Drawing.Point(398, 189)
+        Me.TextBoxEmail.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TextBoxEmail.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBoxEmail.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxEmail.Location = New System.Drawing.Point(295, 186)
         Me.TextBoxEmail.Name = "TextBoxEmail"
-        Me.TextBoxEmail.Size = New System.Drawing.Size(180, 23)
+        Me.TextBoxEmail.Size = New System.Drawing.Size(180, 21)
         Me.TextBoxEmail.TabIndex = 19
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label7.Location = New System.Drawing.Point(283, 186)
+        Me.Label7.Font = New System.Drawing.Font("Lucida Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.Location = New System.Drawing.Point(181, 185)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(46, 20)
+        Me.Label7.Size = New System.Drawing.Size(49, 18)
         Me.Label7.TabIndex = 18
         Me.Label7.Text = "Email"
         '
@@ -146,15 +156,15 @@ Partial Class registrasi
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 116)
+        Me.PictureBox1.Location = New System.Drawing.Point(500, 82)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(254, 271)
+        Me.PictureBox1.Size = New System.Drawing.Size(167, 244)
         Me.PictureBox1.TabIndex = 21
         Me.PictureBox1.TabStop = False
         '
         'PicDaftar
         '
-        Me.PicDaftar.Location = New System.Drawing.Point(634, 116)
+        Me.PicDaftar.Location = New System.Drawing.Point(12, 109)
         Me.PicDaftar.Name = "PicDaftar"
         Me.PicDaftar.Size = New System.Drawing.Size(137, 166)
         Me.PicDaftar.TabIndex = 22
@@ -162,12 +172,14 @@ Partial Class registrasi
         '
         'ButtonGambar
         '
-        Me.ButtonGambar.Location = New System.Drawing.Point(634, 292)
+        Me.ButtonGambar.BackColor = System.Drawing.Color.Lime
+        Me.ButtonGambar.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ButtonGambar.Location = New System.Drawing.Point(12, 285)
         Me.ButtonGambar.Name = "ButtonGambar"
         Me.ButtonGambar.Size = New System.Drawing.Size(137, 23)
         Me.ButtonGambar.TabIndex = 23
         Me.ButtonGambar.Text = "Input Gambar"
-        Me.ButtonGambar.UseVisualStyleBackColor = True
+        Me.ButtonGambar.UseVisualStyleBackColor = False
         '
         'OpenGambar
         '
@@ -177,7 +189,8 @@ Partial Class registrasi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.Color.Silver
+        Me.ClientSize = New System.Drawing.Size(678, 365)
         Me.Controls.Add(Me.ButtonGambar)
         Me.Controls.Add(Me.PicDaftar)
         Me.Controls.Add(Me.PictureBox1)

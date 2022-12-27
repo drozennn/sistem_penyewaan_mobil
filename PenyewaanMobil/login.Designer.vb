@@ -55,12 +55,13 @@ Partial Class login
         '
         'ButtonLogin
         '
+        Me.ButtonLogin.BackColor = System.Drawing.Color.Coral
         Me.ButtonLogin.Location = New System.Drawing.Point(572, 253)
         Me.ButtonLogin.Name = "ButtonLogin"
         Me.ButtonLogin.Size = New System.Drawing.Size(75, 23)
         Me.ButtonLogin.TabIndex = 2
         Me.ButtonLogin.Text = "Login"
-        Me.ButtonLogin.UseVisualStyleBackColor = True
+        Me.ButtonLogin.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -91,7 +92,7 @@ Partial Class login
         '
         'ButtonRegistrasi
         '
-        Me.ButtonRegistrasi.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.ButtonRegistrasi.BackColor = System.Drawing.Color.Salmon
         Me.ButtonRegistrasi.Location = New System.Drawing.Point(454, 253)
         Me.ButtonRegistrasi.Name = "ButtonRegistrasi"
         Me.ButtonRegistrasi.Size = New System.Drawing.Size(75, 23)

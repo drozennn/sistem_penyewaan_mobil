@@ -64,7 +64,7 @@ Partial Class hapus_sewa
         Me.LabelPenyewa.AutoSize = True
         Me.LabelPenyewa.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
         Me.LabelPenyewa.ForeColor = System.Drawing.Color.Red
-        Me.LabelPenyewa.Location = New System.Drawing.Point(293, 89)
+        Me.LabelPenyewa.Location = New System.Drawing.Point(291, 89)
         Me.LabelPenyewa.Name = "LabelPenyewa"
         Me.LabelPenyewa.Size = New System.Drawing.Size(37, 21)
         Me.LabelPenyewa.TabIndex = 50

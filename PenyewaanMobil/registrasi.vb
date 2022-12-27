@@ -24,4 +24,5 @@
     Private Sub TextBoxPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxPassword.KeyPress
         TextBoxPassword.PasswordChar = "*"c
     End Sub
+
 End Class
