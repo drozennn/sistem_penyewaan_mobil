@@ -50,7 +50,6 @@ Public Class tambah_data_sewa
         Next
         '======================================
         data.Clear()
-
     End Sub
 
     Private Sub ComboBoxMerek_SelectedValueChanged(sender As Object, e As EventArgs) Handles ComboBoxMerek.SelectedValueChanged
@@ -76,17 +75,4 @@ Public Class tambah_data_sewa
 
     End Sub
 
-    'Private Sub TextBoxRencana_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxRencana.KeyPress
-    '    If Not Char.IsLetter(e.KeyChar) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) Then
-    '        e.Handled = True
-    '        MessageBox.Show("Masukan angka")
-    '    End If
-    'End Sub
-
-    'Private Sub ComboBoxPenyewa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxPenyewa.KeyPress
-    '    If ComboBoxPenyewa.SelectedIndex = -1 Then
-    '        e.Handled = True
-    '        MessageBox.Show("pilih item terlebih dahulu")
-    '    End If
-    'End Sub
 End Class

@@ -333,6 +333,7 @@ Public Class data_sewa
 
 
 
+
     Public Function loadPenyewa()
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database

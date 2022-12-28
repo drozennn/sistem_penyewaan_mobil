@@ -36,11 +36,6 @@ Public Class form_sewa
         End If
     End Sub
 
-    Private Sub ButtonTambah_Click(sender As Object, e As EventArgs) Handles ButtonTambah.Click
-        Dim tambah = New tambah_data_sewa()
-        tambah.Show()
-    End Sub
-
     Private Sub DataGridSewa_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridSewa.CellClick
         Dim index As Integer = e.RowIndex
         selectedRow = DataGridSewa.Rows(index)
@@ -75,5 +70,10 @@ Public Class form_sewa
             Dim edit = New edit_sewa()
             edit.Show()
         End If
+    End Sub
+
+    Private Sub ButtonTambah_Click_1(sender As Object, e As EventArgs) Handles ButtonTambah.Click
+        Dim tambah = New tambah_data_sewa()
+        tambah.Show()
     End Sub
 End Class

@@ -26,23 +26,26 @@ Partial Class hapus_sewa
         Me.ButtonHapus = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LabelPenyewa = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.LabelMerek = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(122, 9)
+        Me.Label1.Font = New System.Drawing.Font("Franklin Gothic Demi", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(174, 34)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(347, 51)
+        Me.Label1.Size = New System.Drawing.Size(302, 41)
         Me.Label1.TabIndex = 45
         Me.Label1.Text = "Hapus Sewa Mobil"
         '
         'ButtonHapus
         '
-        Me.ButtonHapus.Location = New System.Drawing.Point(243, 155)
+        Me.ButtonHapus.Location = New System.Drawing.Point(437, 217)
         Me.ButtonHapus.Name = "ButtonHapus"
         Me.ButtonHapus.Size = New System.Drawing.Size(113, 23)
         Me.ButtonHapus.TabIndex = 48
@@ -52,60 +55,74 @@ Partial Class hapus_sewa
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(29, 89)
+        Me.Label2.Font = New System.Drawing.Font("Lucida Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.Location = New System.Drawing.Point(51, 101)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(246, 21)
+        Me.Label2.Size = New System.Drawing.Size(273, 18)
         Me.Label2.TabIndex = 49
-        Me.Label2.Text = "Anda yakin ingin menghapus data"
+        Me.Label2.Text = "Anda yakin ingin menghapus nama"
         '
         'LabelPenyewa
         '
         Me.LabelPenyewa.AutoSize = True
-        Me.LabelPenyewa.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.LabelPenyewa.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.LabelPenyewa.Font = New System.Drawing.Font("Lucida Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.LabelPenyewa.ForeColor = System.Drawing.Color.Red
-        Me.LabelPenyewa.Location = New System.Drawing.Point(291, 89)
+        Me.LabelPenyewa.Location = New System.Drawing.Point(470, 101)
         Me.LabelPenyewa.Name = "LabelPenyewa"
-        Me.LabelPenyewa.Size = New System.Drawing.Size(37, 21)
+        Me.LabelPenyewa.Size = New System.Drawing.Size(35, 18)
         Me.LabelPenyewa.TabIndex = 50
         Me.LabelPenyewa.Text = "test"
         Me.LabelPenyewa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(357, 89)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(159, 21)
-        Me.Label4.TabIndex = 51
-        Me.Label4.Text = "yang menyewa mobil"
-        '
         'LabelMerek
         '
         Me.LabelMerek.AutoSize = True
-        Me.LabelMerek.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.LabelMerek.Font = New System.Drawing.Font("Lucida Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.LabelMerek.ForeColor = System.Drawing.Color.Red
-        Me.LabelMerek.Location = New System.Drawing.Point(538, 89)
+        Me.LabelMerek.Location = New System.Drawing.Point(470, 154)
         Me.LabelMerek.Name = "LabelMerek"
-        Me.LabelMerek.Size = New System.Drawing.Size(37, 21)
+        Me.LabelMerek.Size = New System.Drawing.Size(35, 18)
         Me.LabelMerek.TabIndex = 52
         Me.LabelMerek.Text = "test"
         Me.LabelMerek.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Lucida Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(51, 154)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(174, 18)
+        Me.Label3.TabIndex = 53
+        Me.Label3.Text = "yang meminjam mobil"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(214, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Location = New System.Drawing.Point(-2, -11)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(674, 97)
+        Me.GroupBox1.TabIndex = 54
+        Me.GroupBox1.TabStop = False
         '
         'hapus_sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(617, 229)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(667, 266)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.LabelMerek)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.LabelPenyewa)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ButtonHapus)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "hapus_sewa"
         Me.Text = "hapus_sewa"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -115,6 +132,7 @@ Partial Class hapus_sewa
     Friend WithEvents ButtonHapus As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents LabelPenyewa As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents LabelMerek As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents GroupBox1 As GroupBox
 End Class
