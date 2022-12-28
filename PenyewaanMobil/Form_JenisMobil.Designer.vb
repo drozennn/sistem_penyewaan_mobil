@@ -32,9 +32,10 @@ Partial Class Form_JenisMobil
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(42, 59)
+        Me.Label1.Font = New System.Drawing.Font("Franklin Gothic Demi", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(42, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(83, 20)
+        Me.Label1.Size = New System.Drawing.Size(241, 51)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Jenis Mobil"
         '

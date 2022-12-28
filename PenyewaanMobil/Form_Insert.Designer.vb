@@ -32,18 +32,20 @@ Partial Class Form_Insert
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Lucida Sans", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label1.Location = New System.Drawing.Point(151, 171)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(83, 20)
+        Me.Label1.Size = New System.Drawing.Size(90, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Jenis Mobil"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Lucida Sans", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label2.Location = New System.Drawing.Point(151, 220)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(110, 20)
+        Me.Label2.Size = New System.Drawing.Size(117, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Tanggal Dibuat"
         '

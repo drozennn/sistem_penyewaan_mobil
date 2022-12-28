@@ -30,15 +30,16 @@ Partial Class Form_Hapus
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Lucida Sans", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label1.Location = New System.Drawing.Point(243, 88)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(161, 20)
+        Me.Label1.Size = New System.Drawing.Size(177, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Yakin ingin menghapus"
         '
         'BtnHapus
         '
-        Me.BtnHapus.Location = New System.Drawing.Point(261, 237)
+        Me.BtnHapus.Location = New System.Drawing.Point(265, 201)
         Me.BtnHapus.Name = "BtnHapus"
         Me.BtnHapus.Size = New System.Drawing.Size(94, 29)
         Me.BtnHapus.TabIndex = 1
@@ -48,9 +49,10 @@ Partial Class Form_Hapus
         'LblJenisMobil
         '
         Me.LblJenisMobil.AutoSize = True
+        Me.LblJenisMobil.Font = New System.Drawing.Font("Lucida Sans", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.LblJenisMobil.Location = New System.Drawing.Point(288, 108)
         Me.LblJenisMobil.Name = "LblJenisMobil"
-        Me.LblJenisMobil.Size = New System.Drawing.Size(53, 20)
+        Me.LblJenisMobil.Size = New System.Drawing.Size(56, 17)
         Me.LblJenisMobil.TabIndex = 2
         Me.LblJenisMobil.Text = "Label2"
         '
