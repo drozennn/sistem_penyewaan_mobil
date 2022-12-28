@@ -37,40 +37,40 @@ Partial Class EditPenyewa
         'BtnEditPenyewa
         '
         Me.BtnEditPenyewa.Font = New System.Drawing.Font("Lucida Sans Unicode", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.BtnEditPenyewa.Location = New System.Drawing.Point(242, 312)
+        Me.BtnEditPenyewa.Location = New System.Drawing.Point(207, 270)
         Me.BtnEditPenyewa.Name = "BtnEditPenyewa"
-        Me.BtnEditPenyewa.Size = New System.Drawing.Size(95, 30)
+        Me.BtnEditPenyewa.Size = New System.Drawing.Size(81, 26)
         Me.BtnEditPenyewa.TabIndex = 13
         Me.BtnEditPenyewa.Text = "Edit"
         Me.BtnEditPenyewa.UseVisualStyleBackColor = True
         '
         'txtAlamatPenyewa
         '
-        Me.txtAlamatPenyewa.Location = New System.Drawing.Point(193, 208)
+        Me.txtAlamatPenyewa.Location = New System.Drawing.Point(165, 180)
         Me.txtAlamatPenyewa.Name = "txtAlamatPenyewa"
-        Me.txtAlamatPenyewa.Size = New System.Drawing.Size(259, 66)
+        Me.txtAlamatPenyewa.Size = New System.Drawing.Size(223, 58)
         Me.txtAlamatPenyewa.TabIndex = 12
         Me.txtAlamatPenyewa.Text = ""
         '
         'txtNIKPenyewa
         '
-        Me.txtNIKPenyewa.Location = New System.Drawing.Point(193, 171)
+        Me.txtNIKPenyewa.Location = New System.Drawing.Point(165, 148)
         Me.txtNIKPenyewa.Name = "txtNIKPenyewa"
-        Me.txtNIKPenyewa.Size = New System.Drawing.Size(259, 23)
+        Me.txtNIKPenyewa.Size = New System.Drawing.Size(223, 20)
         Me.txtNIKPenyewa.TabIndex = 11
         '
         'txtNamaPenyewa
         '
-        Me.txtNamaPenyewa.Location = New System.Drawing.Point(193, 134)
+        Me.txtNamaPenyewa.Location = New System.Drawing.Point(165, 116)
         Me.txtNamaPenyewa.Name = "txtNamaPenyewa"
-        Me.txtNamaPenyewa.Size = New System.Drawing.Size(259, 23)
+        Me.txtNamaPenyewa.Size = New System.Drawing.Size(223, 20)
         Me.txtNamaPenyewa.TabIndex = 10
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Lucida Sans Unicode", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(100, 208)
+        Me.Label3.Location = New System.Drawing.Point(86, 180)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(64, 20)
         Me.Label3.TabIndex = 9
@@ -80,7 +80,7 @@ Partial Class EditPenyewa
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Lucida Sans Unicode", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(100, 171)
+        Me.Label2.Location = New System.Drawing.Point(86, 148)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(36, 20)
         Me.Label2.TabIndex = 8
@@ -90,7 +90,7 @@ Partial Class EditPenyewa
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Lucida Sans Unicode", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(100, 134)
+        Me.Label1.Location = New System.Drawing.Point(86, 116)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 20)
         Me.Label1.TabIndex = 7
@@ -102,7 +102,7 @@ Partial Class EditPenyewa
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Location = New System.Drawing.Point(1, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(570, 82)
+        Me.GroupBox1.Size = New System.Drawing.Size(489, 71)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         '
@@ -110,7 +110,7 @@ Partial Class EditPenyewa
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Franklin Gothic Demi", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(171, 19)
+        Me.Label4.Location = New System.Drawing.Point(147, 16)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(225, 41)
         Me.Label4.TabIndex = 15
@@ -119,9 +119,9 @@ Partial Class EditPenyewa
         '
         'EditPenyewa
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(567, 390)
+        Me.ClientSize = New System.Drawing.Size(486, 338)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BtnEditPenyewa)
         Me.Controls.Add(Me.txtAlamatPenyewa)
@@ -130,6 +130,7 @@ Partial Class EditPenyewa
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Name = "EditPenyewa"
         Me.Text = "Edit Penyewa"
         Me.GroupBox1.ResumeLayout(False)
