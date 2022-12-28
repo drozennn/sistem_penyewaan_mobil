@@ -30,7 +30,6 @@ Partial Class tambahMobil
         Me.lblTanggalMasuk = New System.Windows.Forms.Label()
         Me.lblJumlah = New System.Windows.Forms.Label()
         Me.txtTipe = New System.Windows.Forms.TextBox()
-        Me.cbJenis = New System.Windows.Forms.ComboBox()
         Me.txtMerek = New System.Windows.Forms.TextBox()
         Me.txtJumlah = New System.Windows.Forms.TextBox()
         Me.txtHarga = New System.Windows.Forms.TextBox()
@@ -39,7 +38,8 @@ Partial Class tambahMobil
         Me.BtnTambahGambar = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btnTambah = New System.Windows.Forms.Button()
-        Me.DtTahunPembuatan = New System.Windows.Forms.DateTimePicker()
+        Me.txtTahun = New System.Windows.Forms.TextBox()
+        Me.cbJenis = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBoxMobil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -113,14 +113,6 @@ Partial Class tambahMobil
         Me.txtTipe.Size = New System.Drawing.Size(326, 31)
         Me.txtTipe.TabIndex = 9
         '
-        'cbJenis
-        '
-        Me.cbJenis.FormattingEnabled = True
-        Me.cbJenis.Location = New System.Drawing.Point(487, 40)
-        Me.cbJenis.Name = "cbJenis"
-        Me.cbJenis.Size = New System.Drawing.Size(326, 33)
-        Me.cbJenis.TabIndex = 10
-        '
         'txtMerek
         '
         Me.txtMerek.Location = New System.Drawing.Point(487, 173)
@@ -179,19 +171,28 @@ Partial Class tambahMobil
         Me.btnTambah.Text = "Tambah"
         Me.btnTambah.UseVisualStyleBackColor = True
         '
-        'DtTahunPembuatan
+        'txtTahun
         '
-        Me.DtTahunPembuatan.Location = New System.Drawing.Point(487, 448)
-        Me.DtTahunPembuatan.Name = "DtTahunPembuatan"
-        Me.DtTahunPembuatan.Size = New System.Drawing.Size(326, 31)
-        Me.DtTahunPembuatan.TabIndex = 22
+        Me.txtTahun.Location = New System.Drawing.Point(487, 448)
+        Me.txtTahun.Name = "txtTahun"
+        Me.txtTahun.Size = New System.Drawing.Size(326, 31)
+        Me.txtTahun.TabIndex = 22
+        '
+        'cbJenis
+        '
+        Me.cbJenis.FormattingEnabled = True
+        Me.cbJenis.Location = New System.Drawing.Point(487, 37)
+        Me.cbJenis.Name = "cbJenis"
+        Me.cbJenis.Size = New System.Drawing.Size(326, 33)
+        Me.cbJenis.TabIndex = 23
         '
         'tambahMobil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(999, 801)
-        Me.Controls.Add(Me.DtTahunPembuatan)
+        Me.Controls.Add(Me.cbJenis)
+        Me.Controls.Add(Me.txtTahun)
         Me.Controls.Add(Me.btnTambah)
         Me.Controls.Add(Me.BtnTambahGambar)
         Me.Controls.Add(Me.PictureBoxMobil)
@@ -199,7 +200,6 @@ Partial Class tambahMobil
         Me.Controls.Add(Me.txtHarga)
         Me.Controls.Add(Me.txtJumlah)
         Me.Controls.Add(Me.txtMerek)
-        Me.Controls.Add(Me.cbJenis)
         Me.Controls.Add(Me.txtTipe)
         Me.Controls.Add(Me.lblJumlah)
         Me.Controls.Add(Me.lblTanggalMasuk)
@@ -224,7 +224,6 @@ Partial Class tambahMobil
     Friend WithEvents lblTanggalMasuk As Label
     Friend WithEvents lblJumlah As Label
     Friend WithEvents txtTipe As TextBox
-    Friend WithEvents cbJenis As ComboBox
     Friend WithEvents txtMerek As TextBox
     Friend WithEvents txtJumlah As TextBox
     Friend WithEvents txtHarga As TextBox
@@ -233,5 +232,6 @@ Partial Class tambahMobil
     Friend WithEvents BtnTambahGambar As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents btnTambah As Button
-    Friend WithEvents DtTahunPembuatan As DateTimePicker
+    Friend WithEvents txtTahun As TextBox
+    Friend WithEvents cbJenis As ComboBox
 End Class

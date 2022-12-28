@@ -22,8 +22,7 @@ Partial Class EditMobil
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.DtTahunPembuatan = New System.Windows.Forms.DateTimePicker()
-        Me.btnTambah = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.BtnTambahGambar = New System.Windows.Forms.Button()
         Me.PictureBoxMobil = New System.Windows.Forms.PictureBox()
         Me.dtTglMasuk = New System.Windows.Forms.DateTimePicker()
@@ -39,24 +38,21 @@ Partial Class EditMobil
         Me.lblMerek = New System.Windows.Forms.Label()
         Me.lblTipe = New System.Windows.Forms.Label()
         Me.lblJenis = New System.Windows.Forms.Label()
+        Me.txtTahun = New System.Windows.Forms.TextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbStatus = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBoxMobil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DtTahunPembuatan
+        'btnUpdate
         '
-        Me.DtTahunPembuatan.Location = New System.Drawing.Point(487, 448)
-        Me.DtTahunPembuatan.Name = "DtTahunPembuatan"
-        Me.DtTahunPembuatan.Size = New System.Drawing.Size(326, 31)
-        Me.DtTahunPembuatan.TabIndex = 43
-        '
-        'btnTambah
-        '
-        Me.btnTambah.Location = New System.Drawing.Point(798, 754)
-        Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(112, 34)
-        Me.btnTambah.TabIndex = 42
-        Me.btnTambah.Text = "Tambah"
-        Me.btnTambah.UseVisualStyleBackColor = True
+        Me.btnUpdate.Location = New System.Drawing.Point(798, 754)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(112, 34)
+        Me.btnUpdate.TabIndex = 42
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'BtnTambahGambar
         '
@@ -181,13 +177,44 @@ Partial Class EditMobil
         Me.lblJenis.TabIndex = 23
         Me.lblJenis.Text = "Jenis"
         '
+        'txtTahun
+        '
+        Me.txtTahun.Location = New System.Drawing.Point(487, 448)
+        Me.txtTahun.Name = "txtTahun"
+        Me.txtTahun.Size = New System.Drawing.Size(326, 31)
+        Me.txtTahun.TabIndex = 43
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(307, 629)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(60, 25)
+        Me.Label1.TabIndex = 44
+        Me.Label1.Text = "Status"
+        '
+        'cbStatus
+        '
+        Me.cbStatus.FormattingEnabled = True
+        Me.cbStatus.Items.AddRange(New Object() {"Tersedia", "Dipinjam"})
+        Me.cbStatus.Location = New System.Drawing.Point(487, 629)
+        Me.cbStatus.Name = "cbStatus"
+        Me.cbStatus.Size = New System.Drawing.Size(326, 33)
+        Me.cbStatus.TabIndex = 45
+        '
         'EditMobil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(977, 820)
-        Me.Controls.Add(Me.DtTahunPembuatan)
-        Me.Controls.Add(Me.btnTambah)
+        Me.Controls.Add(Me.cbStatus)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtTahun)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.BtnTambahGambar)
         Me.Controls.Add(Me.PictureBoxMobil)
         Me.Controls.Add(Me.dtTglMasuk)
@@ -210,9 +237,7 @@ Partial Class EditMobil
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents DtTahunPembuatan As DateTimePicker
-    Friend WithEvents btnTambah As Button
+    Friend WithEvents btnUpdate As Button
     Friend WithEvents BtnTambahGambar As Button
     Friend WithEvents PictureBoxMobil As PictureBox
     Friend WithEvents dtTglMasuk As DateTimePicker
@@ -228,4 +253,8 @@ Partial Class EditMobil
     Friend WithEvents lblMerek As Label
     Friend WithEvents lblTipe As Label
     Friend WithEvents lblJenis As Label
+    Friend WithEvents txtTahun As TextBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cbStatus As ComboBox
 End Class

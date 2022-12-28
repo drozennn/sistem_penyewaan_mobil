@@ -15,10 +15,11 @@ Public Class Mobil
     Private jenis As String
     Private tipe As String
     Private jumlah As Integer
-    Private merek As Integer
+    Private merek As String
     Private harga As Integer
     Private tahunPembuatan As String
     Private tglMasuk As String
+    Private status As String
     Private foto
 
     Public Property GSfoto() As String
@@ -85,6 +86,14 @@ Public Class Mobil
             tglMasuk = value
         End Set
     End Property
+    Public Property GSstatus() As String
+        Get
+            Return status
+        End Get
+        Set(value As String)
+            status = value
+        End Set
+    End Property
     Public Function loadJenis()
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
@@ -142,7 +151,8 @@ Public Class Mobil
                                                   jumlah As Integer,
                                                   harga_sewa As String,
                                                   tahun_pembuatan As Date,
-                                                  tanggal_data_masuk As Date)
+                                                  tanggal_data_masuk As Date,
+                                                  status As String)
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
@@ -154,7 +164,9 @@ Public Class Mobil
                 "jumlah='" & jumlah & "', " &
                 "harga_sewa='" & harga_sewa & "', " &
                 "tahun_pembuatan='" & tahun_pembuatan & "', " &
-                "tanggal_data_masuk='" & tanggal_data_masuk & "' WHERE id='" & ID & "'"
+                "tanggal_data_masuk='" & tanggal_data_masuk & "', " &
+                "status='" & status & "' " &
+                " WHERE id='" & ID & "'"
             Try
                 sqlCommand = New MySqlCommand(sqlQuery, dbConn)
                 sqlRead = sqlCommand.ExecuteReader
@@ -207,40 +219,62 @@ Public Class Mobil
         dbConn.Close()
         Return result
     End Function
+    Public Function DeleteDataKoleksiByIDDatabase(ID As Integer)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+               + "password=" + password + ";" + "database =" + database
+
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "DELETE FROM mobil " &
+                        "WHERE id='" & ID & "'"
+
+            Debug.WriteLine(sqlQuery)
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+            dbConn.Close()
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
     Public Function addKoleksiDataTableDatabase(dir_gambar As String,
                                   jenis As String,
                                   tipe As String,
-                                  merek As Integer,
+                                  merek As String,
                                   jumlah As Integer,
                                   harga_sewa As String,
-                                  tahun_pembuatan As Date,
+                                  tahun_pembuatan As String,
                                   tanggal_data_masuk As Date)
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
 
         Try
+
+            Dim idJenis = getIDJenis(jenis)
+
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "INSERT INTO mobil(jenis, foto_mobil, tipe, merek,
                        jumlah, harga_sewa, tahun_pembuatan, tanggal_data_masuk, status_sewa)
-                        VALUES('" _
-            & jenis & "', '" _
+                        VALUES(" _
+            & idJenis & ", '" _
             & dir_gambar & "', '" _
             & tipe & "','" _
-            & merek & "','" _
-            & jumlah & "','" _
-            & harga_sewa & "','" _
+            & merek & "'," _
+            & jumlah & "," _
+            & harga_sewa & ",'" _
             & tahun_pembuatan & "','" _
-            & tanggal_data_masuk & "','Tersedia')"
+            & tanggal_data_masuk.ToString("yyyy/MM/dd") & "','Tersedia')"
 
-            Try
-                sqlCommand = New MySqlCommand(sqlQuery, dbConn)
-                sqlRead = sqlCommand.ExecuteReader
-                sqlRead.Close()
-                MessageBox.Show("data ditambahkan")
-            Catch ex As Exception
-                MessageBox.Show("Gagal ditambahkan : " & ex.Message.ToString())
-            End Try
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            sqlRead.Close()
             dbConn.Close()
         Catch ex As Exception
             Return ex.Message
@@ -249,4 +283,33 @@ Public Class Mobil
         End Try
 
     End Function
+    Public Function getIDJenis(merek As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT id FROM jenis_mobil WHERE jenis_mobil = '" & merek & "'"
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            Dim result As Integer
+
+
+            While sqlRead.Read
+                result = sqlRead.GetString(0).ToString
+            End While
+            sqlRead.Close()
+            dbConn.Close()
+
+            Return result
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
 End Class
