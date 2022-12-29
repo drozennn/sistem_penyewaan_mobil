@@ -10,4 +10,5 @@ Public Class Form_Insert
                                                           Form_JenisMobil.jenismobil.GSTanggal)
 
     End Sub
+
 End Class
