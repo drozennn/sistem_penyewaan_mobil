@@ -29,10 +29,10 @@ Partial Class form_sewa
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ButtonTambah = New System.Windows.Forms.Button()
-        Me.ButtonJenis = New System.Windows.Forms.Button()
-        Me.ButtonMobil = New System.Windows.Forms.Button()
         Me.ButtonPenyewa = New System.Windows.Forms.Button()
+        Me.ButtonMobil = New System.Windows.Forms.Button()
+        Me.ButtonJenis = New System.Windows.Forms.Button()
+        Me.ButtonTambah = New System.Windows.Forms.Button()
         CType(Me.DataGridSewa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -106,6 +106,45 @@ Partial Class form_sewa
         Me.GroupBox1.TabIndex = 51
         Me.GroupBox1.TabStop = False
         '
+        'ButtonPenyewa
+        '
+        Me.ButtonPenyewa.FlatAppearance.BorderSize = 0
+        Me.ButtonPenyewa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonPenyewa.Font = New System.Drawing.Font("Lucida Sans", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.ButtonPenyewa.ForeColor = System.Drawing.Color.White
+        Me.ButtonPenyewa.Location = New System.Drawing.Point(343, 22)
+        Me.ButtonPenyewa.Name = "ButtonPenyewa"
+        Me.ButtonPenyewa.Size = New System.Drawing.Size(159, 41)
+        Me.ButtonPenyewa.TabIndex = 8
+        Me.ButtonPenyewa.Text = "Penyewa"
+        Me.ButtonPenyewa.UseVisualStyleBackColor = True
+        '
+        'ButtonMobil
+        '
+        Me.ButtonMobil.FlatAppearance.BorderSize = 0
+        Me.ButtonMobil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonMobil.Font = New System.Drawing.Font("Lucida Sans", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.ButtonMobil.ForeColor = System.Drawing.Color.White
+        Me.ButtonMobil.Location = New System.Drawing.Point(199, 22)
+        Me.ButtonMobil.Name = "ButtonMobil"
+        Me.ButtonMobil.Size = New System.Drawing.Size(126, 41)
+        Me.ButtonMobil.TabIndex = 7
+        Me.ButtonMobil.Text = "Mobil"
+        Me.ButtonMobil.UseVisualStyleBackColor = True
+        '
+        'ButtonJenis
+        '
+        Me.ButtonJenis.FlatAppearance.BorderSize = 0
+        Me.ButtonJenis.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonJenis.Font = New System.Drawing.Font("Lucida Sans", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.ButtonJenis.ForeColor = System.Drawing.Color.White
+        Me.ButtonJenis.Location = New System.Drawing.Point(20, 22)
+        Me.ButtonJenis.Name = "ButtonJenis"
+        Me.ButtonJenis.Size = New System.Drawing.Size(161, 41)
+        Me.ButtonJenis.TabIndex = 6
+        Me.ButtonJenis.Text = "Jenis Mobil"
+        Me.ButtonJenis.UseVisualStyleBackColor = True
+        '
         'ButtonTambah
         '
         Me.ButtonTambah.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -117,39 +156,6 @@ Partial Class form_sewa
         Me.ButtonTambah.TabIndex = 10
         Me.ButtonTambah.Text = "Tambah Data Sewa"
         Me.ButtonTambah.UseVisualStyleBackColor = False
-        '
-        'ButtonJenis
-        '
-        Me.ButtonJenis.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.ButtonJenis.Font = New System.Drawing.Font("Lucida Sans", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.ButtonJenis.Location = New System.Drawing.Point(32, 22)
-        Me.ButtonJenis.Name = "ButtonJenis"
-        Me.ButtonJenis.Size = New System.Drawing.Size(106, 41)
-        Me.ButtonJenis.TabIndex = 6
-        Me.ButtonJenis.Text = "Jenis Mobil"
-        Me.ButtonJenis.UseVisualStyleBackColor = True
-        '
-        'ButtonMobil
-        '
-        Me.ButtonMobil.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.ButtonMobil.Font = New System.Drawing.Font("Lucida Sans", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.ButtonMobil.Location = New System.Drawing.Point(191, 22)
-        Me.ButtonMobil.Name = "ButtonMobil"
-        Me.ButtonMobil.Size = New System.Drawing.Size(106, 41)
-        Me.ButtonMobil.TabIndex = 7
-        Me.ButtonMobil.Text = "Mobil"
-        Me.ButtonMobil.UseVisualStyleBackColor = True
-        '
-        'ButtonPenyewa
-        '
-        Me.ButtonPenyewa.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.ButtonPenyewa.Font = New System.Drawing.Font("Lucida Sans", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.ButtonPenyewa.Location = New System.Drawing.Point(353, 22)
-        Me.ButtonPenyewa.Name = "ButtonPenyewa"
-        Me.ButtonPenyewa.Size = New System.Drawing.Size(106, 41)
-        Me.ButtonPenyewa.TabIndex = 8
-        Me.ButtonPenyewa.Text = "Penyewa"
-        Me.ButtonPenyewa.UseVisualStyleBackColor = True
         '
         'form_sewa
         '

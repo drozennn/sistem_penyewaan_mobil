@@ -55,6 +55,7 @@ CREATE TABLE `mobil` (
   `tipe` varchar(100) NOT NULL,
   `jenis` int(10) NOT NULL,
   `foto_mobil` text NOT NULL,
+  `tipe` varchar(100) NOT NULL,
   `merek` varchar(100) NOT NULL,
   `jumlah` int(10) NOT NULL,
   `harga_sewa` varchar(20) NOT NULL,

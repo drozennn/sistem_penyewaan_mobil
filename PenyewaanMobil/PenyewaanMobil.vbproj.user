@@ -19,5 +19,17 @@
     <Compile Update="tambah_data_sewa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EditPenyewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="HapusPenyewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Penyewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TambahPenyewa.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
