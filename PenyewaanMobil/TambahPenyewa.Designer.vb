@@ -48,6 +48,7 @@ Partial Class TambahPenyewa
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Franklin Gothic Demi", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(241, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(121, 19)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(287, 41)
@@ -67,6 +68,9 @@ Partial Class TambahPenyewa
         '
         'txtAlamatPenyewa
         '
+        Me.txtAlamatPenyewa.BackColor = System.Drawing.Color.White
+        Me.txtAlamatPenyewa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAlamatPenyewa.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtAlamatPenyewa.Location = New System.Drawing.Point(177, 168)
         Me.txtAlamatPenyewa.Name = "txtAlamatPenyewa"
         Me.txtAlamatPenyewa.Size = New System.Drawing.Size(223, 58)
@@ -75,6 +79,9 @@ Partial Class TambahPenyewa
         '
         'txtNIKPenyewa
         '
+        Me.txtNIKPenyewa.BackColor = System.Drawing.Color.White
+        Me.txtNIKPenyewa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNIKPenyewa.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtNIKPenyewa.Location = New System.Drawing.Point(177, 136)
         Me.txtNIKPenyewa.Name = "txtNIKPenyewa"
         Me.txtNIKPenyewa.Size = New System.Drawing.Size(223, 23)
@@ -82,6 +89,9 @@ Partial Class TambahPenyewa
         '
         'txtNamaPenyewa
         '
+        Me.txtNamaPenyewa.BackColor = System.Drawing.Color.White
+        Me.txtNamaPenyewa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNamaPenyewa.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtNamaPenyewa.Location = New System.Drawing.Point(177, 104)
         Me.txtNamaPenyewa.Name = "txtNamaPenyewa"
         Me.txtNamaPenyewa.Size = New System.Drawing.Size(223, 23)
@@ -121,6 +131,7 @@ Partial Class TambahPenyewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(523, 314)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BtnTambahPenyewa)

@@ -1,7 +1,7 @@
 ﻿Public Class Penyewa
 
-    Public selectedTablePenyewa
-    Public selectedTablePenyewaNama
+    Public Shared selectedTablePenyewa
+    Public Shared selectedTablePenyewaNama
 
     Public Shared FungsiPenyewa As FungsiPenyewa
 
@@ -37,14 +37,18 @@
     End Sub
 
     Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
-        Dim selectedPenyewa As List(Of String) = FungsiPenyewa.GetDataPenyewaByIdDatabase(selectedTablePenyewa)
+        If selectedTablePenyewa = 0 Then
+            MessageBox.Show("Silahkan pilih baris untuk diedit terlebih dahulu")
+        Else
+            Dim selectedPenyewa As List(Of String) = FungsiPenyewa.GetDataPenyewaByIdDatabase(selectedTablePenyewa)
 
-        FungsiPenyewa.GSNama = selectedPenyewa(1)
-        FungsiPenyewa.GSNIK = selectedPenyewa(2)
-        FungsiPenyewa.GSAlamat = selectedPenyewa(3)
+            FungsiPenyewa.GSNama = selectedPenyewa(1)
+            FungsiPenyewa.GSNIK = selectedPenyewa(2)
+            FungsiPenyewa.GSAlamat = selectedPenyewa(3)
 
-        Dim form_edit = New EditPenyewa()
-        form_edit.Show()
+            Dim form_edit = New EditPenyewa()
+            form_edit.Show()
+        End If
     End Sub
 
     Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click

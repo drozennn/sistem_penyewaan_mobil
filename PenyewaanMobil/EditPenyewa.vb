@@ -1,4 +1,5 @@
 ﻿Public Class EditPenyewa
+    Dim id As Integer
 
     Public Sub New()
 
@@ -9,18 +10,26 @@
         txtNamaPenyewa.Text = Penyewa.FungsiPenyewa.GSNama
         txtNIKPenyewa.Text = Penyewa.FungsiPenyewa.GSNIK
         txtAlamatPenyewa.Text = Penyewa.FungsiPenyewa.GSAlamat
+
+        id = Penyewa.selectedTablePenyewa
+
     End Sub
 
     Private Sub BtnEditPenyewa_Click(sender As Object, e As EventArgs) Handles BtnEditPenyewa.Click
-        Penyewa.FungsiPenyewa.GSNama = txtNamaPenyewa.Text.ToString()
-        Penyewa.FungsiPenyewa.GSNIK = txtNIKPenyewa.Text.ToString()
-        Penyewa.FungsiPenyewa.GSAlamat = txtAlamatPenyewa.Text.ToString()
 
-        Penyewa.FungsiPenyewa.UpdateDataPenyewaByIdDatabase(Penyewa.selectedTablePenyewa,
-                                                            Penyewa.FungsiPenyewa.GSNama,
-                                                            Penyewa.FungsiPenyewa.GSNIK,
-                                                            Penyewa.FungsiPenyewa.GSAlamat)
+        Penyewa.FungsiPenyewa.UpdateDataPenyewaByIdDatabase(id,
+                                                            txtNamaPenyewa.Text,
+                                                            txtNIKPenyewa.Text,
+                                                            txtAlamatPenyewa.Text)
+        'MessageBox.Show(id)
+        'MessageBox.Show(txtNamaPenyewa.Text)
+        'MessageBox.Show(txtNIKPenyewa.Text)
+        'MessageBox.Show(txtAlamatPenyewa.Text)
 
+        'MessageBox.Show(Penyewa.selectedTablePenyewa)
+        'MessageBox.Show(Penyewa.FungsiPenyewa.GSNama)
+        'MessageBox.Show(Penyewa.FungsiPenyewa.GSNIK)
+        'MessageBox.Show(Penyewa.FungsiPenyewa.GSAlamat)
         Me.Close()
     End Sub
 End Class

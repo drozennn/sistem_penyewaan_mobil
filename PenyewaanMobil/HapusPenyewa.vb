@@ -7,6 +7,7 @@
 
         ' Add any initialization after the InitializeComponent() call.
         NamaPenyewaHapus.Text = Penyewa.selectedTablePenyewaNama
+        MessageBox.Show(Penyewa.selectedTablePenyewaNama)
 
     End Sub
     Private Sub BtnBatal_Click(sender As Object, e As EventArgs) Handles BtnBatal.Click

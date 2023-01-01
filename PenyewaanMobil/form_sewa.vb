@@ -76,4 +76,9 @@ Public Class form_sewa
         Dim tambah = New tambah_data_sewa()
         tambah.Show()
     End Sub
+
+    Private Sub ButtonPenyewa_Click(sender As Object, e As EventArgs) Handles ButtonPenyewa.Click
+        Dim penyewa = New Penyewa()
+        penyewa.Show()
+    End Sub
 End Class

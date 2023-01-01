@@ -76,6 +76,7 @@ Partial Class form_sewa
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Franklin Gothic Demi", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(719, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(289, 41)

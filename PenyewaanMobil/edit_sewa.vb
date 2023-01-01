@@ -1,7 +1,6 @@
 ﻿Public Class edit_sewa
     Private data As New List(Of String)
     Private tipe
-    Private id
     Public Sub New()
 
         ' This call is required by the designer.
@@ -43,7 +42,6 @@
         TextBoxTotalBayar.Text = form_sewa.Data_Sewa.GStotalBayar
         ComboBoxSewa.SelectedItem() = form_sewa.Data_Sewa.GSstatusSewa
         tipe = form_sewa.Data_Sewa.GStipe
-        id = form_sewa.Data_Sewa.GSmerek
     End Sub
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
