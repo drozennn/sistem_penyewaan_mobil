@@ -9,5 +9,6 @@
     End Sub
     Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
         Form_JenisMobil.jenismobil.DeleteDataKoleksiByIDDatabase(Form_JenisMobil.selectedTableId)
+        MessageBox.Show("Jenis Mobill Berhasil Dihapus")
     End Sub
 End Class

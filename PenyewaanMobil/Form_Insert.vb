@@ -8,6 +8,7 @@ Public Class Form_Insert
 
         Form_JenisMobil.jenismobil.AddDataKoleksiDatabase(Form_JenisMobil.jenismobil.GSJenisMobil,
                                                           Form_JenisMobil.jenismobil.GSTanggal)
+        MessageBox.Show("Jenis Mobill Berhasil Ditambahkan")
 
     End Sub
 
