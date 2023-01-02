@@ -31,5 +31,14 @@
     <Compile Update="tambah_data_sewa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Form_Hapus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form_Insert.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form_JenisMobil.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
