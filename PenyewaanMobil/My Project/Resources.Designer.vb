@@ -66,9 +66,6 @@ Namespace My.Resources
         Friend ReadOnly Property icons8_people_in_car_100() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("icons8-people-in-car-100", resourceCulture)
-        Friend ReadOnly Property sammy_man_thinks() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("sammy-man-thinks", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -79,6 +76,23 @@ Namespace My.Resources
         Friend ReadOnly Property pluto_riding_a_car() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("pluto-riding-a-car", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property sammy_man_thinks() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("sammy-man-thinks", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property shine_girl_writing_in_a_notebook() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("shine-girl-writing-in-a-notebook", resourceCulture)

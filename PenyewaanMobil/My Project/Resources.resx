@@ -121,8 +121,9 @@
   <data name="icons8-people-in-car-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-people-in-car-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pluto-riding-a-car" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pluto-riding-a-car.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	<data name="pluto-riding-a-car" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\pluto-riding-a-car.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
   <data name="shine-girl-writing-in-a-notebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shine-girl-writing-in-a-notebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
