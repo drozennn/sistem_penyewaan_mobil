@@ -29,7 +29,16 @@ Public Class tambah_data_sewa
                                                    form_sewa.Data_Sewa.GSstatusSewa
                                                    )
 
+        MessageBox.Show(form_sewa.Data_Sewa.GSmerek)
+        MessageBox.Show(form_sewa.Data_Sewa.GSnamaPenyewa)
+        MessageBox.Show(form_sewa.Data_Sewa.GSrencanaPinjam)
+        MessageBox.Show(form_sewa.Data_Sewa.GStanggalPinjam)
+        MessageBox.Show(form_sewa.Data_Sewa.GStotalBiayaSewa)
+        MessageBox.Show(form_sewa.Data_Sewa.GSstatusSewa)
+
         form_sewa.Data_Sewa.setSewa(form_sewa.Data_Sewa.GSmerek, form_sewa.Data_Sewa.GSstatusSewa)
+
+
 
         MessageBox.Show("data dimasukan")
     End Sub

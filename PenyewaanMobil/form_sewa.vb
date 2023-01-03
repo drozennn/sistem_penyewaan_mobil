@@ -86,4 +86,9 @@ Public Class form_sewa
         Dim jenis = New Form_JenisMobil()
         jenis.Show()
     End Sub
+
+    Private Sub ButtonMobil_Click(sender As Object, e As EventArgs) Handles ButtonMobil.Click
+        Dim mobil = New FormMobil()
+        mobil.Show()
+    End Sub
 End Class

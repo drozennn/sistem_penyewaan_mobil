@@ -23,8 +23,16 @@ Public Class tambahMobil
         FormMobil.Mobil.GSfoto = FormMobil.Mobil.GSfoto.Replace("\", "/")
     End Sub
 
-    Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
+    Private Sub tambahMobil_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        data = FormMobil.Mobil.loadJenis()
+        cbJenis.Items.Clear()
+        For Each kel In data
+            cbJenis.Items.Add(kel)
+        Next
+        data.Clear()
+    End Sub
 
+    Private Sub BtnTmbh_Click(sender As Object, e As EventArgs) Handles BtnTmbh.Click
         FormMobil.Mobil.GSJenis = FormMobil.Mobil.getIDJenis(cbJenis.Text)
         FormMobil.Mobil.GSTipe = txtTipe.Text
         FormMobil.Mobil.GSMerek = txtMerek.Text
@@ -42,27 +50,7 @@ Public Class tambahMobil
                                                     FormMobil.Mobil.GSHarga,
                                                     FormMobil.Mobil.GSTahunPembuatan,
                                                     FormMobil.Mobil.GSTglMasuk)
-        MessageBox.Show(FormMobil.Mobil.GSfoto)
-        MessageBox.Show(FormMobil.Mobil.GSJenis)
-        MessageBox.Show(FormMobil.Mobil.GSTipe)
-        MessageBox.Show(FormMobil.Mobil.GSMerek)
-        MessageBox.Show(FormMobil.Mobil.GSJumlah)
-        MessageBox.Show(FormMobil.Mobil.GSHarga)
-        MessageBox.Show(FormMobil.Mobil.GSTahunPembuatan)
-        MessageBox.Show(FormMobil.Mobil.GSTglMasuk)
-
+        MessageBox.Show("Data Ditambahkan")
         Me.Close()
     End Sub
-
-    Private Sub tambahMobil_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        data = FormMobil.Mobil.loadJenis()
-        cbJenis.Items.Clear()
-        For Each kel In data
-            cbJenis.Items.Add(kel)
-        Next
-        data.Clear()
-    End Sub
-
-
-
 End Class

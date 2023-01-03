@@ -13,8 +13,13 @@
         "packagesPath": "C:\\Users\\Fazril\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Fazril\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\obj\\",
         "projectStyle": "PackageReference",
-        "configFilePaths": ["C:\\Users\\Fazril\\AppData\\Roaming\\NuGet\\NuGet.Config", "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"],
-        "originalTargetFrameworks": ["net6.0-windows"],
+        "configFilePaths": [
+          "C:\\Users\\Fazril\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
@@ -26,7 +31,9 @@
           }
         },
         "warningProperties": {
-          "warnAsError": ["NU1605"]
+          "warnAsError": [
+            "NU1605"
+          ]
         }
       },
       "frameworks": {
@@ -38,7 +45,15 @@
               "version": "[8.0.31, )"
             }
           },
-          "imports": ["net461", "net462", "net47", "net471", "net472", "net48", "net481"],
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {

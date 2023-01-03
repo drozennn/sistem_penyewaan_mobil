@@ -37,123 +37,137 @@ Partial Class tambahMobil
         Me.PictureBoxMobil = New System.Windows.Forms.PictureBox()
         Me.BtnTambahGambar = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.btnTambah = New System.Windows.Forms.Button()
         Me.txtTahun = New System.Windows.Forms.TextBox()
         Me.cbJenis = New System.Windows.Forms.ComboBox()
+        Me.BtnTmbh = New System.Windows.Forms.Button()
         CType(Me.PictureBoxMobil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblJenis
         '
         Me.lblJenis.AutoSize = True
-        Me.lblJenis.Location = New System.Drawing.Point(300, 40)
+        Me.lblJenis.Location = New System.Drawing.Point(210, 24)
+        Me.lblJenis.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblJenis.Name = "lblJenis"
-        Me.lblJenis.Size = New System.Drawing.Size(49, 25)
+        Me.lblJenis.Size = New System.Drawing.Size(32, 15)
         Me.lblJenis.TabIndex = 0
         Me.lblJenis.Text = "Jenis"
         '
         'lblTipe
         '
         Me.lblTipe.AutoSize = True
-        Me.lblTipe.Location = New System.Drawing.Point(300, 111)
+        Me.lblTipe.Location = New System.Drawing.Point(210, 67)
+        Me.lblTipe.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTipe.Name = "lblTipe"
-        Me.lblTipe.Size = New System.Drawing.Size(45, 25)
+        Me.lblTipe.Size = New System.Drawing.Size(29, 15)
         Me.lblTipe.TabIndex = 1
         Me.lblTipe.Text = "Tipe"
         '
         'lblMerek
         '
         Me.lblMerek.AutoSize = True
-        Me.lblMerek.Location = New System.Drawing.Point(300, 179)
+        Me.lblMerek.Location = New System.Drawing.Point(210, 107)
+        Me.lblMerek.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblMerek.Name = "lblMerek"
-        Me.lblMerek.Size = New System.Drawing.Size(61, 25)
+        Me.lblMerek.Size = New System.Drawing.Size(40, 15)
         Me.lblMerek.TabIndex = 2
         Me.lblMerek.Text = "Merek"
         '
         'lblHargaSewa
         '
         Me.lblHargaSewa.AutoSize = True
-        Me.lblHargaSewa.Location = New System.Drawing.Point(300, 363)
+        Me.lblHargaSewa.Location = New System.Drawing.Point(210, 218)
+        Me.lblHargaSewa.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblHargaSewa.Name = "lblHargaSewa"
-        Me.lblHargaSewa.Size = New System.Drawing.Size(106, 25)
+        Me.lblHargaSewa.Size = New System.Drawing.Size(69, 15)
         Me.lblHargaSewa.TabIndex = 3
         Me.lblHargaSewa.Text = "Harga Sewa"
         '
         'lblTahun
         '
         Me.lblTahun.AutoSize = True
-        Me.lblTahun.Location = New System.Drawing.Point(300, 448)
+        Me.lblTahun.Location = New System.Drawing.Point(210, 269)
+        Me.lblTahun.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTahun.Name = "lblTahun"
-        Me.lblTahun.Size = New System.Drawing.Size(152, 25)
+        Me.lblTahun.Size = New System.Drawing.Size(103, 15)
         Me.lblTahun.TabIndex = 4
         Me.lblTahun.Text = "Tahun Pembuatan"
         '
         'lblTanggalMasuk
         '
         Me.lblTanggalMasuk.AutoSize = True
-        Me.lblTanggalMasuk.Location = New System.Drawing.Point(303, 541)
+        Me.lblTanggalMasuk.Location = New System.Drawing.Point(212, 325)
+        Me.lblTanggalMasuk.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTanggalMasuk.Name = "lblTanggalMasuk"
-        Me.lblTanggalMasuk.Size = New System.Drawing.Size(130, 25)
+        Me.lblTanggalMasuk.Size = New System.Drawing.Size(86, 15)
         Me.lblTanggalMasuk.TabIndex = 7
         Me.lblTanggalMasuk.Text = "Tanggal Masuk"
         '
         'lblJumlah
         '
         Me.lblJumlah.AutoSize = True
-        Me.lblJumlah.Location = New System.Drawing.Point(300, 272)
+        Me.lblJumlah.Location = New System.Drawing.Point(210, 163)
+        Me.lblJumlah.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblJumlah.Name = "lblJumlah"
-        Me.lblJumlah.Size = New System.Drawing.Size(67, 25)
+        Me.lblJumlah.Size = New System.Drawing.Size(45, 15)
         Me.lblJumlah.TabIndex = 8
         Me.lblJumlah.Text = "Jumlah"
         '
         'txtTipe
         '
-        Me.txtTipe.Location = New System.Drawing.Point(487, 105)
+        Me.txtTipe.Location = New System.Drawing.Point(341, 63)
+        Me.txtTipe.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTipe.Name = "txtTipe"
-        Me.txtTipe.Size = New System.Drawing.Size(326, 31)
+        Me.txtTipe.Size = New System.Drawing.Size(229, 23)
         Me.txtTipe.TabIndex = 9
         '
         'txtMerek
         '
-        Me.txtMerek.Location = New System.Drawing.Point(487, 173)
+        Me.txtMerek.Location = New System.Drawing.Point(341, 104)
+        Me.txtMerek.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMerek.Name = "txtMerek"
-        Me.txtMerek.Size = New System.Drawing.Size(326, 31)
+        Me.txtMerek.Size = New System.Drawing.Size(229, 23)
         Me.txtMerek.TabIndex = 11
         '
         'txtJumlah
         '
-        Me.txtJumlah.Location = New System.Drawing.Point(487, 266)
+        Me.txtJumlah.Location = New System.Drawing.Point(341, 160)
+        Me.txtJumlah.Margin = New System.Windows.Forms.Padding(2)
         Me.txtJumlah.Name = "txtJumlah"
-        Me.txtJumlah.Size = New System.Drawing.Size(326, 31)
+        Me.txtJumlah.Size = New System.Drawing.Size(229, 23)
         Me.txtJumlah.TabIndex = 12
         '
         'txtHarga
         '
-        Me.txtHarga.Location = New System.Drawing.Point(487, 357)
+        Me.txtHarga.Location = New System.Drawing.Point(341, 214)
+        Me.txtHarga.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHarga.Name = "txtHarga"
-        Me.txtHarga.Size = New System.Drawing.Size(326, 31)
+        Me.txtHarga.Size = New System.Drawing.Size(229, 23)
         Me.txtHarga.TabIndex = 13
         '
         'dtTglMasuk
         '
-        Me.dtTglMasuk.Location = New System.Drawing.Point(487, 535)
+        Me.dtTglMasuk.Location = New System.Drawing.Point(341, 321)
+        Me.dtTglMasuk.Margin = New System.Windows.Forms.Padding(2)
         Me.dtTglMasuk.Name = "dtTglMasuk"
-        Me.dtTglMasuk.Size = New System.Drawing.Size(326, 31)
+        Me.dtTglMasuk.Size = New System.Drawing.Size(229, 23)
         Me.dtTglMasuk.TabIndex = 15
         '
         'PictureBoxMobil
         '
-        Me.PictureBoxMobil.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBoxMobil.Location = New System.Drawing.Point(8, 7)
+        Me.PictureBoxMobil.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBoxMobil.Name = "PictureBoxMobil"
-        Me.PictureBoxMobil.Size = New System.Drawing.Size(260, 228)
+        Me.PictureBoxMobil.Size = New System.Drawing.Size(182, 137)
         Me.PictureBoxMobil.TabIndex = 19
         Me.PictureBoxMobil.TabStop = False
         '
         'BtnTambahGambar
         '
-        Me.BtnTambahGambar.Location = New System.Drawing.Point(56, 264)
+        Me.BtnTambahGambar.Location = New System.Drawing.Point(39, 158)
+        Me.BtnTambahGambar.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnTambahGambar.Name = "BtnTambahGambar"
-        Me.BtnTambahGambar.Size = New System.Drawing.Size(170, 34)
+        Me.BtnTambahGambar.Size = New System.Drawing.Size(119, 20)
         Me.BtnTambahGambar.TabIndex = 20
         Me.BtnTambahGambar.Text = "Tambah Gambar"
         Me.BtnTambahGambar.UseVisualStyleBackColor = True
@@ -162,38 +176,41 @@ Partial Class tambahMobil
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'btnTambah
-        '
-        Me.btnTambah.Location = New System.Drawing.Point(798, 754)
-        Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(112, 34)
-        Me.btnTambah.TabIndex = 21
-        Me.btnTambah.Text = "Tambah"
-        Me.btnTambah.UseVisualStyleBackColor = True
-        '
         'txtTahun
         '
-        Me.txtTahun.Location = New System.Drawing.Point(487, 448)
+        Me.txtTahun.Location = New System.Drawing.Point(341, 269)
+        Me.txtTahun.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTahun.Name = "txtTahun"
-        Me.txtTahun.Size = New System.Drawing.Size(326, 31)
+        Me.txtTahun.Size = New System.Drawing.Size(229, 23)
         Me.txtTahun.TabIndex = 22
         '
         'cbJenis
         '
         Me.cbJenis.FormattingEnabled = True
-        Me.cbJenis.Location = New System.Drawing.Point(487, 37)
+        Me.cbJenis.Location = New System.Drawing.Point(341, 22)
+        Me.cbJenis.Margin = New System.Windows.Forms.Padding(2)
         Me.cbJenis.Name = "cbJenis"
-        Me.cbJenis.Size = New System.Drawing.Size(326, 33)
+        Me.cbJenis.Size = New System.Drawing.Size(229, 23)
         Me.cbJenis.TabIndex = 23
+        '
+        'BtnTmbh
+        '
+        Me.BtnTmbh.Location = New System.Drawing.Point(451, 367)
+        Me.BtnTmbh.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnTmbh.Name = "BtnTmbh"
+        Me.BtnTmbh.Size = New System.Drawing.Size(119, 20)
+        Me.BtnTmbh.TabIndex = 24
+        Me.BtnTmbh.Text = "Tambah"
+        Me.BtnTmbh.UseVisualStyleBackColor = True
         '
         'tambahMobil
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(999, 801)
+        Me.ClientSize = New System.Drawing.Size(699, 428)
+        Me.Controls.Add(Me.BtnTmbh)
         Me.Controls.Add(Me.cbJenis)
         Me.Controls.Add(Me.txtTahun)
-        Me.Controls.Add(Me.btnTambah)
         Me.Controls.Add(Me.BtnTambahGambar)
         Me.Controls.Add(Me.PictureBoxMobil)
         Me.Controls.Add(Me.dtTglMasuk)
@@ -208,6 +225,7 @@ Partial Class tambahMobil
         Me.Controls.Add(Me.lblMerek)
         Me.Controls.Add(Me.lblTipe)
         Me.Controls.Add(Me.lblJenis)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "tambahMobil"
         Me.Text = "tambahMobil"
         CType(Me.PictureBoxMobil, System.ComponentModel.ISupportInitialize).EndInit()
@@ -231,7 +249,7 @@ Partial Class tambahMobil
     Friend WithEvents PictureBoxMobil As PictureBox
     Friend WithEvents BtnTambahGambar As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents btnTambah As Button
     Friend WithEvents txtTahun As TextBox
     Friend WithEvents cbJenis As ComboBox
+    Friend WithEvents BtnTmbh As Button
 End Class
