@@ -47,6 +47,7 @@ Partial Class HapusMobil
         Me.lblHapusMobil.Size = New System.Drawing.Size(429, 171)
         Me.lblHapusMobil.TabIndex = 1
         Me.lblHapusMobil.Text = "Mobil"
+        Me.lblHapusMobil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BtnHapus
         '

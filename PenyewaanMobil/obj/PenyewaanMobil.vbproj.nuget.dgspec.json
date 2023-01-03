@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ihsan\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj": {}
+    "C:\\Users\\ihsan\\Downloads\\sistem_penyewaan_mobil\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\ihsan\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj": {
+    "C:\\Users\\ihsan\\Downloads\\sistem_penyewaan_mobil\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ihsan\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj",
+        "projectUniqueName": "C:\\Users\\ihsan\\Downloads\\sistem_penyewaan_mobil\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj",
         "projectName": "PenyewaanMobil",
-        "projectPath": "C:\\Users\\ihsan\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj",
+        "projectPath": "C:\\Users\\ihsan\\Downloads\\sistem_penyewaan_mobil\\sistem_penyewaan_mobil\\PenyewaanMobil\\PenyewaanMobil.vbproj",
         "packagesPath": "C:\\Users\\ihsan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ihsan\\source\\repos\\sistem_penyewaan_mobil\\PenyewaanMobil\\obj\\",
+        "outputPath": "C:\\Users\\ihsan\\Downloads\\sistem_penyewaan_mobil\\sistem_penyewaan_mobil\\PenyewaanMobil\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ihsan\\AppData\\Roaming\\NuGet\\NuGet.Config",

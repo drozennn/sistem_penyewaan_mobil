@@ -1,12 +1,13 @@
 ﻿Public Class EditMobil
+
     Public Sub New()
 
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        'PictureBoxMobil.Load(FormMobil.Mobil.GSfoto)
-        'PictureBoxMobil.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBoxMobil.Load(FormMobil.Mobil.GSfoto)
+        PictureBoxMobil.SizeMode = PictureBoxSizeMode.StretchImage
         cbJenis.SelectedItem = FormMobil.Mobil.GSJenis
         txtTipe.Text = FormMobil.Mobil.GSTipe
         txtMerek.Text = FormMobil.Mobil.GSMerek
@@ -14,6 +15,7 @@
         txtHarga.Text = FormMobil.Mobil.GSHarga
         txtTahun.Text = FormMobil.Mobil.GSTahunPembuatan
         dtTglMasuk.Value = FormMobil.Mobil.GSTglMasuk
+        cbStatus.SelectedItem = FormMobil.Mobil.GSstatus
     End Sub
 
     Private Sub BtnTambahGambar_Click(sender As Object, e As EventArgs) Handles BtnTambahGambar.Click
@@ -30,7 +32,7 @@
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        FormMobil.Mobil.GSJenis = cbJenis.SelectedItem()
+        FormMobil.Mobil.GSJenis = FormMobil.Mobil.getIDJenis(cbJenis.SelectedItem)
         FormMobil.Mobil.GSTipe = txtTipe.Text
         FormMobil.Mobil.GSMerek = txtMerek.Text
         FormMobil.Mobil.GSJumlah = txtJumlah.Text
@@ -50,5 +52,26 @@
                                                       FormMobil.Mobil.GSTahunPembuatan,
                                                       FormMobil.Mobil.GSTglMasuk,
                                                       FormMobil.Mobil.GSstatus)
+        cbStatus.Items.Clear()
+    End Sub
+
+
+    Private Sub EditMobil_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        tambahMobil.data = FormMobil.Mobil.loadJenis()
+        cbJenis.Items.Clear()
+        For Each kel In tambahMobil.data
+            cbJenis.Items.Add(kel)
+        Next
+        tambahMobil.data.Clear()
+        cbJenis.SelectedItem() = FormMobil.Mobil.GSJenis
+
+        '=========================================
+
+        'tambahMobil.data.Clear()
+        FormMobil.Mobil.loadStatus(FormMobil.selectedTableKoleksi)
+        'For Each kel In data
+        '    cbStatus.Items.Add(kel)
+        'Next
+        cbStatus.SelectedItem() = FormMobil.Mobil.GSstatus
     End Sub
 End Class

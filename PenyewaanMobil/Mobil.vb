@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Collections.Immutable
+Imports MySql.Data.MySqlClient
 Public Class Mobil
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
@@ -104,7 +105,7 @@ Public Class Mobil
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
-
+            dataJenis.Clear()
             While sqlRead.Read
                 dataJenis.Add(sqlRead.GetString(0).ToString)
             End While
@@ -119,14 +120,42 @@ Public Class Mobil
             dbConn.Dispose()
         End Try
     End Function
+
+    Public Function loadStatus(id As Integer)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
+            + "password=" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT status_sewa FROM mobil WHERE id=" & id
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+
+            While sqlRead.Read
+                dataJenis.Add(sqlRead.GetString(0).ToString)
+            End While
+            sqlRead.Close()
+            dbConn.Close()
+            GSstatus = dataJenis(0)
+
+
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
     Public Function GetDataKoleksiDatabase() As DataTable
         Dim result As New DataTable
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT id AS 'ID',
-                                  jenis AS 'Jenis Mobil',
+        sqlCommand.CommandText = "SELECT mobil.id AS 'ID',
+                                  jenis_mobil.jenis_mobil AS 'Jenis Mobil',
                                   foto_mobil AS 'Gambar',
                                   tipe AS 'tipe mobil',
                                   merek AS 'merek mobil',
@@ -135,8 +164,7 @@ Public Class Mobil
                                   tahun_pembuatan AS 'Tahun Pembuatan', 
                                   tanggal_data_masuk AS 'Tanggal Masuk',
                                   status_sewa AS 'Status'
-                                 
-                                  FROM mobil"
+                                  FROM mobil JOIN jenis_mobil ON mobil.jenis = jenis_mobil.id"
         sqlRead = sqlCommand.ExecuteReader
         result.Load(sqlRead)
         sqlRead.Close()
@@ -147,25 +175,25 @@ Public Class Mobil
                                                   dir_gambar As String,
                                                   jenis As String,
                                                   tipe As String,
-                                                  merek As Integer,
+                                                  merek As String,
                                                   jumlah As Integer,
                                                   harga_sewa As String,
-                                                  tahun_pembuatan As Date,
+                                                  tahun_pembuatan As String,
                                                   tanggal_data_masuk As Date,
                                                   status As String)
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "UPDATE koleksi SET " &
+            sqlQuery = "UPDATE mobil SET " &
                 "jenis='" & jenis & "', " &
-                "dir_gambar='" & dir_gambar & "', " &
+                "foto_mobil='" & dir_gambar & "', " &
                 "tipe='" & tipe & "', " &
                 "merek='" & merek & "', " &
                 "jumlah='" & jumlah & "', " &
                 "harga_sewa='" & harga_sewa & "', " &
                 "tahun_pembuatan='" & tahun_pembuatan & "', " &
-                "tanggal_data_masuk='" & tanggal_data_masuk & "', " &
-                "status='" & status & "' " &
+                "tanggal_data_masuk='" & tanggal_data_masuk.ToString("yyyy/MM/dd") & "', " &
+                "status_sewa='" & status & "' " &
                 " WHERE id='" & ID & "'"
             Try
                 sqlCommand = New MySqlCommand(sqlQuery, dbConn)
@@ -188,8 +216,8 @@ Public Class Mobil
                 + "password=" + password + ";" + "database =" + database
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT id,
-                                  jenis,
+        sqlCommand.CommandText = "SELECT mobil.id,
+                                  jenis_mobil.jenis_mobil,
                                   foto_mobil,
                                   tipe,
                                   merek,
@@ -199,7 +227,8 @@ Public Class Mobil
                                   tanggal_data_masuk,
                                   status_sewa
                                   FROM mobil
-                                  WHERE id='" & ID & "'"
+                                  JOIN jenis_mobil ON mobil.jenis = jenis_mobil.id
+                                  WHERE mobil.id='" & ID & "'"
 
         sqlRead = sqlCommand.ExecuteReader
         While sqlRead.Read
@@ -243,34 +272,34 @@ Public Class Mobil
             dbConn.Dispose()
         End Try
     End Function
+
     Public Function addKoleksiDataTableDatabase(dir_gambar As String,
-                                  jenis As String,
-                                  tipe As String,
-                                  merek As String,
-                                  jumlah As Integer,
-                                  harga_sewa As String,
-                                  tahun_pembuatan As String,
-                                  tanggal_data_masuk As Date)
+                                              jenis As String,
+                                              tipe As String,
+                                              merek As String,
+                                              jumlah As Integer,
+                                              harga_sewa As String,
+                                              tahun_pembuatan As String,
+                                              tanggal_data_masuk As Date)
+        Dim status As String = "Tersedia"
         dbConn.ConnectionString = "server =" + server + ";" + "user id=" + username + ";" _
             + "password=" + password + ";" + "database =" + database
 
         Try
-
-            Dim idJenis = getIDJenis(jenis)
 
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "INSERT INTO mobil(jenis, foto_mobil, tipe, merek,
                        jumlah, harga_sewa, tahun_pembuatan, tanggal_data_masuk, status_sewa)
                         VALUES(" _
-            & idJenis & ", '" _
+            & jenis & ", '" _
             & dir_gambar & "', '" _
             & tipe & "','" _
             & merek & "'," _
             & jumlah & "," _
             & harga_sewa & ",'" _
             & tahun_pembuatan & "','" _
-            & tanggal_data_masuk.ToString("yyyy/MM/dd") & "','Tersedia')"
+            & tanggal_data_masuk.ToString("yyyy/MM/dd") & "','" & status & "')"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader

@@ -36,23 +36,28 @@
     End Sub
 
     Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
-        Dim selectedKoleksi As List(Of String) = Mobil.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
+        If selectedTableKoleksi = 0 Then
+            MessageBox.Show("pilih item terlebih dahulu")
+        Else
+            Dim selectedKoleksi As List(Of String) = Mobil.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
 
-        Mobil.GSfoto = selectedKoleksi(2)
+            Mobil.GSfoto = selectedKoleksi(2)
 
-        Mobil.GSJenis = selectedKoleksi(1)
-        Mobil.GSTipe = selectedKoleksi(3)
-        Mobil.GSMerek = selectedKoleksi(4)
-        Mobil.GSJumlah = selectedKoleksi(5)
-        Mobil.GSHarga = selectedKoleksi(6)
-        Mobil.GSTahunPembuatan = selectedKoleksi(7)
-        Mobil.GSTglMasuk = selectedKoleksi(8)
-        Mobil.GSstatus = selectedKoleksi(9)
+            Mobil.GSJenis = selectedKoleksi(1)
+            Mobil.GSTipe = selectedKoleksi(3)
+            Mobil.GSMerek = selectedKoleksi(4)
+            Mobil.GSJumlah = selectedKoleksi(5)
+            Mobil.GSHarga = selectedKoleksi(6)
+            Mobil.GSTahunPembuatan = selectedKoleksi(7)
+            Mobil.GSTglMasuk = selectedKoleksi(8)
+            Mobil.GSstatus = selectedKoleksi(9)
 
 
 
-        Dim formUpdate = New EditMobil()
-        formUpdate.Show()
+            Dim formUpdate = New EditMobil()
+            formUpdate.Show()
+        End If
+
     End Sub
 
     Private Sub BtnKurangMobil_Click(sender As Object, e As EventArgs) Handles BtnKurangMobil.Click
