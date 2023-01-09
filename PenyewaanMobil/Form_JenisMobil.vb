@@ -2,6 +2,9 @@
     Public Shared jenismobil As JenisMobil
     Public Shared selectedTableId
     Public Shared selectedTableJenisMobil
+    Public Shared selectedNama
+    Public Shared selectedRow As DataGridViewRow
+
 
     Public Sub New()
 
@@ -28,19 +31,19 @@
 
     End Sub
 
-    Private Sub DataGridJenisMobil_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridJenisMobil.CellClick
-        'selectedTableKoleksi-DataGridKoleksi.CurrentRow.Index
-        Dim index As Integer = e.RowIndex
-        Dim selectedRow As DataGridViewRow
-        selectedRow = DataGridJenisMobil.Rows(index)
-
-        selectedTableId = selectedRow.Cells(0).Value
-        selectedTableJenisMobil = selectedRow.Cells(1).Value
-
+    Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
+        If selectedTableId = 0 Then
+            MessageBox.Show("Pilih baris yang akan dihapus")
+        Else
+            Dim formhapus = New Form_Hapus()
+            formhapus.Show()
+        End If
     End Sub
 
-    Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
-        Dim formhapus = New Form_Hapus()
-        formhapus.Show()
+    Private Sub DataGridJenisMobil_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridJenisMobil.CellClick
+        Dim index As Integer = e.RowIndex
+        selectedRow = DataGridJenisMobil.Rows(index)
+        selectedTableId = selectedRow.Cells(0).Value
+        selectedNama = selectedRow.Cells(1).Value
     End Sub
 End Class

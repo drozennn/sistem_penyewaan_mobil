@@ -283,7 +283,7 @@ Partial Class tambah_data_sewa
         'ComboBoxSewa
         '
         Me.ComboBoxSewa.FormattingEnabled = True
-        Me.ComboBoxSewa.Items.AddRange(New Object() {"Booking", "Pinjam", "Dikembalikan"})
+        Me.ComboBoxSewa.Items.AddRange(New Object() {"Pinjam", "Dikembalikan"})
         Me.ComboBoxSewa.Location = New System.Drawing.Point(580, 262)
         Me.ComboBoxSewa.Name = "ComboBoxSewa"
         Me.ComboBoxSewa.Size = New System.Drawing.Size(185, 23)

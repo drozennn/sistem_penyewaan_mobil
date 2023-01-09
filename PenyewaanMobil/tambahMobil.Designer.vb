@@ -46,70 +46,77 @@ Partial Class tambahMobil
         'lblJenis
         '
         Me.lblJenis.AutoSize = True
-        Me.lblJenis.Location = New System.Drawing.Point(210, 24)
+        Me.lblJenis.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblJenis.Location = New System.Drawing.Point(191, 26)
         Me.lblJenis.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblJenis.Name = "lblJenis"
-        Me.lblJenis.Size = New System.Drawing.Size(32, 15)
+        Me.lblJenis.Size = New System.Drawing.Size(37, 15)
         Me.lblJenis.TabIndex = 0
         Me.lblJenis.Text = "Jenis"
         '
         'lblTipe
         '
         Me.lblTipe.AutoSize = True
-        Me.lblTipe.Location = New System.Drawing.Point(210, 67)
+        Me.lblTipe.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblTipe.Location = New System.Drawing.Point(191, 69)
         Me.lblTipe.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTipe.Name = "lblTipe"
-        Me.lblTipe.Size = New System.Drawing.Size(29, 15)
+        Me.lblTipe.Size = New System.Drawing.Size(33, 15)
         Me.lblTipe.TabIndex = 1
         Me.lblTipe.Text = "Tipe"
         '
         'lblMerek
         '
         Me.lblMerek.AutoSize = True
-        Me.lblMerek.Location = New System.Drawing.Point(210, 107)
+        Me.lblMerek.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblMerek.Location = New System.Drawing.Point(191, 109)
         Me.lblMerek.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblMerek.Name = "lblMerek"
-        Me.lblMerek.Size = New System.Drawing.Size(40, 15)
+        Me.lblMerek.Size = New System.Drawing.Size(47, 15)
         Me.lblMerek.TabIndex = 2
         Me.lblMerek.Text = "Merek"
         '
         'lblHargaSewa
         '
         Me.lblHargaSewa.AutoSize = True
-        Me.lblHargaSewa.Location = New System.Drawing.Point(210, 218)
+        Me.lblHargaSewa.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblHargaSewa.Location = New System.Drawing.Point(191, 220)
         Me.lblHargaSewa.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblHargaSewa.Name = "lblHargaSewa"
-        Me.lblHargaSewa.Size = New System.Drawing.Size(69, 15)
+        Me.lblHargaSewa.Size = New System.Drawing.Size(81, 15)
         Me.lblHargaSewa.TabIndex = 3
         Me.lblHargaSewa.Text = "Harga Sewa"
         '
         'lblTahun
         '
         Me.lblTahun.AutoSize = True
-        Me.lblTahun.Location = New System.Drawing.Point(210, 269)
+        Me.lblTahun.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblTahun.Location = New System.Drawing.Point(191, 271)
         Me.lblTahun.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTahun.Name = "lblTahun"
-        Me.lblTahun.Size = New System.Drawing.Size(103, 15)
+        Me.lblTahun.Size = New System.Drawing.Size(118, 15)
         Me.lblTahun.TabIndex = 4
         Me.lblTahun.Text = "Tahun Pembuatan"
         '
         'lblTanggalMasuk
         '
         Me.lblTanggalMasuk.AutoSize = True
-        Me.lblTanggalMasuk.Location = New System.Drawing.Point(212, 325)
+        Me.lblTanggalMasuk.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblTanggalMasuk.Location = New System.Drawing.Point(193, 327)
         Me.lblTanggalMasuk.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTanggalMasuk.Name = "lblTanggalMasuk"
-        Me.lblTanggalMasuk.Size = New System.Drawing.Size(86, 15)
+        Me.lblTanggalMasuk.Size = New System.Drawing.Size(100, 15)
         Me.lblTanggalMasuk.TabIndex = 7
         Me.lblTanggalMasuk.Text = "Tanggal Masuk"
         '
         'lblJumlah
         '
         Me.lblJumlah.AutoSize = True
-        Me.lblJumlah.Location = New System.Drawing.Point(210, 163)
+        Me.lblJumlah.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblJumlah.Location = New System.Drawing.Point(191, 165)
         Me.lblJumlah.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblJumlah.Name = "lblJumlah"
-        Me.lblJumlah.Size = New System.Drawing.Size(45, 15)
+        Me.lblJumlah.Size = New System.Drawing.Size(48, 15)
         Me.lblJumlah.TabIndex = 8
         Me.lblJumlah.Text = "Jumlah"
         '
@@ -155,22 +162,27 @@ Partial Class tambahMobil
         '
         'PictureBoxMobil
         '
-        Me.PictureBoxMobil.Location = New System.Drawing.Point(8, 7)
+        Me.PictureBoxMobil.Location = New System.Drawing.Point(11, 22)
         Me.PictureBoxMobil.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBoxMobil.Name = "PictureBoxMobil"
-        Me.PictureBoxMobil.Size = New System.Drawing.Size(182, 137)
+        Me.PictureBoxMobil.Size = New System.Drawing.Size(151, 176)
         Me.PictureBoxMobil.TabIndex = 19
         Me.PictureBoxMobil.TabStop = False
         '
         'BtnTambahGambar
         '
-        Me.BtnTambahGambar.Location = New System.Drawing.Point(39, 158)
+        Me.BtnTambahGambar.BackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnTambahGambar.FlatAppearance.BorderSize = 0
+        Me.BtnTambahGambar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnTambahGambar.Font = New System.Drawing.Font("Lucida Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.BtnTambahGambar.ForeColor = System.Drawing.Color.White
+        Me.BtnTambahGambar.Location = New System.Drawing.Point(11, 202)
         Me.BtnTambahGambar.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnTambahGambar.Name = "BtnTambahGambar"
-        Me.BtnTambahGambar.Size = New System.Drawing.Size(119, 20)
+        Me.BtnTambahGambar.Size = New System.Drawing.Size(151, 34)
         Me.BtnTambahGambar.TabIndex = 20
         Me.BtnTambahGambar.Text = "Tambah Gambar"
-        Me.BtnTambahGambar.UseVisualStyleBackColor = True
+        Me.BtnTambahGambar.UseVisualStyleBackColor = False
         '
         'OpenFileDialog1
         '
@@ -195,19 +207,24 @@ Partial Class tambahMobil
         '
         'BtnTmbh
         '
-        Me.BtnTmbh.Location = New System.Drawing.Point(451, 367)
+        Me.BtnTmbh.BackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.BtnTmbh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnTmbh.Font = New System.Drawing.Font("Lucida Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.BtnTmbh.ForeColor = System.Drawing.Color.White
+        Me.BtnTmbh.Location = New System.Drawing.Point(430, 362)
         Me.BtnTmbh.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnTmbh.Name = "BtnTmbh"
-        Me.BtnTmbh.Size = New System.Drawing.Size(119, 20)
+        Me.BtnTmbh.Size = New System.Drawing.Size(140, 34)
         Me.BtnTmbh.TabIndex = 24
         Me.BtnTmbh.Text = "Tambah"
-        Me.BtnTmbh.UseVisualStyleBackColor = True
+        Me.BtnTmbh.UseVisualStyleBackColor = False
         '
         'tambahMobil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(699, 428)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(643, 414)
         Me.Controls.Add(Me.BtnTmbh)
         Me.Controls.Add(Me.cbJenis)
         Me.Controls.Add(Me.txtTahun)

@@ -3,7 +3,7 @@
 
         ' This call is required by the designer.
         InitializeComponent()
-        LblJenisMobil.Text = Form_JenisMobil.selectedTableJenisMobil
+        LblJenisMobil.Text = Form_JenisMobil.selectedNama
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub

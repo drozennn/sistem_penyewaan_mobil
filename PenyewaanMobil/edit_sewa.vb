@@ -113,4 +113,9 @@
         TextBoxTotalBayar.Text = total_denda + form_sewa.Data_Sewa.GStotalBiayaSewa
 
     End Sub
+
+    Private Sub ButtonKembali_Click(sender As Object, e As EventArgs) Handles ButtonKembali.Click
+        Dim main = New form_sewa()
+        main.Show()
+    End Sub
 End Class

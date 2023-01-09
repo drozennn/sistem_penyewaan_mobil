@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2022 at 03:02 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Waktu pembuatan: 09 Jan 2023 pada 18.44
+-- Versi server: 10.4.25-MariaDB
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenis_mobil`
+-- Struktur dari tabel `jenis_mobil`
 --
 
 CREATE TABLE `jenis_mobil` (
@@ -34,25 +34,22 @@ CREATE TABLE `jenis_mobil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `jenis_mobil`
+-- Dumping data untuk tabel `jenis_mobil`
 --
 
 INSERT INTO `jenis_mobil` (`id`, `jenis_mobil`, `created_at`) VALUES
 (1, 'Sedan', '2022-12-19'),
 (2, 'Van', '2022-12-15'),
-(3, 'SUV', '2022-12-10'),
-(4, 'Pickup', '2022-12-01'),
-(5, 'Sport', '2022-10-20');
+(3, 'SUV', '2022-12-10');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mobil`
+-- Struktur dari tabel `mobil`
 --
 
 CREATE TABLE `mobil` (
   `id` int(10) NOT NULL,
-  `tipe` varchar(100) NOT NULL,
   `jenis` int(10) NOT NULL,
   `foto_mobil` text NOT NULL,
   `tipe` varchar(100) NOT NULL,
@@ -64,10 +61,17 @@ CREATE TABLE `mobil` (
   `status_sewa` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `mobil`
+--
+
+INSERT INTO `mobil` (`id`, `jenis`, `foto_mobil`, `tipe`, `merek`, `jumlah`, `harga_sewa`, `tahun_pembuatan`, `tanggal_data_masuk`, `status_sewa`) VALUES
+(9, 2, 'C:/Users/Fazril/source/repos/sistem_penyewaan_mobil/gambar/bg.jpg', 'KU32', 'toyota', 1, '320000', 2019, '2022-06-27', 'Dipinjam');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penyewa`
+-- Struktur dari tabel `penyewa`
 --
 
 CREATE TABLE `penyewa` (
@@ -77,10 +81,18 @@ CREATE TABLE `penyewa` (
   `alamat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `penyewa`
+--
+
+INSERT INTO `penyewa` (`id_penyewa`, `nama`, `nik`, `alamat`) VALUES
+(8, 'jumaidisdfdsf', '21232321', 'lorem ipsum'),
+(9, 'asep', '232323', 'jalanan');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sewa`
+-- Struktur dari tabel `sewa`
 --
 
 CREATE TABLE `sewa` (
@@ -96,45 +108,61 @@ CREATE TABLE `sewa` (
   `status_sewa` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `sewa`
+--
+
+INSERT INTO `sewa` (`id`, `merek`, `penyewa`, `rencana_pinjam`, `tanggal_pinjam`, `tanggal_kembali`, `total_biaya_sewa`, `biaya_kelebihan_pinjam`, `total_bayar`, `status_sewa`) VALUES
+(16, 9, 8, 3, '2023-01-10', NULL, '960000', '0', '960000', 'Pinjam');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
   `id` int(10) NOT NULL,
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(16) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `foto` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `foto`) VALUES
+(4, '1', '1', 'c4ca4238a0b923820dcc509a6f75849b', 'C:/Users/Fazril/source/repos/sistem_penyewaan_mobil/gambar/shine-girl-writing-in-a-notebook.png'),
+(5, 'q', 'q@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 'C:/Users/Fazril/source/repos/sistem_penyewaan_mobil/gambar/sammy-man-thinks.png'),
+(6, 'qwerty', 'qwerty@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'C:/Users/Fazril/source/repos/sistem_penyewaan_mobil/gambar/sammy-man-thinks.png');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `jenis_mobil`
+-- Indeks untuk tabel `jenis_mobil`
 --
 ALTER TABLE `jenis_mobil`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `mobil`
+-- Indeks untuk tabel `mobil`
 --
 ALTER TABLE `mobil`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_jenismobil` (`jenis`);
 
 --
--- Indexes for table `penyewa`
+-- Indeks untuk tabel `penyewa`
 --
 ALTER TABLE `penyewa`
   ADD PRIMARY KEY (`id_penyewa`);
 
 --
--- Indexes for table `sewa`
+-- Indeks untuk tabel `sewa`
 --
 ALTER TABLE `sewa`
   ADD PRIMARY KEY (`id`),
@@ -142,57 +170,57 @@ ALTER TABLE `sewa`
   ADD KEY `fk_penyewa` (`penyewa`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `jenis_mobil`
+-- AUTO_INCREMENT untuk tabel `jenis_mobil`
 --
 ALTER TABLE `jenis_mobil`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `mobil`
+-- AUTO_INCREMENT untuk tabel `mobil`
 --
 ALTER TABLE `mobil`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `penyewa`
+-- AUTO_INCREMENT untuk tabel `penyewa`
 --
 ALTER TABLE `penyewa`
-  MODIFY `id_penyewa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_penyewa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `sewa`
+-- AUTO_INCREMENT untuk tabel `sewa`
 --
 ALTER TABLE `sewa`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `mobil`
+-- Ketidakleluasaan untuk tabel `mobil`
 --
 ALTER TABLE `mobil`
   ADD CONSTRAINT `fk_jenismobil` FOREIGN KEY (`jenis`) REFERENCES `jenis_mobil` (`id`);
 
 --
--- Constraints for table `sewa`
+-- Ketidakleluasaan untuk tabel `sewa`
 --
 ALTER TABLE `sewa`
   ADD CONSTRAINT `fk_merek` FOREIGN KEY (`merek`) REFERENCES `mobil` (`id`),

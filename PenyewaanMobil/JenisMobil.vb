@@ -80,8 +80,7 @@ Public Class JenisMobil
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "DELETE FROM jenis_mobil " &
-                        "WHERE id='" & ID & "'"
+            sqlQuery = "DELETE FROM jenis_mobil WHERE id='" & ID & "'"
 
             Debug.WriteLine(sqlQuery)
 

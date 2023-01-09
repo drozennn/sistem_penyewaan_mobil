@@ -1,7 +1,6 @@
 ﻿Imports Mysqlx.XDevAPI.Relational
 
 Public Class form_sewa
-    Private data As New List(Of String)
     Public Shared Data_Sewa As data_sewa
     Public Shared selectedId
     Public Shared selectedMerek
